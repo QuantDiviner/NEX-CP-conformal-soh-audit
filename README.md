@@ -1,145 +1,197 @@
-# Recent-Label Availability and Benchmark Integrity in Conformal SOH Estimation
+# Recent-Label Dependence in Cross-Dataset Conformal SOH Evaluation: A Benchmark-Integrity Case Study
 
-Official replication package for the manuscript:  
-**"Recent-Label Availability and Benchmark Integrity in Conformal SOH Estimation"**  
-*Target Journal*: Reliability Engineering & System Safety (RESS) — Case Study
+Official replication package for the manuscript:
 
----
-
-## 📌 Abstract & Repository Overview
-
-Conformal prediction (CP) provides distribution-free uncertainty guarantees for battery State of Health (SOH) estimation. However, when evaluating conformal SOH algorithms across real-world cycle trajectories, benchmark design choices—specifically recent-label availability, cell-block separation, and time-forward calibration—profoundly affect reported coverage validity.
-
-This repository provides the complete, deterministic replication code, dataset preprocessing pipelines, metrics single source of truth (`paper/data/metrics.json`), and Quarto manuscript sources for auditing conformal battery SOH evidence across public **CALCE**, **NASA**, and **Oxford** battery degradation corpora.
+**"Recent-Label Dependence in Cross-Dataset Conformal SOH Evaluation: A Benchmark-Integrity Case Study"**
+Qingsong Shan, Qianning Liu (Jiangxi University of Finance and Economics)
+Target journal: *Reliability Engineering & System Safety* (Short Communication / Case Study)
 
 ---
 
-## 📁 Repository Structure
+## Overview
+
+Conformal prediction (CP) provides distribution-free uncertainty guarantees for
+battery State of Health (SOH) estimation. This case study audits how benchmark
+design choices — specifically recent-label availability, cell-block separation,
+and time-forward calibration — affect reported coverage validity when
+conformal SOH algorithms are evaluated across real-world cycle trajectories.
+
+The repository contains the complete deterministic analysis pipeline, the
+dataset preprocessing and QA-gating code, all experiment metrics and run
+manifests, the numerical single source of truth (`paper/data/metrics.json`),
+and the Quarto manuscript sources. All results are derived exclusively from
+the public **CALCE**, **NASA**, and **Oxford** battery degradation corpora
+(45 QA-passing cells); no synthetic data are used anywhere.
+
+---
+
+## Repository structure
 
 ```text
 NEX-CP-conformal-soh-audit/
-├── README.md                   # Repository guide and reproducibility instructions
+├── README.md                   # This file
 ├── LICENSE                     # MIT License
-├── pyproject.toml              # Build & package metadata
-├── requirements.txt            # Locked Python dependencies
-├── environment.yml             # Conda environment specification
-├── research.conf               # Immutable experiment configuration
+├── pyproject.toml              # Package metadata and locked dependency versions
+├── requirements.txt            # Pinned Python dependencies
+├── environment.yml             # Conda environment specification (equivalent)
 │
-├── src/                        # Core Python library
-│   ├── models/                 # Quantile Regression, CQR, and CP backbones
-│   └── utils/                  # Evaluation, bootstrap CI, and QA utilities
+├── scripts/                    # Self-contained analysis pipeline (run from repo root)
+│   ├── download_data.py        # Prints manual acquisition instructions for the 3 datasets
+│   ├── preprocess_real_battery.py            # Raw data -> QA-gated cycle-level SOH table + splits
+│   ├── run_real_experiments.py               # exp001-exp005: main coverage audit, ablation,
+│   │                                         #   cross-protocol transfer, stress probe, cost screen
+│   ├── run_fpa_repair_experiment.py          # exp006/exp007: baseline & dependence-aware repair analyses
+│   ├── run_reliability_audit_experiment.py   # exp008/exp009: reliability & safety-boundary audit
+│   ├── run_hard_regime_audit_experiment.py   # exp010: hard-regime audit (no recent labels)
+│   ├── run_original_paper_substance_experiment.py # exp011: feature-schema measurement-validity audit
+│   ├── run_shift_adaptive_cp_comparator.py   # exp012: shift-adaptive conformal comparator
+│   └── run_pcr_20260718_repair.py            # Batch driver that deterministically reruns the
+│                                             #   repair runners with their locked arguments
 │
-├── scripts/                    # Executable workflow scripts
-│   ├── download_data.py        # Dataset downloader (CALCE, NASA, Oxford)
-│   ├── preprocess_real_battery.py # Real-data QA filtering & cell-block split generator
-│   ├── run_real_experiments.py # Main conformal evaluation runner (exp001 - exp005)
-│   ├── run_reliability_audit_experiment.py  # Reliability audit (exp008)
-│   ├── run_hard_regime_audit_experiment.py   # Hard regime audit (exp010)
-│   ├── run_original_paper_substance_experiment.py # Schema sensitivity audit (exp011)
-│   └── run_shift_adaptive_cp_comparator.py   # Shift-adaptive CP comparator (exp012)
+├── src/                        # Empty package skeletons only (no implementation).
+│                               # The analysis pipeline is entirely under scripts/.
 │
-├── data/                       # Preprocessing QA & Split Metadata
-│   ├── splits/
-│   │   ├── real_battery_preprocess_qa.csv  # QA pass/fail logs across 44 battery cells
-│   │   ├── real_battery_splits.json         # Time-forward cell-separated splits
-│   │   └── real_battery_skipped_sources.json
-│   └── README.md
+├── data/
+│   ├── raw/                    # Raw datasets (NOT included; manual download, gitignored)
+│   ├── processed/              # Generated cycle-level tables (not tracked)
+│   └── splits/                 # Tracked preprocessing outputs: QA log (45 passing cells),
+│                               # split manifest, run manifest, skipped-cell ledger
 │
-├── experiments/                # Experiment execution manifests and reports
-│   ├── exp001_main/            # Main marginal & conditional coverage audit
-│   ├── exp003_cross_protocol/  # Cross-dataset transfer stress test
-│   ├── exp008_reliability_audit/ # Reliability & safety boundary audit
-│   ├── exp011_original_paper_substance/ # Controlled schema-bundle audit
-│   └── exp012_shift_adaptive_cp_comparator/ # Shift-adaptive comparator
+├── experiments/                # One directory per experiment (see experiments/README.md)
+│   ├── exp001_main/ ... exp005_edge/
+│   │                           # exp001-exp005: results/metrics.json only
+│   ├── exp006_fpa_repair/ ... exp012_shift_adaptive_cp_comparator/
+│   │                           # exp006-exp012: results/metrics.json + results/run_manifest.json
+│   │                           # (plus split manifests and task-specific outputs)
+│   └── _template/              # Scaffold for new experiment directories
 │
-└── paper/                      # Quarto paper source & numerical SSOT
-    ├── data/
-    │   ├── metrics.json        # Primary numerical SSOT for all figures & tables
+└── paper/
+    ├── data/                   # Numerical SSOT
+    │   ├── metrics.json        # Every number quoted in text, tables, and figures
     │   ├── metrics_manifest.yaml
     │   └── external_facts.yaml
-    ├── figures/                # Vector artwork (PDF/SVG)
-    └── source/                 # Quarto manuscript (.qmd) & Elsevier LaTeX templates
+    ├── source/                 # Quarto manuscript (index.qmd + section files),
+    │   │                       # references/main.bib, Elsevier assets
+    │   └── figures/            # Vector figures (PDF) used by the manuscript
+    ├── scripts/                # SSOT maintenance & consistency-check utilities
+    └── templates/              # Reference copies of elsarticle / quarto-elsevier assets
 ```
 
 ---
 
-## 🛠️ Installation & Setup
+## Requirements
 
-### 1. Environment Setup
+- **Python 3.11** (results were produced with CPython 3.11.15; `pyproject.toml`
+  allows `>=3.11,<3.13`)
+- Python-side dependencies are pinned identically in `requirements.txt`,
+  `environment.yml`, and `pyproject.toml` (numpy 2.2.6, pandas 2.3.3,
+  scikit-learn 1.7.2, scipy 1.15.3, plus supporting packages)
 
-Python 3.10+ is recommended. Create and activate a clean virtual environment:
+Install with pip:
 
 ```bash
-# Using venv
-python3 -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
-
-# Install dependencies
 pip install -r requirements.txt
-pip install -e .
 ```
 
-### 2. Dataset Access
-
-This study utilizes real cycle-level battery aging records from three public repositories:
-- **CALCE Battery Research Group**: [https://calce.umd.edu/battery-data](https://calce.umd.edu/battery-data)
-- **NASA Ames PCoE Repository**: [https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/](https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/)
-- **Oxford Battery Degradation Dataset**: [https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac](https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac)
-
-To download or verify raw dataset records, execute:
+or with conda:
 
 ```bash
-python scripts/download_data.py
+conda env create -f environment.yml
+conda activate nex-cp-conformal-soh-audit
 ```
+
+The `scripts/run_*.py` runners are self-contained and are executed directly
+from the repository root; no package installation (`pip install -e .`) is
+required.
 
 ---
 
-## 🚀 Quickstart & Reproducibility Guide
+## Data acquisition
 
-### Step 1: Preprocessing & Leakage-Safe QA Audit
+Raw battery data are **not redistributed** here and must be obtained manually
+from the three public sources:
 
-Run the preprocessing QA pipeline to inspect cell records, apply capacity spike filtering, and generate time-forward cell-block splits:
+- **CALCE Battery Research Group**: <https://calce.umd.edu/battery-data> → place under `data/raw/calce/`
+- **NASA Ames PCoE Data Set Repository**: <https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/> → place under `data/raw/nasa/`
+- **Oxford Battery Degradation Dataset 1**: <https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac> → place under `data/raw/oxford/`
+
+`python scripts/download_data.py` prints the same instructions with
+per-dataset layout notes. See `data/README.md` for details.
+
+---
+
+## Reproducing the analysis
+
+### Step 1 — Preprocessing and QA gating
 
 ```bash
 python scripts/preprocess_real_battery.py
 ```
 
-Outputs will be saved in `data/splits/real_battery_preprocess_qa.csv` and `data/splits/real_battery_splits.json`.
+Builds `data/processed/real_battery_cycle_level_features.csv` from `data/raw/`,
+applies per-cell QA gating (55 candidate cells → 45 passing), and writes the
+time-forward, cell-separated splits to `data/splits/`. The tracked artifacts
+under `data/splits/` already contain these outputs, so this step is only
+needed to verify the pipeline end-to-end.
 
-### Step 2: Running Conformal Calibration Audits
-
-To reproduce the core conformal calibration experiments, execute the evaluation runners:
+### Step 2 — Experiment runners
 
 ```bash
-# Main conformal calibration & cross-protocol stress test (exp001 - exp005)
-python scripts/run_real_experiments.py
-
-# Reliability and safety threshold failure audit (exp008)
-python scripts/run_reliability_audit_experiment.py
-
-# Shift-adaptive conformal comparator (exp012)
-python scripts/run_shift_adaptive_cp_comparator.py
+python scripts/run_real_experiments.py                  # exp001-exp005
+python scripts/run_fpa_repair_experiment.py             # exp006/exp007 analyses
+python scripts/run_reliability_audit_experiment.py      # exp008/exp009 analyses
+python scripts/run_hard_regime_audit_experiment.py      # exp010
+python scripts/run_original_paper_substance_experiment.py # exp011
+python scripts/run_shift_adaptive_cp_comparator.py      # exp012
 ```
 
-### Step 3: Compiling the Manuscript
+Each runner reads the processed table and split manifest, and rewrites the
+`results/` directory of its experiment(s). `scripts/run_pcr_20260718_repair.py`
+is a batch driver that reruns the three repair runners with the exact locked
+arguments used for the reported metrics. All reported metrics are already
+committed under `experiments/*/results/` and aggregated in
+`paper/data/metrics.json`.
 
-The paper is written using Quarto and rendered with Elsevier LaTeX assets:
+### Step 3 — Rendering the manuscript (optional)
+
+Requires Quarto and a TeX Live installation, plus the rendering-only Python
+packages listed in `requirements.txt`:
 
 ```bash
-# Render manuscript to PDF
-quarto render paper/source/index.qmd --to pdf
+quarto render paper/source/index.qmd
+```
+
+The manuscript injects every quoted number from `paper/data/metrics.json` at
+render time; no numerical result is hard-coded in the text.
+
+---
+
+## Citation
+
+If you use this code or data, please cite:
+
+> Qingsong Shan, Qianning Liu. "Recent-Label Dependence in Cross-Dataset
+> Conformal SOH Evaluation: A Benchmark-Integrity Case Study." Jiangxi
+> University of Finance and Economics. Replication package:
+> <https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit>
+
+```bibtex
+@misc{shan_liu_conformal_soh_audit,
+  author       = {Shan, Qingsong and Liu, Qianning},
+  title        = {Recent-Label Dependence in Cross-Dataset Conformal {SOH}
+                  Evaluation: A Benchmark-Integrity Case Study},
+  howpublished = {Replication package,
+                  \url{https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit}},
+  year         = {2026},
+}
 ```
 
 ---
 
-## 📊 Data & Code Availability Statement
+## License
 
-For manuscript submission (Option C repository deposit):
-- **Code & Manifests**: Deposited in this repository (`NEX-CP-conformal-soh-audit`).
-- **Numerical SSOT**: All active numbers in text, tables, and figures are dynamically read from `paper/data/metrics.json`.
-
----
-
-## 📜 License
-
-This repository is licensed under the [MIT License](LICENSE).
+This repository is licensed under the [MIT License](LICENSE). The underlying
+battery datasets remain the property of their respective providers (CALCE,
+NASA, Oxford) and are subject to their own terms of use.

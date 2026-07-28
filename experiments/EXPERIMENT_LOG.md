@@ -1,72 +1,12 @@
-# 实验日志
+# Experiment Log
 
-按时间倒序记录实验过程。
+Chronological execution records are kept inside each experiment directory:
 
----
+- `plan.md` — written before execution
+- `report.md` — written at experiment close-out
+- `records/` — dated review records
+- `results/run_manifest.json` — execution timestamp, package versions, seeds,
+  and CLI arguments (exp006–exp012)
 
-## 日志模板
-
-```markdown
-## YYYY-MM-DD: expXXX 实验名称
-
-### 背景
-[为什么要做这个实验]
-
-### 假设
-[基于什么假设]
-
-### 方法
-- 配置: experiments/expXXX/config.yaml
-- 主要变化: [列出与之前实验的区别]
-
-### 结果
-| 指标 | 值 | 对比基线 |
-|-----|-----|---------|
-| | | |
-
-### 分析
-[结果意味着什么]
-
-### 学到的教训
-- [教训1]
-- [教训2]
-
-### 后续行动
-- [ ] [action1]
-- [ ] [action2]
-
-### 相关文件
-- 实验目录: experiments/expXXX/
-- Git commit: [hash]
-
----
-```
-
----
-
-## 实验记录
-
-### YYYY-MM-DD: exp001 基线实验
-
-### 背景
-建立基线结果，用于后续对比。
-
-### 假设
-标准方法应该达到 XX% 的准确率。
-
-### 方法
-- 配置: experiments/exp001_baseline/config.yaml
-- 使用默认参数
-
-### 结果
-| 指标 | 值 |
-|-----|-----|
-| | |
-
-### 后续行动
-- [ ] 运行消融实验
-- [ ] 测试不同超参数
-
----
-
-<!-- 新的实验记录添加在这里 -->
+See `experiments/README.md` for the experiment roster. This file is
+intentionally minimal; no separate running log is maintained.

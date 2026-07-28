@@ -8,11 +8,11 @@ The implication for reliability engineering is simple: coverage must not be prom
 
 ## Data Availability {.unnumbered}
 
-This study uses real cycle-level SOH records from public CALCE, NASA, and Oxford battery datasets. The dataset source records are the CALCE Battery Research Group battery data repository (https://calce.umd.edu/battery-data), the NASA Ames Prognostics Center of Excellence data repository (https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/), and the Oxford Battery Degradation Dataset record (https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac), accessed 2026-06-02. The authors have not yet selected and authorized an external archival repository, so a public deposit cannot be completed from the present revision environment. Before submission, the versioned derived-data package, source-data provenance, and archive DOI or URL must be inserted here. The complete package can be supplied to reviewers during assessment.
+This study uses real cycle-level SOH records from three public battery datasets: the CALCE Battery Research Group battery data repository [@calce_battery_data], the NASA Ames Prognostics Data Repository [@nasa_pcoe_battery_data], and the Oxford Battery Degradation Dataset [@howey2017oxford], all accessed 2026-06-02. The versioned derived-data package, source-data provenance, split manifests, and run manifests underlying every reported value are publicly available in the project replication repository at https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit.
 
 ## Code Availability {.unnumbered}
 
-Analysis code, locked dependencies, and run manifests are maintained in the project repository. They must be deposited with the derived-data package and the archive DOI or URL inserted before submission. Until that author-controlled deposit is completed, the versioned analysis package can be supplied to reviewers during assessment.
+The complete analysis code, locked dependencies, and run manifests are publicly available at https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit. The repository regenerates the scripted results table from which all manuscript values are drawn.
 
 ## Declaration of Competing Interest {.unnumbered}
 

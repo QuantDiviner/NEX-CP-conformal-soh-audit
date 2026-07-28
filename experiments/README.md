@@ -1,155 +1,38 @@
-# 实验目录
+# Experiments
 
-此目录管理所有实验。
+This directory contains the twelve experiments reported in the manuscript.
+Each experiment directory holds:
 
-## 目录结构
+- `plan.md` — pre-registered purpose, data policy, and analysis plan
+- `metadata.json` — experiment metadata
+- `report.md` — closing report with findings
+- `results/metrics.json` — metrics consumed by the paper SSOT (`paper/data/metrics.json`)
+- `results/run_manifest.json` — execution manifest (exp006–exp012 only; includes
+  code version, package versions, seeds, and CLI arguments)
+- `records/` — internal review records kept for audit traceability
 
-```
-experiments/
-├── README.md               # 本文件
-├── EXPERIMENT_LOG.md       # 实验日志（按时间记录）
-│
-├── exp001_baseline/        # 正式实验
-│   ├── config.yaml         # 实验配置
-│   ├── metadata.json       # 元数据
-│   ├── README.md           # 实验说明
-│   ├── logs/               # 训练日志
-│   ├── checkpoints/        # 模型检查点
-│   └── results/
-│       ├── metrics.json    # 评估指标
-│       └── figures/        # 结果图表
-│
-├── exp002_our_method/
-│   └── ...
-│
-├── _archived/              # 已归档实验（不删除）
-│   └── ARCHIVE_INDEX.md    # 归档索引
-│
-└── _scratch/               # 临时实验（可删除）
-    └── debug_xxx/
-```
+## Experiment roster
 
-## 命名规则
+| Experiment | Role |
+|---|---|
+| `exp001_main` | Main marginal and conditional coverage audit of conformal SOH intervals on QA-gated CALCE/NASA/Oxford real data |
+| `exp002_ablation` | Feature and calibration ablation: dependence of the exp001 result on `prev_soh` persistence and resistance features |
+| `exp003_cross_protocol` | Leave-domain-out cross-protocol transfer stress test |
+| `exp004_stress_failure` | Real residual stress probe: interval behavior under systematically biased point predictions |
+| `exp005_edge` | Host-only compute-cost screen for the selected interval path (not a deployment claim) |
+| `exp006_fpa_repair` | Repair round 1: RESS-level comparative baselines, dependence-aware coverage intervals, cross-protocol failure diagnostics |
+| `exp007_fpa_round2_repair` | Repair round 2: cross-family UQ baselines and decision-utility analysis |
+| `exp008_reliability_audit` | Reliability and safety-boundary audit: when intervals are trustworthy and when protocol non-exchangeability breaks them |
+| `exp009_fpa_round4_repair` | Repair round 4: experiment-level blocker resolution for the RESS route |
+| `exp010_hard_regime_audit` | Hard-regime audit: no recent SOH label at decision time, multi-step-ahead targets, threshold sweep, multiplicity-controlled decision utility |
+| `exp011_original_paper_substance` | Measurement-validity experiment: whether feature-schema choices alter cross-dataset interval reliability and safety-decision conclusions on identical splits |
+| `exp012_shift_adaptive_cp_comparator` | Comparator test: can a shift-adaptive conformal method recover a usable trust/recalibrate/abstain envelope under the same protocol shifts |
 
-- 正式实验: `expXXX_简短描述`
-  - XXX: 三位数字编号 (001, 002, ...)
-  - 简短描述: 使用下划线连接的英文描述
+exp001–exp005 were run before the run-manifest convention was adopted and
+contain only `results/metrics.json` under `results/`; exp006–exp012 also
+contain `results/run_manifest.json` (plus `split_manifest.json` and
+task-specific outputs).
 
-- 临时实验: `debug_xxx` 或 `test_xxx`
-  - 放在 `_scratch/` 目录
-
-## 创建新实验
-
-### 1. 复制模板
-
-```bash
-cp -r experiments/_template experiments/exp001_my_experiment
-```
-
-### 2. 修改配置
-
-编辑 `exp001_my_experiment/config.yaml`
-
-### 3. 运行实验
-
-```bash
-python scripts/train.py --config experiments/exp001_my_experiment/config.yaml
-```
-
-### 4. 记录日志
-
-在 `EXPERIMENT_LOG.md` 中添加记录
-
----
-
-## 实验模板
-
-每个实验目录应包含以下文件：
-
-### config.yaml
-
-```yaml
-# 实验配置
-# 继承默认配置，只写需要修改的参数
-
-experiment:
-  id: "exp001"
-  name: "实验名称"
-  description: "实验描述"
-
-# 覆盖默认参数
-training:
-  epochs: 200
-```
-
-### metadata.json
-
-```json
-{
-  "experiment_id": "exp001",
-  "name": "实验名称",
-  "status": "planned",
-  "created_at": "YYYY-MM-DDTHH:MM:SS",
-  "dependencies": {
-    "parent_experiment": null,
-    "frozen_parameters_version": "v1.0"
-  },
-  "outputs": {
-    "paper_section": "Section X.X"
-  }
-}
-```
-
-### README.md
-
-```markdown
-# exp001: 实验名称
-
-## 目的
-[这个实验要验证什么]
-
-## 方法
-[使用什么方法]
-
-## 结果
-[主要结果]
-
-## 结论
-[得出的结论]
-```
-
----
-
-## 实验状态
-
-| 状态 | 说明 |
-|------|------|
-| `planned` | 已计划，未开始 |
-| `running` | 正在运行 |
-| `completed` | 运行完成，待验证 |
-| `validated` | 验证通过 |
-| `archived` | 已归档 |
-
----
-
-## 归档规则
-
-1. **不要删除实验**，移动到 `_archived/`
-2. 在 `_archived/ARCHIVE_INDEX.md` 记录归档原因
-3. 保留完整的配置和结果文件
-
----
-
-## 实验角色映射
-
-见 `PROJECT_CHARTER.md` 中的 `experiment_roles` 定义。
-
-使用角色而非硬编码实验ID，方便切换版本：
-
-```yaml
-# PROJECT_CHARTER.md
-experiment_roles:
-  main_experiment: exp003      # 可以随时更新
-  ablation_study: exp004
-  baseline_comparison: exp005
-```
+The runner scripts live in `scripts/` (see the repository root `README.md`
+for the script-to-experiment mapping). `_template/` is a scaffold for new
+experiment directories.

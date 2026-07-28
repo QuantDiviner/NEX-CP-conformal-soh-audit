@@ -312,9 +312,11 @@ conformal prediction.
 Battery SOH and remaining useful life (RUL) studies increasingly report
 probabilistic forecasts, predictive intervals, and prognostic
 performance under uncertainty
-\citep{saxena2010evaluating, he2011remaining, liu2020futurecapacity}. A
-parallel transfer-learning literature studies how SOH estimators adapt
-across batteries, operating conditions, and laboratory or field domains
+\citep{saxena2010evaluating, he2011remaining, liu2020futurecapacity},
+and real-application SOH estimation has its own mature methodological
+literature \citep{berecibar2016critical}. A parallel transfer-learning
+literature studies how SOH estimators adapt across batteries, operating
+conditions, and laboratory or field domains
 \citep{ye2021domainadversarial, vilsen2022field, shen2024review}. These
 studies motivate cross-domain evaluation, but they usually treat the
 benchmark schema as a prerequisite for model comparison rather than as
@@ -345,19 +347,20 @@ The audit is organized around pre-specified diagnostic analyses rather
 than ad hoc result selection. A scripted results table aggregates the
 outputs used for the manuscript, and the reported values are taken from
 that table. All active rows are real battery state-of-health (SOH)
-records from CALCE, NASA, and Oxford; no synthetic records are included
-in the reported evidence. The case object is therefore the benchmark
-evidence produced by these public cycle-level datasets, not a proposed
-battery-management algorithm. Table \ref{tbl-datasets} summarizes the
-45-cell source evidence base of 13,876 cycle rows and the 13,831 rows
-eligible for a strictly prior recent-SOH feature. The 12 completed
-diagnostic analyses are a same-protocol coverage baseline, a
-recent-label ablation, a cross-protocol transfer diagnostic, a
-residual-stress robustness screen, a host-timing robustness screen, a
-negative-control check, a method-family robustness comparison, a
-threshold decision-utility audit, a schema-cleaning audit, a hard-regime
-audit, the schema-to-decision audit, and a localized-residual
-comparator.
+records from CALCE, NASA, and Oxford
+\citep{calce_battery_data, nasa_pcoe_battery_data, howey2017oxford}; no
+synthetic records are included in the reported evidence. The case object
+is therefore the benchmark evidence produced by these public cycle-level
+datasets, not a proposed battery-management algorithm. Table
+\ref{tbl-datasets} summarizes the 45-cell source evidence base of 13,876
+cycle rows and the 13,831 rows eligible for a strictly prior recent-SOH
+feature. The 12 completed diagnostic analyses are a same-protocol
+coverage baseline, a recent-label ablation, a cross-protocol transfer
+diagnostic, a residual-stress robustness screen, a host-timing
+robustness screen, a negative-control check, a method-family robustness
+comparison, a threshold decision-utility audit, a schema-cleaning audit,
+a hard-regime audit, the schema-to-decision audit, and a
+localized-residual comparator.
 
 \begin{table}
 
@@ -517,27 +520,28 @@ persistence-anchor protocol Mondrian conformal predictor
 regression (QR), conformalized quantile regression (CQR)
 \citep{romano2019conformalized}, and natural-gradient boosting (NGBoost)
 \citep{duan2020ngboost}. For the no-recent-SOH ablation condition, the
-selected diagnostic is a gradient-boosting non-exchangeable conformal
-variant \citep{barber2023beyond}; it is used only to quantify the
-dependence of the benchmark on recent-label access and is not presented
-as a method contribution. Because the calibration-selection rule, not
-the analyst, chooses the per-condition operating point, the full-feature
-and no-recent-SOH conditions can select different conformal families;
-the resulting same-protocol coverage change therefore reflects the
-selection rule's response to removing recent labels rather than a
-same-method feature ablation, and the method-matched feature-isolation
-contrast is supplied separately by the row-matched recent-label
-reference comparison reported in Section \ref{sec-results}.
-Gradient-boosting CQR is used for decision-utility diagnostics, schema
-comparisons, and the localized-residual comparator. Training,
-validation, calibration, and test indices are pairwise disjoint per
-task. The as-used bundle contains \texttt{source\_row\_id},
-\texttt{target\_cycle\_index}, and the permuted control column, whereas
-the clean-original schema removes all three; the bundle contrast
-therefore cannot isolate a bookkeeping-specific effect. The independent
-control adds a fixed-seed (seed 1033) permutation of
-\texttt{log\_cycle\_index} to the clean schema and refits the complete
-pipeline on the same rows.
+selected diagnostic is a gradient-boosting domain-Mondrian conformal
+variant, a group-conditional calibration construction suited to settings
+where exchangeability across domains is not credible
+\citep{barber2023beyond}; it is used only to quantify the dependence of
+the benchmark on recent-label access and is not presented as a method
+contribution. Because the calibration-selection rule, not the analyst,
+chooses the per-condition operating point, the full-feature and
+no-recent-SOH conditions can select different conformal families; the
+resulting same-protocol coverage change therefore reflects the selection
+rule's response to removing recent labels rather than a same-method
+feature ablation, and the method-matched feature-isolation contrast is
+supplied separately by the row-matched recent-label reference comparison
+reported in Section \ref{sec-results}. Gradient-boosting CQR is used for
+decision-utility diagnostics, schema comparisons, and the
+localized-residual comparator. Training, validation, calibration, and
+test indices are pairwise disjoint per task. The as-used bundle contains
+\texttt{source\_row\_id}, \texttt{target\_cycle\_index}, and the
+permuted control column, whereas the clean-original schema removes all
+three; the bundle contrast therefore cannot isolate a
+bookkeeping-specific effect. The independent control adds a fixed-seed
+(seed 1033) permutation of \texttt{log\_cycle\_index} to the clean
+schema and refits the complete pipeline on the same rows.
 
 A decision-risk cell is defined relative to a capacity-SOH
 serviceability threshold and a predicted SOH interval with lower bound L
@@ -667,7 +671,7 @@ The main baseline selected method is the persistence-anchor Mondrian
 conformal diagnostic. On the same-protocol held-out task it reaches
 coverage 94.8\% with CI 94.2\%-97.1\%, mean width 0.038, and sample size
 2323. Removing the recent-SOH feature from the ablation package changes
-the selected condition to the gradient-boosting non-exchangeable
+the selected condition to the gradient-boosting domain-Mondrian
 conformal diagnostic, with coverage 80.8\% and mean width 0.221;
 relative to the full feature condition, this is a coverage change of
 -11.8 pp and a width increase of 0.193. Figure \ref{fig-evidence-flow}
@@ -902,7 +906,37 @@ time, demonstrate that training, validation, calibration, and test
 indices are disjoint, use cell-aware uncertainty, test schema claims
 against independent negative controls, and report threshold decisions
 with their denominators. A localization comparator can test sensitivity,
-but it cannot substitute for a valid conformal guarantee.
+but it cannot substitute for a valid conformal guarantee. Table
+\ref{tbl-audit-protocol} condenses this discipline into the audit
+protocol applied in this case study; each gate is pre-specified, and a
+failure bounds the claim rather than terminating the analysis.
+
+\begin{table}
+
+\caption{\label{tbl-audit-protocol}Pre-submission benchmark-integrity audit protocol for conformal SOH evidence. Each gate names the measurement condition examined, the evidence required, and the consequence of failure used in this case study.}
+
+\centering{
+
+\centering
+\scriptsize
+
+
+\begin{tabular}{p{0.20\linewidth}p{0.42\linewidth}p{0.30\linewidth}}
+\toprule
+Gate & Evidence required & Consequence of failure \\
+\midrule
+Information set & Declare whether a recent measured SOH (or any oracle label) is available at prediction time & No no-recent-label deployment claim \\
+Split integrity & Demonstrate pairwise-disjoint training, validation, calibration, and test indices, cell-disjoint for longitudinal records & Coverage treated as split artifact \\
+Uncertainty units & Report cell-aware (block-resampled) interval uncertainty rather than row-level iid intervals & Rates treated as optimistic \\
+Schema sensitivity & Test feature-schema contrasts against an independent permuted-feature negative control with multiplicity adjustment & Bundle-level warning only, no mechanism claim \\
+Decision consequences & Report threshold false-acceptance and false-rejection rates with denominators and small-denominator flags & Coverage not promoted to serviceability \\
+Localization sensitivity & Compare standard and localized calibration as a sensitivity envelope & No shift-robust coverage interpretation \\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{table}%
 
 The recent-label finding is deliberately not stated as a monotone
 benefit. Method-matched deltas are strongly negative in TCAL, LNAS,
@@ -984,29 +1018,24 @@ same audit.
 \section*{Data Availability}\label{data-availability}
 \addcontentsline{toc}{section}{Data Availability}
 
-This study uses real cycle-level SOH records from public CALCE, NASA,
-and Oxford battery datasets. The dataset source records are the CALCE
-Battery Research Group battery data repository
-(https://calce.umd.edu/battery-data), the NASA Ames Prognostics Center
-of Excellence data repository
-(https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/),
-and the Oxford Battery Degradation Dataset record
-(https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac),
-accessed 2026-06-02. The authors have not yet selected and authorized an
-external archival repository, so a public deposit cannot be completed
-from the present revision environment. Before submission, the versioned
-derived-data package, source-data provenance, and archive DOI or URL
-must be inserted here. The complete package can be supplied to reviewers
-during assessment.
+This study uses real cycle-level SOH records from three public battery
+datasets: the CALCE Battery Research Group battery data repository
+\citep{calce_battery_data}, the NASA Ames Prognostics Data Repository
+\citep{nasa_pcoe_battery_data}, and the Oxford Battery Degradation
+Dataset \citep{howey2017oxford}, all accessed 2026-06-02. The versioned
+derived-data package, source-data provenance, split manifests, and run
+manifests underlying every reported value are publicly available in the
+project replication repository at
+https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit.
 
 \section*{Code Availability}\label{code-availability}
 \addcontentsline{toc}{section}{Code Availability}
 
-Analysis code, locked dependencies, and run manifests are maintained in
-the project repository. They must be deposited with the derived-data
-package and the archive DOI or URL inserted before submission. Until
-that author-controlled deposit is completed, the versioned analysis
-package can be supplied to reviewers during assessment.
+The complete analysis code, locked dependencies, and run manifests are
+publicly available at
+https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit. The
+repository regenerates the scripted results table from which all
+manuscript values are drawn.
 
 \section*{Declaration of Competing
 Interest}\label{declaration-of-competing-interest}

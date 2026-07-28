@@ -1,49 +1,31 @@
 # ============================================================================
-# Conda 环境配置
-# ============================================================================
-# 使用方法:
-#   创建环境: conda env create -f environment.yml
-#   激活环境: conda activate [项目名称]
-#   更新环境: conda env update -f environment.yml
-#   导出环境: conda env export > environment.yml
+# Conda environment — NEX-CP-conformal-soh-audit
+#
+# Usage:
+#   conda env create -f environment.yml
+#   conda activate nex-cp-conformal-soh-audit
+#
+# Versions are pinned identically to pyproject.toml / requirements.txt.
 # ============================================================================
 
-name: project_name  # TODO: 修改为你的项目名称
+name: nex-cp-conformal-soh-audit
 
 channels:
-  - pytorch
   - conda-forge
   - defaults
 
 dependencies:
-  # Python 版本
-  - python=3.10
+  - python=3.11
 
-  # 核心科学计算
-  # - numpy=1.24
-  # - pandas=2.0
-  # - scipy=1.11
+  # Core analysis pipeline (scripts/preprocess_real_battery.py, scripts/run_*.py)
+  - numpy=2.2.6
+  - pandas=2.3.3
+  - scikit-learn=1.7.2
+  - scipy=1.15.3
 
-  # 深度学习框架 (选择一个)
-  # - pytorch=2.0
-  # - tensorflow=2.12
+  # Supporting packages (ranges match pyproject.toml)
+  - pyyaml>=6,<7
+  - openpyxl>=3.1,<4   # pandas engine for the CALCE .xlsx workbooks
+  - ngboost>=0.5,<1    # optional NGBoost baseline in the repair runners
 
-  # 可视化
-  # - matplotlib=3.7
-  # - seaborn=0.12
-
-  # Jupyter
-  # - jupyter
-  # - jupyterlab
-
-  # pip 依赖
   - pip
-  - pip:
-    # - some-pip-only-package
-
-# ============================================================================
-# 环境记录
-# ============================================================================
-# 创建日期: YYYY-MM-DD
-# CUDA 版本: (如适用)
-# cuDNN 版本: (如适用)

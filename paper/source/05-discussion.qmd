@@ -2,7 +2,26 @@
 
 The audit changes the interpretation of cross-dataset conformal SOH benchmarks. Coverage is conditional on the benchmark's measurement validity and information set; it is not automatically a reliability or serviceability result. Recent-label access can make a benchmark easier than the intended forecasting problem. The as-used schema-bundle contrast reveals an unstable evaluation design, but it jointly changes multiple columns, and the endpoint-wide independent-control gate fails in LCAL and TCAL. The corrected LNAS false-acceptance association is therefore retained at the bundle level without attribution to bookkeeping fields or promotion to a causal schema mechanism. Residual drift, finite-cell variation, and label-definition differences remain plausible contributors.
 
-For reliability and battery-health practitioners, the engineering implication is a pre-submission benchmark-integrity discipline. Analysts should declare whether a recent measured SOH is available at prediction time, demonstrate that training, validation, calibration, and test indices are disjoint, use cell-aware uncertainty, test schema claims against independent negative controls, and report threshold decisions with their denominators. A localization comparator can test sensitivity, but it cannot substitute for a valid conformal guarantee.
+For reliability and battery-health practitioners, the engineering implication is a pre-submission benchmark-integrity discipline. Analysts should declare whether a recent measured SOH is available at prediction time, demonstrate that training, validation, calibration, and test indices are disjoint, use cell-aware uncertainty, test schema claims against independent negative controls, and report threshold decisions with their denominators. A localization comparator can test sensitivity, but it cannot substitute for a valid conformal guarantee. Table \ref{tbl-audit-protocol} condenses this discipline into the audit protocol applied in this case study; each gate is pre-specified, and a failure bounds the claim rather than terminating the analysis.
+
+\begin{table}[!htbp]
+\centering
+\scriptsize
+\caption{Pre-submission benchmark-integrity audit protocol for conformal SOH evidence. Each gate names the measurement condition examined, the evidence required, and the consequence of failure used in this case study.}
+\label{tbl-audit-protocol}
+\begin{tabular}{p{0.20\linewidth}p{0.42\linewidth}p{0.30\linewidth}}
+\toprule
+Gate & Evidence required & Consequence of failure \\
+\midrule
+Information set & Declare whether a recent measured SOH (or any oracle label) is available at prediction time & No no-recent-label deployment claim \\
+Split integrity & Demonstrate pairwise-disjoint training, validation, calibration, and test indices, cell-disjoint for longitudinal records & Coverage treated as split artifact \\
+Uncertainty units & Report cell-aware (block-resampled) interval uncertainty rather than row-level iid intervals & Rates treated as optimistic \\
+Schema sensitivity & Test feature-schema contrasts against an independent permuted-feature negative control with multiplicity adjustment & Bundle-level warning only, no mechanism claim \\
+Decision consequences & Report threshold false-acceptance and false-rejection rates with denominators and small-denominator flags & Coverage not promoted to serviceability \\
+Localization sensitivity & Compare standard and localized calibration as a sensitivity envelope & No shift-robust coverage interpretation \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 The recent-label finding is deliberately not stated as a monotone benefit. Method-matched deltas are strongly negative in TCAL, LNAS, TNAS, and LOxf, smaller but still negative in LCAL, near zero in Main, and positive in TOxf. That reversal matters: recent-SOH is not simply a universally helpful covariate; it changes the estimand and interacts with the target task. The practical failure is therefore undeclared information availability. A benchmark using an oracle recent label cannot support a no-recent-label deployment claim without a separate evaluation.
 

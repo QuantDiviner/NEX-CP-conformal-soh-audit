@@ -1,15 +1,17 @@
-# Python 项目配置文件
-# 包含代码规范、工具配置等
+# Python package metadata — NEX-CP-conformal-soh-audit
+# Replication package for the manuscript "Recent-Label Dependence in
+# Cross-Dataset Conformal SOH Evaluation: A Benchmark-Integrity Case Study".
 
 [project]
-name = "project_name"  # TODO: 修改为你的项目名
+name = "nex-cp-conformal-soh-audit"
 version = "0.1.0"
-description = "项目描述"  # TODO: 修改
+description = "Replication package for 'Recent-Label Dependence in Cross-Dataset Conformal SOH Evaluation: A Benchmark-Integrity Case Study'"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
 license = {text = "MIT"}
 authors = [
-    {name = "Your Name", email = "your@email.com"},  # TODO: 修改
+    {name = "Qianning Liu", email = "liuqianning@jxufe.edu.cn"},
+    {name = "Qingsong Shan", email = "shanqingsong@jxufe.edu.cn"},
 ]
 
 dependencies = [
@@ -43,7 +45,7 @@ include = ["src*"]
 # === 代码格式化: Black ===
 [tool.black]
 line-length = 100
-target-version = ["py38", "py39", "py310", "py311"]
+target-version = ["py311"]
 include = '\.pyi?$'
 exclude = '''
 /(
@@ -60,7 +62,7 @@ exclude = '''
 # === 代码检查: Ruff ===
 [tool.ruff]
 line-length = 100
-target-version = "py38"
+target-version = "py311"
 
 [tool.ruff.lint]
 select = [
@@ -86,7 +88,7 @@ known-first-party = ["src"]
 
 # === 类型检查: MyPy ===
 [tool.mypy]
-python_version = "3.8"
+python_version = "3.11"
 warn_return_any = true
 warn_unused_configs = true
 ignore_missing_imports = true
