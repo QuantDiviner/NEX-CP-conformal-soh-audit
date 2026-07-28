@@ -1,0 +1,2386 @@
+{
+  "main_heldout": {
+    "persistence_anchor_protocol_mondrian_cp": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.014173228346456693,
+          "ci_low": 0.0010719422779203753,
+          "ci_high": 0.027274514414993012,
+          "se": 0.006684452455186726,
+          "ci_method": "normal_approx",
+          "denominator_n": 1270,
+          "effective_cell_count": 9,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.020892687559354226,
+          "ci_low": 0.010914180816772147,
+          "ci_high": 0.030871194301936307,
+          "se": 0.005091168420078772,
+          "ci_method": "normal_approx",
+          "denominator_n": 1053,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.18080068876452862,
+          "ci_low": 0.12042619369052865,
+          "ci_high": 0.2411751838385286,
+          "se": 0.030803879841786026,
+          "ci_method": "normal_approx",
+          "denominator_n": 2323,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.3758071459319845,
+        "predicted_unsafe_rate": 0.44339216530348685,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.08396946564885496,
+          "ci_low": 0.0,
+          "ci_high": 0.3000382518199821,
+          "se": 0.1102412023258847,
+          "ci_method": "normal_approx",
+          "denominator_n": 393,
+          "effective_cell_count": 5,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.015025906735751295,
+          "ci_low": 0.005243582373894981,
+          "ci_high": 0.02480823109760761,
+          "se": 0.004991073529420971,
+          "ci_method": "normal_approx",
+          "denominator_n": 1930,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.0680154972018941,
+          "ci_low": 0.03976802160978586,
+          "ci_high": 0.09626297279400235,
+          "se": 0.01441224217124434,
+          "ci_method": "normal_approx",
+          "denominator_n": 2323,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.7950925527335342,
+        "predicted_unsafe_rate": 0.13689195006457167,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "qr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.011023622047244094,
+          "ci_low": 0.0,
+          "ci_high": 0.023710682813835995,
+          "se": 0.006473109131936006,
+          "ci_method": "normal_approx",
+          "denominator_n": 1270,
+          "effective_cell_count": 9,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.007597340930674264,
+          "ci_low": 0.0,
+          "ci_high": 0.019210888365993207,
+          "se": 0.005925388184132529,
+          "ci_method": "normal_approx",
+          "denominator_n": 1053,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.29143349117520445,
+          "ci_low": 0.09428184249921404,
+          "ci_high": 0.4885851398511949,
+          "se": 0.10058942420937197,
+          "ci_method": "normal_approx",
+          "denominator_n": 2323,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.2686181661644425,
+        "predicted_unsafe_rate": 0.439948342660353,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.08142493638676845,
+          "ci_low": 0.0,
+          "ci_high": 0.2997245846107106,
+          "se": 0.11137941816577346,
+          "ci_method": "normal_approx",
+          "denominator_n": 393,
+          "effective_cell_count": 5,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1930,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.38613861386138615,
+          "ci_low": 0.1229567191570698,
+          "ci_high": 0.6493205085657026,
+          "se": 0.13427894429706957,
+          "ci_method": "normal_approx",
+          "denominator_n": 2323,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6138613861386139,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "cqr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.011023622047244094,
+          "ci_low": 0.0,
+          "ci_high": 0.023710682813835995,
+          "se": 0.006473109131936006,
+          "ci_method": "normal_approx",
+          "denominator_n": 1270,
+          "effective_cell_count": 9,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.006647673314339981,
+          "ci_low": 0.0,
+          "ci_high": 0.016809527320244058,
+          "se": 0.005184714661115963,
+          "ci_method": "normal_approx",
+          "denominator_n": 1053,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.3086526043908739,
+          "ci_low": 0.12373672769721633,
+          "ci_high": 0.49356848108453144,
+          "se": 0.0943465686881241,
+          "ci_method": "normal_approx",
+          "denominator_n": 2323,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.2686181661644425,
+        "predicted_unsafe_rate": 0.4227292294446836,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.08142493638676845,
+          "ci_low": 0.0,
+          "ci_high": 0.2997245846107106,
+          "se": 0.11137941816577346,
+          "ci_method": "normal_approx",
+          "denominator_n": 393,
+          "effective_cell_count": 5,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1930,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.38872148084373653,
+          "ci_low": 0.12768314666147967,
+          "ci_high": 0.6497598150259933,
+          "se": 0.13318527087298238,
+          "ci_method": "normal_approx",
+          "denominator_n": 2323,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6112785191562634,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "ngboost_normal_cqr": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.010236220472440945,
+          "ci_low": 0.0,
+          "ci_high": 0.02311027723724732,
+          "se": 0.00656851700661609,
+          "ci_method": "normal_approx",
+          "denominator_n": 1270,
+          "effective_cell_count": 9,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.08452041785375118,
+          "ci_low": 0.0,
+          "ci_high": 0.23963889585603393,
+          "se": 0.0791435348944356,
+          "ci_method": "normal_approx",
+          "denominator_n": 1053,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.3461041756349548,
+          "ci_low": 0.27309662739223084,
+          "ci_high": 0.4191117238776788,
+          "se": 0.03724943357051367,
+          "ci_method": "normal_approx",
+          "denominator_n": 2323,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.2458028411536806,
+        "predicted_unsafe_rate": 0.4080929832113646,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.09923664122137404,
+          "ci_low": 0.0,
+          "ci_high": 0.44799121805776315,
+          "se": 0.177939278265989,
+          "ci_method": "normal_approx",
+          "denominator_n": 393,
+          "effective_cell_count": 5,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.01917098445595855,
+          "ci_low": 0.0,
+          "ci_high": 0.05179809960440721,
+          "se": 0.01664679320936874,
+          "ci_method": "normal_approx",
+          "denominator_n": 1930,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.1459319845027981,
+          "ci_low": 0.1012421064784157,
+          "ci_high": 0.1906218625271805,
+          "se": 0.02280137715636128,
+          "ci_method": "normal_approx",
+          "denominator_n": 2323,
+          "effective_cell_count": 10,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.7188979767541972,
+        "predicted_unsafe_rate": 0.13517003874300473,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    }
+  },
+  "leave_CALCE_out": {
+    "persistence_anchor_protocol_mondrian_cp": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.01574056514318225,
+          "ci_low": 0.011414185464732208,
+          "ci_high": 0.02006694482163229,
+          "se": 0.0022073771317105695,
+          "ci_method": "normal_approx",
+          "denominator_n": 5273,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.013768001266023105,
+          "ci_low": 0.01063396919963129,
+          "ci_high": 0.01690203333241492,
+          "se": 0.0015990253347064843,
+          "ci_method": "normal_approx",
+          "denominator_n": 6319,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.2329192546583851,
+          "ci_low": 0.18199273132301297,
+          "ci_high": 0.2838457779937572,
+          "se": 0.025983397520094285,
+          "ci_method": "normal_approx",
+          "denominator_n": 11592,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.43219461697722567,
+        "predicted_unsafe_rate": 0.33488612836438925,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.03272058823529412,
+          "ci_low": 0.015995822995501688,
+          "ci_high": 0.04944535347508655,
+          "se": 0.008533200289247788,
+          "ci_method": "normal_approx",
+          "denominator_n": 2720,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.008904418394950406,
+          "ci_low": 0.006834257736885303,
+          "ci_high": 0.01097457905301551,
+          "se": 0.0010562238257408132,
+          "ci_method": "normal_approx",
+          "denominator_n": 8872,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.13008971704623878,
+          "ci_low": 0.09995507142566701,
+          "ci_high": 0.16022436266681056,
+          "se": 0.015375101715271313,
+          "ci_method": "normal_approx",
+          "denominator_n": 11592,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6943581780538303,
+        "predicted_unsafe_rate": 0.17555210489993098,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "qr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.020292053859283142,
+          "ci_low": 0.015157275903804845,
+          "ci_high": 0.02542683181476144,
+          "se": 0.00261983281120509,
+          "ci_method": "normal_approx",
+          "denominator_n": 5273,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 6319,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.4998274672187716,
+          "ci_low": 0.4344094123814297,
+          "ci_high": 0.5652455220561134,
+          "se": 0.03337717190384679,
+          "ci_method": "normal_approx",
+          "denominator_n": 11592,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.5001725327812284,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 2720,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 8872,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 11592,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 1.0,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "cqr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.012895884695619192,
+          "ci_low": 0.009210096814278838,
+          "ci_high": 0.01658167257695955,
+          "se": 0.001880538576429659,
+          "ci_method": "normal_approx",
+          "denominator_n": 5273,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 6319,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.6283643892339544,
+          "ci_low": 0.5679043627445126,
+          "ci_high": 0.6888244157233963,
+          "se": 0.03084751912093428,
+          "ci_method": "normal_approx",
+          "denominator_n": 11592,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.37163561076604557,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.03125,
+          "ci_low": 0.01482419568281472,
+          "ci_high": 0.04767580431718528,
+          "se": 0.00838066640343901,
+          "ci_method": "normal_approx",
+          "denominator_n": 2720,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 8872,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.33186680469289165,
+          "ci_low": 0.2654725361099118,
+          "ci_high": 0.3982610732758715,
+          "se": 0.03387524929370612,
+          "ci_method": "normal_approx",
+          "denominator_n": 11592,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6681331953071084,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "ngboost_normal_cqr": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.009292622795372654,
+          "ci_low": 0.006648064564007487,
+          "ci_high": 0.01193718102673782,
+          "se": 0.0013492891972633706,
+          "ci_method": "normal_approx",
+          "denominator_n": 5273,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 6319,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.6889233954451346,
+          "ci_low": 0.634473468170754,
+          "ci_high": 0.7433733227195152,
+          "se": 0.027781085623957726,
+          "ci_method": "normal_approx",
+          "denominator_n": 11592,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.3110766045548654,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.019852941176470587,
+          "ci_low": 0.010544210144955738,
+          "ci_high": 0.029161672207985434,
+          "se": 0.0047494398391709925,
+          "ci_method": "normal_approx",
+          "denominator_n": 2720,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 8872,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.44038992408557626,
+          "ci_low": 0.37507268964998547,
+          "ci_high": 0.505707158521167,
+          "se": 0.03332573197814083,
+          "ci_method": "normal_approx",
+          "denominator_n": 11592,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.5596100759144237,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    }
+  },
+  "target_recalibrated_CALCE": {
+    "persistence_anchor_protocol_mondrian_cp": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.0043859649122807015,
+          "ci_low": 0.0007569049536789124,
+          "ci_high": 0.00801502487088249,
+          "se": 0.001851595226865061,
+          "ci_method": "normal_approx",
+          "denominator_n": 4560,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.036243822075782535,
+          "ci_low": 0.022554593002269998,
+          "ci_high": 0.04993305114929507,
+          "se": 0.006984428888230311,
+          "ci_method": "normal_approx",
+          "denominator_n": 607,
+          "effective_cell_count": 9,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.056899554867427905,
+          "ci_low": 0.02255357029127361,
+          "ci_high": 0.0912455394435822,
+          "se": 0.017523783522080533,
+          "ci_method": "normal_approx",
+          "denominator_n": 5167,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.09580027095026128,
+        "predicted_unsafe_rate": 0.8473001741823109,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.022872140982377203,
+          "ci_low": 0.0071833338484119,
+          "ci_high": 0.0385609481163425,
+          "se": 0.008004640522844613,
+          "ci_method": "normal_approx",
+          "denominator_n": 2667,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0244,
+          "ci_low": 0.018798184983602313,
+          "ci_high": 0.03000181501639769,
+          "se": 0.0028581214045687036,
+          "ci_method": "normal_approx",
+          "denominator_n": 2500,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.0609638087865299,
+          "ci_low": 0.04298518581604116,
+          "ci_high": 0.07894243175701864,
+          "se": 0.009172935376518055,
+          "ci_method": "normal_approx",
+          "denominator_n": 5167,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.4515192568221405,
+        "predicted_unsafe_rate": 0.4875169343913296,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "qr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.004166666666666667,
+          "ci_low": 0.0,
+          "ci_high": 0.008618494772831605,
+          "se": 0.002271382607680749,
+          "ci_method": "normal_approx",
+          "denominator_n": 4560,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 607,
+          "effective_cell_count": 9,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.9283917166634411,
+          "ci_low": 0.8642467448325536,
+          "ci_high": 0.9925366884943286,
+          "se": 0.032727627822171694,
+          "ci_method": "normal_approx",
+          "denominator_n": 5167,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.07160828333655893,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.06711661042369704,
+          "ci_low": 0.027585222318740894,
+          "ci_high": 0.1066479985286532,
+          "se": 0.02016944618205983,
+          "ci_method": "normal_approx",
+          "denominator_n": 2667,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 2500,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.5028062705631895,
+          "ci_low": 0.3790644258745921,
+          "ci_high": 0.6265481152517869,
+          "se": 0.06313475434480291,
+          "ci_method": "normal_approx",
+          "denominator_n": 5167,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.4971937294368105,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "cqr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.0030701754385964912,
+          "ci_low": 0.0,
+          "ci_high": 0.0066358512037889925,
+          "se": 0.0018192557584313276,
+          "ci_method": "normal_approx",
+          "denominator_n": 4560,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 607,
+          "effective_cell_count": 9,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.9458099477453068,
+          "ci_low": 0.8929743473052824,
+          "ci_high": 0.9986455481853312,
+          "se": 0.02695743434919466,
+          "ci_method": "normal_approx",
+          "denominator_n": 5167,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.05419005225469325,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.045744281964754406,
+          "ci_low": 0.015535227996845778,
+          "ci_high": 0.07595333593266304,
+          "se": 0.0154130658553901,
+          "ci_method": "normal_approx",
+          "denominator_n": 2667,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 2500,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.5339655506096381,
+          "ci_low": 0.4077512931622853,
+          "ci_high": 0.660179808056991,
+          "se": 0.06439621260539216,
+          "ci_method": "normal_approx",
+          "denominator_n": 5167,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.4660344493903619,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "ngboost_normal_cqr": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.19035087719298247,
+          "ci_low": 0.07382425339046177,
+          "ci_high": 0.30687750099550315,
+          "se": 0.059453451554042774,
+          "ci_method": "normal_approx",
+          "denominator_n": 4560,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0016474464579901153,
+          "ci_low": 0.0,
+          "ci_high": 0.004798518449456089,
+          "se": 0.0016077193337843089,
+          "ci_method": "normal_approx",
+          "denominator_n": 607,
+          "effective_cell_count": 9,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.46700212889491,
+          "ci_low": 0.3522817258560514,
+          "ci_high": 0.5817225319337687,
+          "se": 0.058531893414245646,
+          "ci_method": "normal_approx",
+          "denominator_n": 5167,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.2817882717244049,
+        "predicted_unsafe_rate": 0.2512095993806851,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.016497937757780277,
+          "ci_low": 0.0024639738932631695,
+          "ci_high": 0.030531901622297384,
+          "se": 0.007160317217670952,
+          "ci_method": "normal_approx",
+          "denominator_n": 2667,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 2500,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.5351267660150958,
+          "ci_low": 0.3961537204671277,
+          "ci_high": 0.6740998115630639,
+          "se": 0.07090591798837623,
+          "ci_method": "normal_approx",
+          "denominator_n": 5167,
+          "effective_cell_count": 12,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.40042577898200116,
+        "predicted_unsafe_rate": 0.06444745500290304,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    }
+  },
+  "leave_NASA_out": {
+    "persistence_anchor_protocol_mondrian_cp": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.019138755980861243,
+          "ci_low": 0.0028237335046023306,
+          "ci_high": 0.03545377845712015,
+          "se": 0.008324144017415491,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 16,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.009990917347865577,
+          "ci_low": 0.0006321010380779118,
+          "ci_high": 0.019349733657653242,
+          "se": 0.0047749940221395995,
+          "ci_method": "normal_approx",
+          "denominator_n": 1101,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.061342592592592594,
+          "ci_low": 0.038737800195313435,
+          "ci_high": 0.08394738498987175,
+          "se": 0.01153326927207994,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6122685185185185,
+        "predicted_unsafe_rate": 0.3263888888888889,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.022222222222222223,
+          "ci_low": 0.0,
+          "ci_high": 0.08819962999165717,
+          "se": 0.03366256129697094,
+          "ci_method": "normal_approx",
+          "denominator_n": 180,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.005813953488372093,
+          "ci_low": 0.0010923693027404622,
+          "ci_high": 0.010535537674003724,
+          "se": 0.002409015789511892,
+          "ci_method": "normal_approx",
+          "denominator_n": 1548,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.04050925925925926,
+          "ci_low": 0.011485649975141388,
+          "ci_high": 0.06953286854337713,
+          "se": 0.014808236025280265,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.8726851851851852,
+        "predicted_unsafe_rate": 0.08680555555555555,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "qr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.014354066985645933,
+          "ci_low": 0.001285433951760076,
+          "ci_high": 0.02742270001953179,
+          "se": 0.006667792437498634,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 16,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1101,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.39641203703703703,
+          "ci_low": 0.2824902049055752,
+          "ci_high": 0.5103338691684989,
+          "se": 0.0581244517909833,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6035879629629629,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.016666666666666666,
+          "ci_low": 0.0,
+          "ci_high": 0.06600243027400551,
+          "se": 0.025171770500117898,
+          "ci_method": "normal_approx",
+          "denominator_n": 180,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1548,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.13657407407407407,
+          "ci_low": 0.0329445816497386,
+          "ci_high": 0.24020356649840954,
+          "se": 0.05287316156916746,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.8634259259259259,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "cqr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.014354066985645933,
+          "ci_low": 0.001285433951760076,
+          "ci_high": 0.02742270001953179,
+          "se": 0.006667792437498634,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 16,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1101,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.39641203703703703,
+          "ci_low": 0.2824902049055752,
+          "ci_high": 0.5103338691684989,
+          "se": 0.0581244517909833,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6035879629629629,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.011111111111111112,
+          "ci_low": 0.0,
+          "ci_high": 0.05862529984893566,
+          "se": 0.02424237848889593,
+          "ci_method": "normal_approx",
+          "denominator_n": 180,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1548,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.16087962962962962,
+          "ci_low": 0.05162604643614309,
+          "ci_high": 0.27013321282311614,
+          "se": 0.055742648362554055,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.8391203703703703,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "ngboost_normal_cqr": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.6921850079744817,
+          "ci_low": 0.4683318879389759,
+          "ci_high": 0.9160381280099874,
+          "se": 0.11421287421668495,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 16,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1101,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.11458333333333333,
+          "ci_low": 0.01148233682198957,
+          "ci_high": 0.2176843298446771,
+          "se": 0.05260351584242941,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.8854166666666666,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.6222222222222222,
+          "ci_low": 0.38899082187171385,
+          "ci_high": 0.8554536225727306,
+          "se": 0.11899779903621087,
+          "ci_method": "normal_approx",
+          "denominator_n": 180,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1548,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.04398148148148148,
+          "ci_low": 0.0,
+          "ci_high": 0.09157849874876421,
+          "se": 0.024284638719242777,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.9560185185185185,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    }
+  },
+  "target_recalibrated_NASA": {
+    "persistence_anchor_protocol_mondrian_cp": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.004081632653061225,
+          "ci_low": 0.0,
+          "ci_high": 0.011422022775426512,
+          "se": 0.003745165819507578,
+          "ci_method": "normal_approx",
+          "denominator_n": 490,
+          "effective_cell_count": 15,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.010238907849829351,
+          "ci_low": 0.0,
+          "ci_high": 0.02477594765042516,
+          "se": 0.007416993330113273,
+          "ci_method": "normal_approx",
+          "denominator_n": 293,
+          "effective_cell_count": 20,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.210727969348659,
+          "ci_low": 0.11059678786613371,
+          "ci_high": 0.3108591508311843,
+          "se": 0.051088276250149146,
+          "ci_method": "normal_approx",
+          "denominator_n": 783,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.3052362707535121,
+        "predicted_unsafe_rate": 0.4840357598978289,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.01282051282051282,
+          "ci_low": 0.0,
+          "ci_high": 0.07041592244730432,
+          "se": 0.029385953048676795,
+          "ci_method": "normal_approx",
+          "denominator_n": 156,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.007974481658692184,
+          "ci_low": 0.0,
+          "ci_high": 0.017910395213497216,
+          "se": 0.0050694368025016034,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 24,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.1417624521072797,
+          "ci_low": 0.0464005324956354,
+          "ci_high": 0.23712437171892398,
+          "se": 0.048654934664028,
+          "ci_method": "normal_approx",
+          "denominator_n": 783,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.7292464878671775,
+        "predicted_unsafe_rate": 0.12899106002554278,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "qr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.014285714285714285,
+          "ci_low": 0.002783278587886002,
+          "ci_high": 0.02578814998354257,
+          "se": 0.005868697480442515,
+          "ci_method": "normal_approx",
+          "denominator_n": 490,
+          "effective_cell_count": 15,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 293,
+          "effective_cell_count": 20,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.6411238825031929,
+          "ci_low": 0.48484558532114386,
+          "ci_high": 0.7974021796852419,
+          "se": 0.07973529024755163,
+          "ci_method": "normal_approx",
+          "denominator_n": 783,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.35887611749680715,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.019230769230769232,
+          "ci_low": 0.0,
+          "ci_high": 0.07817473522091521,
+          "se": 0.030074004652681625,
+          "ci_method": "normal_approx",
+          "denominator_n": 156,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 24,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.25287356321839083,
+          "ci_low": 0.06433410662745712,
+          "ci_high": 0.44141301980932457,
+          "se": 0.09619536791395605,
+          "ci_method": "normal_approx",
+          "denominator_n": 783,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.7471264367816092,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "cqr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.004081632653061225,
+          "ci_low": 0.0,
+          "ci_high": 0.011422022775426512,
+          "se": 0.003745165819507578,
+          "ci_method": "normal_approx",
+          "denominator_n": 490,
+          "effective_cell_count": 15,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 293,
+          "effective_cell_count": 20,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.6794380587484036,
+          "ci_low": 0.5171623665724301,
+          "ci_high": 0.8417137509243771,
+          "se": 0.08279524187994448,
+          "ci_method": "normal_approx",
+          "denominator_n": 783,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.3205619412515964,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.019230769230769232,
+          "ci_low": 0.0,
+          "ci_high": 0.07817473522091521,
+          "se": 0.030074004652681625,
+          "ci_method": "normal_approx",
+          "denominator_n": 156,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 24,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.25287356321839083,
+          "ci_low": 0.06433410662745712,
+          "ci_high": 0.44141301980932457,
+          "se": 0.09619536791395605,
+          "ci_method": "normal_approx",
+          "denominator_n": 783,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.7471264367816092,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "ngboost_normal_cqr": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.16938775510204082,
+          "ci_low": 0.014985697803582082,
+          "ci_high": 0.32378981240049953,
+          "se": 0.07877800741052515,
+          "ci_method": "normal_approx",
+          "denominator_n": 490,
+          "effective_cell_count": 15,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 293,
+          "effective_cell_count": 20,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.6130268199233716,
+          "ci_low": 0.4576109162589377,
+          "ci_high": 0.7684427235878055,
+          "se": 0.07929528546969986,
+          "ci_method": "normal_approx",
+          "denominator_n": 783,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.38697318007662834,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.08974358974358974,
+          "ci_low": 0.0,
+          "ci_high": 0.18811660790466245,
+          "se": 0.05019123766407269,
+          "ci_method": "normal_approx",
+          "denominator_n": 156,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 24,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.34610472541507026,
+          "ci_low": 0.1790595765671903,
+          "ci_high": 0.5131498742629502,
+          "se": 0.08522868285617025,
+          "ci_method": "normal_approx",
+          "denominator_n": 783,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6538952745849298,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    }
+  },
+  "leave_Oxford_out": {
+    "persistence_anchor_protocol_mondrian_cp": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.030612244897959183,
+          "ci_low": 0.0,
+          "ci_high": 0.0861381571388243,
+          "se": 0.028330067633306758,
+          "ci_method": "normal_approx",
+          "denominator_n": 98,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 413,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.1898238747553816,
+          "ci_low": 0.12581696569476736,
+          "ci_high": 0.25383078381599583,
+          "se": 0.032657186338877965,
+          "ci_method": "normal_approx",
+          "denominator_n": 511,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.7318982387475538,
+        "predicted_unsafe_rate": 0.07827788649706457,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 2,
+          "effective_cell_count": 2,
+          "interpretation": "suppressed_low_denominator_or_cells"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 509,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.0019569471624266144,
+          "ci_low": 0.0,
+          "ci_high": 0.005300981685386194,
+          "se": 0.001706171414034594,
+          "ci_method": "normal_approx",
+          "denominator_n": 511,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.9980430528375733,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "qr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 98,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 413,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.6340508806262231,
+          "ci_low": 0.5525120004669495,
+          "ci_high": 0.7155897607854966,
+          "se": 0.04160223391982809,
+          "ci_method": "normal_approx",
+          "denominator_n": 511,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.2172211350293542,
+        "predicted_unsafe_rate": 0.1487279843444227,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.5,
+          "ci_low": 0.0,
+          "ci_high": 1.0,
+          "se": 0.37962031586197637,
+          "ci_method": "normal_approx",
+          "denominator_n": 2,
+          "effective_cell_count": 2,
+          "interpretation": "suppressed_low_denominator_or_cells"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 509,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.10371819960861056,
+          "ci_low": 0.030574629768052128,
+          "ci_high": 0.17686176944916898,
+          "se": 0.03731883362016119,
+          "ci_method": "normal_approx",
+          "denominator_n": 511,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.8962818003913894,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "cqr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 98,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 413,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.6555772994129159,
+          "ci_low": 0.5817584693404233,
+          "ci_high": 0.7293961294854084,
+          "se": 0.03766336047742005,
+          "ci_method": "normal_approx",
+          "denominator_n": 511,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.2172211350293542,
+        "predicted_unsafe_rate": 0.12720156555772993,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.5,
+          "ci_low": 0.0,
+          "ci_high": 1.0,
+          "se": 0.37962031586197637,
+          "ci_method": "normal_approx",
+          "denominator_n": 2,
+          "effective_cell_count": 2,
+          "interpretation": "suppressed_low_denominator_or_cells"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 509,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.17221135029354206,
+          "ci_low": 0.07330149334500291,
+          "ci_high": 0.2711212072420812,
+          "se": 0.050465140037637184,
+          "ci_method": "normal_approx",
+          "denominator_n": 511,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.8277886497064579,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "ngboost_normal_cqr": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 98,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.18159806295399517,
+          "ci_low": 0.13585380903904218,
+          "ci_high": 0.22734231686894815,
+          "se": 0.023339333924387307,
+          "ci_method": "normal_approx",
+          "denominator_n": 413,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.2700587084148728,
+          "ci_low": 0.23370596768012317,
+          "ci_high": 0.30641144914962243,
+          "se": 0.018547657518962295,
+          "ci_method": "normal_approx",
+          "denominator_n": 511,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.3913894324853229,
+        "predicted_unsafe_rate": 0.3385518590998043,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.5,
+          "ci_low": 0.0,
+          "ci_high": 1.0,
+          "se": 0.37962031586197637,
+          "ci_method": "normal_approx",
+          "denominator_n": 2,
+          "effective_cell_count": 2,
+          "interpretation": "suppressed_low_denominator_or_cells"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0019646365422396855,
+          "ci_low": 0.0,
+          "ci_high": 0.0056216685685821196,
+          "se": 0.0018658669522443462,
+          "ci_method": "normal_approx",
+          "denominator_n": 509,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.1232876712328767,
+          "ci_low": 0.041143723414106145,
+          "ci_high": 0.20543161905164725,
+          "se": 0.04191094758205333,
+          "ci_method": "normal_approx",
+          "denominator_n": 511,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.8747553816046967,
+        "predicted_unsafe_rate": 0.0019569471624266144,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    }
+  },
+  "target_recalibrated_Oxford": {
+    "persistence_anchor_protocol_mondrian_cp": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.030612244897959183,
+          "ci_low": 0.0,
+          "ci_high": 0.0861381571388243,
+          "se": 0.028330067633306758,
+          "ci_method": "normal_approx",
+          "denominator_n": 98,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 135,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.1630901287553648,
+          "ci_low": 0.09109300944762472,
+          "ci_high": 0.23508724806310488,
+          "se": 0.03673389913061883,
+          "ci_method": "normal_approx",
+          "denominator_n": 233,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.5407725321888412,
+        "predicted_unsafe_rate": 0.296137339055794,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 2,
+          "effective_cell_count": 2,
+          "interpretation": "suppressed_low_denominator_or_cells"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.004329004329004329,
+          "ci_low": 0.0,
+          "ci_high": 0.012414574751604956,
+          "se": 0.0041253668365228025,
+          "ci_method": "normal_approx",
+          "denominator_n": 231,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 233,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.9957081545064378,
+        "predicted_unsafe_rate": 0.004291845493562232,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "qr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 98,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 135,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.45493562231759654,
+          "ci_low": 0.33397534738316964,
+          "ci_high": 0.5758958972520234,
+          "se": 0.061715560024850534,
+          "ci_method": "normal_approx",
+          "denominator_n": 233,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.296137339055794,
+        "predicted_unsafe_rate": 0.24892703862660945,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 2,
+          "effective_cell_count": 2,
+          "interpretation": "suppressed_low_denominator_or_cells"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 231,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.004291845493562232,
+          "ci_low": 0.0,
+          "ci_high": 0.011629274261237412,
+          "se": 0.0037436548964939584,
+          "ci_method": "normal_approx",
+          "denominator_n": 233,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.9957081545064378,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "cqr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 98,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 135,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.45493562231759654,
+          "ci_low": 0.33397534738316964,
+          "ci_high": 0.5758958972520234,
+          "se": 0.061715560024850534,
+          "ci_method": "normal_approx",
+          "denominator_n": 233,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.296137339055794,
+        "predicted_unsafe_rate": 0.24892703862660945,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 2,
+          "effective_cell_count": 2,
+          "interpretation": "suppressed_low_denominator_or_cells"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 231,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.004291845493562232,
+          "ci_low": 0.0,
+          "ci_high": 0.011629274261237412,
+          "se": 0.0037436548964939584,
+          "ci_method": "normal_approx",
+          "denominator_n": 233,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.9957081545064378,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "ngboost_normal_cqr": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 98,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.06666666666666667,
+          "ci_low": 0.034114557300279784,
+          "ci_high": 0.09921877603305354,
+          "se": 0.016608524250013662,
+          "ci_method": "normal_approx",
+          "denominator_n": 135,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.2446351931330472,
+          "ci_low": 0.1734383724728865,
+          "ci_high": 0.3158320137932079,
+          "se": 0.03632557599106524,
+          "ci_method": "normal_approx",
+          "denominator_n": 233,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.3090128755364807,
+        "predicted_unsafe_rate": 0.44635193133047213,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 2,
+          "effective_cell_count": 2,
+          "interpretation": "suppressed_low_denominator_or_cells"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.004329004329004329,
+          "ci_low": 0.0,
+          "ci_high": 0.012414574751604956,
+          "se": 0.0041253668365228025,
+          "ci_method": "normal_approx",
+          "denominator_n": 231,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 233,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.9957081545064378,
+        "predicted_unsafe_rate": 0.004291845493562232,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    }
+  },
+  "leave_NASA_out_common_feature_schema": {
+    "persistence_anchor_protocol_mondrian_cp": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.019138755980861243,
+          "ci_low": 0.0028237335046023306,
+          "ci_high": 0.03545377845712015,
+          "se": 0.008324144017415491,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 16,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.009990917347865577,
+          "ci_low": 0.0006321010380779118,
+          "ci_high": 0.019349733657653242,
+          "se": 0.0047749940221395995,
+          "ci_method": "normal_approx",
+          "denominator_n": 1101,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.061342592592592594,
+          "ci_low": 0.038737800195313435,
+          "ci_high": 0.08394738498987175,
+          "se": 0.01153326927207994,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6122685185185185,
+        "predicted_unsafe_rate": 0.3263888888888889,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.022222222222222223,
+          "ci_low": 0.0,
+          "ci_high": 0.08819962999165717,
+          "se": 0.03366256129697094,
+          "ci_method": "normal_approx",
+          "denominator_n": 180,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.005813953488372093,
+          "ci_low": 0.0010923693027404622,
+          "ci_high": 0.010535537674003724,
+          "se": 0.002409015789511892,
+          "ci_method": "normal_approx",
+          "denominator_n": 1548,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.04050925925925926,
+          "ci_low": 0.011485649975141388,
+          "ci_high": 0.06953286854337713,
+          "se": 0.014808236025280265,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.8726851851851852,
+        "predicted_unsafe_rate": 0.08680555555555555,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "qr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.051036682615629984,
+          "ci_low": 0.021308783780776448,
+          "ci_high": 0.08076458145048351,
+          "se": 0.01516757403163702,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 16,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1101,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.3229166666666667,
+          "ci_low": 0.2315889384521178,
+          "ci_high": 0.41424439488121556,
+          "se": 0.04659663592542025,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6429398148148148,
+        "predicted_unsafe_rate": 0.03414351851851852,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.25555555555555554,
+          "ci_low": 0.0,
+          "ci_high": 0.5141578515691094,
+          "se": 0.13194237141772805,
+          "ci_method": "normal_approx",
+          "denominator_n": 180,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1548,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.08275462962962964,
+          "ci_low": 0.0014073900667653516,
+          "ci_high": 0.16410186919249392,
+          "se": 0.04150445630864698,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.9172453703703703,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "cqr_gradient_boosting": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.051036682615629984,
+          "ci_low": 0.021308783780776448,
+          "ci_high": 0.08076458145048351,
+          "se": 0.01516757403163702,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 16,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1101,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.3229166666666667,
+          "ci_low": 0.2315889384521178,
+          "ci_high": 0.41424439488121556,
+          "se": 0.04659663592542025,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.6429398148148148,
+        "predicted_unsafe_rate": 0.03414351851851852,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.25,
+          "ci_low": 0.007960666348009765,
+          "ci_high": 0.49203933365199026,
+          "se": 0.1234917251343217,
+          "ci_method": "normal_approx",
+          "denominator_n": 180,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1548,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.08449074074074074,
+          "ci_low": 0.0037945055123637522,
+          "ci_high": 0.16518697596911774,
+          "se": 0.04117230513667528,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.9155092592592593,
+        "predicted_unsafe_rate": 0.0,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    },
+    "ngboost_normal_cqr": {
+      "soh_threshold_0.80": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.47368421052631576,
+          "ci_low": 0.26333266027585295,
+          "ci_high": 0.6840357607767786,
+          "se": 0.10732419162274873,
+          "ci_method": "normal_approx",
+          "denominator_n": 627,
+          "effective_cell_count": 16,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0036330608537693005,
+          "ci_low": 0.0,
+          "ci_high": 0.007402502822084047,
+          "se": 0.001923220017330739,
+          "ci_method": "normal_approx",
+          "denominator_n": 1101,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.1568287037037037,
+          "ci_low": 0.06973008277724442,
+          "ci_high": 0.24392732463016298,
+          "se": 0.044438888476258806,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.8055555555555556,
+        "predicted_unsafe_rate": 0.03761574074074074,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      },
+      "soh_threshold_0.70": {
+        "false_safe_per_actual_unsafe": {
+          "rate": 0.3055555555555556,
+          "ci_low": 0.028160258219198486,
+          "ci_high": 0.5829508528919127,
+          "se": 0.14153081358862504,
+          "ci_method": "normal_approx",
+          "denominator_n": 180,
+          "effective_cell_count": 8,
+          "interpretation": "interpretable"
+        },
+        "false_alarm_per_actual_safe": {
+          "rate": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "se": 0.0,
+          "ci_method": "normal_approx",
+          "denominator_n": 1548,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "uncertain_rate": {
+          "rate": 0.0787037037037037,
+          "ci_low": 0.0009087999112567802,
+          "ci_high": 0.15649860749615063,
+          "se": 0.03969200679506523,
+          "ci_method": "normal_approx",
+          "denominator_n": 1728,
+          "effective_cell_count": 25,
+          "interpretation": "interpretable"
+        },
+        "predicted_safe_rate": 0.9195601851851852,
+        "predicted_unsafe_rate": 0.001736111111111111,
+        "multiplicity_family_n": 6,
+        "multiplicity_note": "Interpret threshold/task sweeps as a family; low-denominator cells are suppressed or exploratory."
+      }
+    }
+  }
+}

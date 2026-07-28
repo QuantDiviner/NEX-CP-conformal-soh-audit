@@ -1,0 +1,82 @@
+[
+  {
+    "cell_id": "CALCE_CX2_16",
+    "dataset": "CALCE",
+    "reason": "qa_failed",
+    "n_cycles": 1999,
+    "max_soh": 9.843057688214024,
+    "min_soh": 0.4597421897166773
+  },
+  {
+    "cell_id": "NASA_B0033",
+    "dataset": "NASA",
+    "reason": "qa_failed",
+    "n_cycles": 197,
+    "max_soh": 1.1003816966230973,
+    "min_soh": 0.03994101537548318
+  },
+  {
+    "cell_id": "NASA_B0034",
+    "dataset": "NASA",
+    "reason": "qa_failed",
+    "n_cycles": 197,
+    "max_soh": 1.0950383365216867,
+    "min_soh": 0.4487279982604721
+  },
+  {
+    "cell_id": "NASA_B0036",
+    "dataset": "NASA",
+    "reason": "qa_failed",
+    "n_cycles": 197,
+    "max_soh": 1.3544842044135073,
+    "min_soh": 0.5552925207506211
+  },
+  {
+    "cell_id": "NASA_B0038",
+    "dataset": "NASA",
+    "reason": "qa_failed",
+    "n_cycles": 47,
+    "max_soh": 1.6201731137132758,
+    "min_soh": 0.8144731746483217
+  },
+  {
+    "cell_id": "NASA_B0039",
+    "dataset": "NASA",
+    "reason": "qa_failed",
+    "n_cycles": 47,
+    "max_soh": 3.700310030508425,
+    "min_soh": 0.24863710781239273
+  },
+  {
+    "cell_id": "NASA_B0040",
+    "dataset": "NASA",
+    "reason": "qa_failed",
+    "n_cycles": 47,
+    "max_soh": 2.1914773523294353,
+    "min_soh": 0.5381133693716459
+  },
+  {
+    "cell_id": "NASA_B0041",
+    "dataset": "NASA",
+    "reason": "qa_failed",
+    "n_cycles": 67,
+    "max_soh": 21.350264678163477,
+    "min_soh": 0.7743861794200531
+  },
+  {
+    "cell_id": "NASA_B0050",
+    "dataset": "NASA",
+    "reason": "qa_failed",
+    "n_cycles": 20,
+    "max_soh": 1.6012650148244973,
+    "min_soh": 0.019746859729574105
+  },
+  {
+    "cell_id": "NASA_B0052",
+    "dataset": "NASA",
+    "reason": "qa_failed",
+    "n_cycles": 4,
+    "max_soh": 1.0,
+    "min_soh": 0.606820404075842
+  }
+]

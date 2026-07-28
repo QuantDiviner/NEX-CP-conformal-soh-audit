@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-07-18T04:53:15.528948",
+  "seed": 42,
+  "raw_rows": 13876,
+  "feature_rows": 13831,
+  "cells": 45,
+  "domains": [
+    "CALCE",
+    "NASA",
+    "Oxford"
+  ],
+  "source": "real data only: data/raw symlinks to NAS battery datasets",
+  "runtime_packages": {
+    "python": "3.11.15",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3"
+  },
+  "outputs": [
+    "data/processed/real_battery_cycle_level_raw.csv",
+    "data/processed/real_battery_cycle_level_features.csv",
+    "data/splits/real_battery_splits.json",
+    "data/splits/real_battery_preprocess_qa.csv",
+    "data/splits/real_battery_skipped_sources.json"
+  ]
+}

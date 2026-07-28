@@ -1,0 +1,18 @@
+{
+  "experiment_id": "exp009_fpa_round4_repair",
+  "status": "validated_route_A",
+  "target_journal": "Reliability Engineering & System Safety",
+  "source_revision_plan": "docs/reports/20260530_210059_fpa_revision_20260530_205235_revision_plan.md",
+  "synthetic_data_used": false,
+  "external_review": "docs/reports/20260530_211022_D-EXP-exp009_fpa_round4_repair_codex.md",
+  "route": "A",
+  "confidence": "medium",
+  "result_files": [
+    "experiments/exp009_fpa_round4_repair/results/metrics.json",
+    "experiments/exp009_fpa_round4_repair/results/run_manifest.json",
+    "experiments/exp009_fpa_round4_repair/results/split_manifest.json",
+    "experiments/exp009_fpa_round4_repair/results/baseline_alignment.json",
+    "experiments/exp009_fpa_round4_repair/results/decision_utility_ci.json",
+    "experiments/exp009_fpa_round4_repair/results/shift_diagnostics.json"
+  ]
+}

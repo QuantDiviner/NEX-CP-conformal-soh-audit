@@ -1,0 +1,8 @@
+{
+  "status": "closed",
+  "route": "E",
+  "result_type": "negative_diagnostic",
+  "synthetic_data_used": false,
+  "latest_record": "experiments/exp003_cross_protocol/records/20260520_023453_record.md",
+  "latest_external_review": "docs/reports/20260520_023039_R1_exp003_cross_protocol_opus.md"
+}

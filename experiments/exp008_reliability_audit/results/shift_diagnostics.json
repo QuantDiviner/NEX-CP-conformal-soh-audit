@@ -1,0 +1,344 @@
+{
+  "main_heldout": {
+    "top_standardized_mean_differences": [
+      {
+        "feature": "protocol_CX2",
+        "cal_mean": 0.0,
+        "test_mean": 0.6956521739130435,
+        "standardized_mean_diff": 2.1380899352993947
+      },
+      {
+        "feature": "log_cycle_index",
+        "cal_mean": 4.466819970248372,
+        "test_mean": 6.420310978702285,
+        "standardized_mean_diff": 1.7803856504826707
+      },
+      {
+        "feature": "prev_soh",
+        "cal_mean": 0.9185956695418058,
+        "test_mean": 0.775517381132492,
+        "standardized_mean_diff": -1.5107344619645136
+      },
+      {
+        "feature": "protocol_CS2",
+        "cal_mean": 0.7261363636363637,
+        "test_mean": 0.15152819629789066,
+        "standardized_mean_diff": -1.420128771339876
+      },
+      {
+        "feature": "cycle_index",
+        "cal_mean": 164.22613636363636,
+        "test_mean": 928.7382694791219,
+        "standardized_mean_diff": 0.9465858159770069
+      },
+      {
+        "feature": "ambient_temperature",
+        "cal_mean": 21.97425227997713,
+        "test_mean": 24.692288105369116,
+        "standardized_mean_diff": 0.43986462157665623
+      },
+      {
+        "feature": "dataset_NASA",
+        "cal_mean": 0.24545454545454545,
+        "test_mean": 0.10977184674989238,
+        "standardized_mean_diff": -0.3607456023823627
+      },
+      {
+        "feature": "chemistry_Li-ion",
+        "cal_mean": 0.24545454545454545,
+        "test_mean": 0.10977184674989238,
+        "standardized_mean_diff": -0.3607456023823627
+      },
+      {
+        "feature": "protocol_NASA",
+        "cal_mean": 0.24545454545454545,
+        "test_mean": 0.10977184674989238,
+        "standardized_mean_diff": -0.3607456023823627
+      },
+      {
+        "feature": "internal_resistance_missing",
+        "cal_mean": 0.27386363636363636,
+        "test_mean": 0.15281962978906585,
+        "standardized_mean_diff": -0.2987474713519578
+      },
+      {
+        "feature": "ambient_temperature_missing",
+        "cal_mean": 0.7261363636363637,
+        "test_mean": 0.8471803702109342,
+        "standardized_mean_diff": 0.29874747135195767
+      },
+      {
+        "feature": "dataset_CALCE",
+        "cal_mean": 0.7261363636363637,
+        "test_mean": 0.8471803702109342,
+        "standardized_mean_diff": 0.29874747135195767
+      }
+    ],
+    "max_abs_standardized_mean_diff": 2.1380899352993947,
+    "cal_domains": {
+      "CALCE": 639,
+      "NASA": 216,
+      "Oxford": 25
+    },
+    "test_domains": {
+      "CALCE": 1968,
+      "NASA": 255,
+      "Oxford": 100
+    }
+  },
+  "leave_CALCE_out": {
+    "top_standardized_mean_differences": [
+      {
+        "feature": "log_cycle_index",
+        "cal_mean": 3.5476053747709537,
+        "test_mean": 6.009678791456936,
+        "standardized_mean_diff": 1.9474728673610988
+      },
+      {
+        "feature": "cycle_index",
+        "cal_mean": 171.3609958506224,
+        "test_mean": 598.1349206349206,
+        "standardized_mean_diff": 0.929767821389272
+      },
+      {
+        "feature": "ambient_temperature",
+        "cal_mean": 16.603078864646776,
+        "test_mean": 24.0,
+        "standardized_mean_diff": 0.8237541817060215
+      },
+      {
+        "feature": "prev_soh",
+        "cal_mean": 0.8297180835762988,
+        "test_mean": 0.7994320344283301,
+        "standardized_mean_diff": -0.23978749123426596
+      },
+      {
+        "feature": "internal_resistance",
+        "cal_mean": 0.08590715378522872,
+        "test_mean": 0.08888224349019748,
+        "standardized_mean_diff": 0.17038530373270744
+      }
+    ],
+    "max_abs_standardized_mean_diff": 1.9474728673610988,
+    "cal_domains": {
+      "NASA": 216,
+      "Oxford": 25
+    },
+    "test_domains": {
+      "CALCE": 11592
+    }
+  },
+  "target_recalibrated_CALCE": {
+    "top_standardized_mean_differences": [
+      {
+        "feature": "prev_soh",
+        "cal_mean": 0.9037679996627395,
+        "test_mean": 0.6751347720289366,
+        "standardized_mean_diff": -2.613658975127096
+      },
+      {
+        "feature": "cycle_index",
+        "cal_mean": 331.09122006841505,
+        "test_mean": 929.2163731372169,
+        "standardized_mean_diff": 2.110048318793949
+      },
+      {
+        "feature": "log_cycle_index",
+        "cal_mean": 5.7019135790387745,
+        "test_mean": 6.729928887397986,
+        "standardized_mean_diff": 2.103474214127721
+      },
+      {
+        "feature": "internal_resistance",
+        "cal_mean": 0.08493819710678559,
+        "test_mean": 0.09265304052560958,
+        "standardized_mean_diff": 0.3126622058862692
+      }
+    ],
+    "max_abs_standardized_mean_diff": 2.613658975127096,
+    "cal_domains": {
+      "CALCE": 1754
+    },
+    "test_domains": {
+      "CALCE": 5167
+    }
+  },
+  "leave_NASA_out": {
+    "top_standardized_mean_differences": [
+      {
+        "feature": "ambient_temperature_missing",
+        "cal_mean": 0.9623493975903614,
+        "test_mean": 0.0,
+        "standardized_mean_diff": -7.14982517268779
+      },
+      {
+        "feature": "internal_resistance_missing",
+        "cal_mean": 0.03765060240963856,
+        "test_mean": 1.0,
+        "standardized_mean_diff": 7.14982517268779
+      },
+      {
+        "feature": "internal_resistance",
+        "cal_mean": 0.09447728036846736,
+        "test_mean": 0.08590715378522872,
+        "standardized_mean_diff": -5.053856655308139
+      },
+      {
+        "feature": "prev_soh",
+        "cal_mean": 0.9515279600446548,
+        "test_mean": 0.8426025798979836,
+        "standardized_mean_diff": -1.319199136015425
+      },
+      {
+        "feature": "log_cycle_index",
+        "cal_mean": 4.894652425583217,
+        "test_mean": 3.64503073501506,
+        "standardized_mean_diff": -1.2867455339042844
+      },
+      {
+        "feature": "ambient_temperature",
+        "cal_mean": 24.658647599969687,
+        "test_mean": 17.30439814814815,
+        "standardized_mean_diff": -0.8105913046841029
+      },
+      {
+        "feature": "cycle_index",
+        "cal_mean": 207.59939759036143,
+        "test_mean": 54.20543981481482,
+        "standardized_mean_diff": -0.7280642274060244
+      }
+    ],
+    "max_abs_standardized_mean_diff": 7.14982517268779,
+    "cal_domains": {
+      "CALCE": 639,
+      "Oxford": 25
+    },
+    "test_domains": {
+      "NASA": 1728
+    }
+  },
+  "target_recalibrated_NASA": {
+    "top_standardized_mean_differences": [
+      {
+        "feature": "cycle_index",
+        "cal_mean": 29.89605734767025,
+        "test_mean": 84.12771392081737,
+        "standardized_mean_diff": 1.7912848227294595
+      },
+      {
+        "feature": "log_cycle_index",
+        "cal_mean": 3.316756996853746,
+        "test_mean": 4.29167829069349,
+        "standardized_mean_diff": 1.727393389923383
+      },
+      {
+        "feature": "prev_soh",
+        "cal_mean": 0.8939472971903384,
+        "test_mean": 0.7828694257962515,
+        "standardized_mean_diff": -1.2714023531314969
+      },
+      {
+        "feature": "ambient_temperature",
+        "cal_mean": 18.602150537634408,
+        "test_mean": 16.270753512132824,
+        "standardized_mean_diff": -0.19068759192335677
+      }
+    ],
+    "max_abs_standardized_mean_diff": 1.7912848227294595,
+    "cal_domains": {
+      "NASA": 279
+    },
+    "test_domains": {
+      "NASA": 783
+    }
+  },
+  "leave_Oxford_out": {
+    "top_standardized_mean_differences": [
+      {
+        "feature": "ambient_temperature",
+        "cal_mean": 21.403508771929825,
+        "test_mean": 40.77579737649533,
+        "standardized_mean_diff": 3.931916467995656
+      },
+      {
+        "feature": "log_cycle_index",
+        "cal_mean": 4.393662037111203,
+        "test_mean": 7.909795386106943,
+        "standardized_mean_diff": 3.350301425548097
+      },
+      {
+        "feature": "ambient_temperature_missing",
+        "cal_mean": 0.7473684210526316,
+        "test_mean": 0.0,
+        "standardized_mean_diff": -2.432419919887738
+      },
+      {
+        "feature": "internal_resistance_missing",
+        "cal_mean": 0.25263157894736843,
+        "test_mean": 1.0,
+        "standardized_mean_diff": 2.432419919887738
+      },
+      {
+        "feature": "internal_resistance",
+        "cal_mean": 0.0925627842545509,
+        "test_mean": 0.08590715378522872,
+        "standardized_mean_diff": -2.2689833639825996
+      },
+      {
+        "feature": "cycle_index",
+        "cal_mean": 128.5309941520468,
+        "test_mean": 3702.3698630136987,
+        "standardized_mean_diff": 2.2231500373324655
+      },
+      {
+        "feature": "prev_soh",
+        "cal_mean": 0.9180722278152509,
+        "test_mean": 0.870754815525601,
+        "standardized_mean_diff": -0.6138998364884355
+      }
+    ],
+    "max_abs_standardized_mean_diff": 3.931916467995656,
+    "cal_domains": {
+      "CALCE": 639,
+      "NASA": 216
+    },
+    "test_domains": {
+      "Oxford": 511
+    }
+  },
+  "target_recalibrated_Oxford": {
+    "top_standardized_mean_differences": [
+      {
+        "feature": "prev_soh",
+        "cal_mean": 0.919240355920801,
+        "test_mean": 0.8117493236222291,
+        "standardized_mean_diff": -4.226565873057868
+      },
+      {
+        "feature": "log_cycle_index",
+        "cal_mean": 7.581605060569453,
+        "test_mean": 8.615160399791522,
+        "standardized_mean_diff": 3.7105925467695595
+      },
+      {
+        "feature": "cycle_index",
+        "cal_mean": 2034.8028169014085,
+        "test_mean": 5711.300429184549,
+        "standardized_mean_diff": 3.4022892520699743
+      },
+      {
+        "feature": "ambient_temperature",
+        "cal_mean": 40.79370625697245,
+        "test_mean": 40.91620737187025,
+        "standardized_mean_diff": 0.2928811834138686
+      }
+    ],
+    "max_abs_standardized_mean_diff": 4.226565873057868,
+    "cal_domains": {
+      "Oxford": 71
+    },
+    "test_domains": {
+      "Oxford": 233
+    }
+  }
+}

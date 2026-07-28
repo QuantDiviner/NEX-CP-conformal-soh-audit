@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "facts": [
+    {
+      "fact_id": "ress_author_guide",
+      "fact_type": "journal_guideline",
+      "statement": "Reliability Engineering & System Safety is the target Elsevier journal; its official Guide for Authors sets a maximum manuscript length of 13,000 words and applies research-data Option C, requiring repository deposit and article citation/link or an explanation when sharing is impossible.",
+      "source_url_or_doi": "https://www.sciencedirect.com/journal/reliability-engineering-and-system-safety/publish/guide-for-authors",
+      "page_or_section": "Guide for Authors",
+      "verified_date": "2026-07-18",
+      "anti_claims": [
+        "RESS Original Paper is the active target",
+        "multiple corresponding authors are allowed in the accepted manuscript"
+      ]
+    },
+    {
+      "fact_id": "elsevier_latex",
+      "fact_type": "publisher_template",
+      "statement": "Elsevier supports LaTeX submissions through elsarticle; source files should be submitted flat when requested by Editorial Manager.",
+      "source_url_or_doi": "https://www.elsevier.com/en-gb/researcher/author/policies-and-guidelines/latex-instructions",
+      "page_or_section": "The Elsevier article class; Submitting your manuscript; FAQs",
+      "verified_date": "2026-06-02",
+      "anti_claims": [
+        "Editorial Manager can process LaTeX source subfolders",
+        "PDF alone is always sufficient for final source submission"
+      ]
+    },
+    {
+      "fact_id": "quarto_elsevier",
+      "fact_type": "publisher_template",
+      "statement": "Quarto provides a generic Elsevier journal format extension, but no RESS-specific Quarto format was identified.",
+      "source_url_or_doi": "https://quarto.org/docs/journals/; https://github.com/quarto-journals/elsevier",
+      "page_or_section": "Journal Formats; Elsevier README",
+      "verified_date": "2026-06-02",
+      "anti_claims": [
+        "A RESS-specific Quarto template is available"
+      ]
+    },
+    {
+      "fact_id": "calce_dataset",
+      "fact_type": "dataset_source",
+      "statement": "CALCE battery data are one of the public real-data sources used by this project.",
+      "source_url_or_doi": "https://calce.umd.edu/battery-data",
+      "page_or_section": "Battery Data",
+      "verified_date": "2026-06-02",
+      "anti_claims": [
+        "synthetic CALCE data"
+      ]
+    },
+    {
+      "fact_id": "nasa_pcoe_dataset",
+      "fact_type": "dataset_source",
+      "statement": "NASA PCoE battery data are one of the public real-data sources used by this project.",
+      "source_url_or_doi": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/",
+      "page_or_section": "PCoE Data Set Repository",
+      "verified_date": "2026-06-02",
+      "anti_claims": [
+        "synthetic NASA data"
+      ]
+    },
+    {
+      "fact_id": "oxford_dataset",
+      "fact_type": "dataset_source",
+      "statement": "The Oxford Battery Degradation Dataset is one of the public real-data sources used by this project.",
+      "source_url_or_doi": "https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac",
+      "page_or_section": "Oxford Research Archive dataset record",
+      "verified_date": "2026-06-02",
+      "anti_claims": [
+        "synthetic Oxford data"
+      ]
+    }
+  ]
+}

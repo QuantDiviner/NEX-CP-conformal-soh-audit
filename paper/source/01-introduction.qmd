@@ -1,0 +1,18 @@
+## Introduction
+
+Lithium-ion battery state-of-health (SOH) uncertainty estimates are often evaluated through cross-dataset benchmarks, where a model calibrated on one collection is tested on another. In maintenance- and reliability-facing uses, it is tempting to read those intervals as evidence that threshold decisions remain trustworthy under protocol shift. This paper argues that such a reading is not warranted unless the benchmark itself is audited as a measurement instrument and the information available at prediction time is stated explicitly.
+
+This case study uses only real cycle-level SOH records from the Center for Advanced Life Cycle Engineering (CALCE), the National Aeronautics and Space Administration (NASA), and Oxford, bounding external validity to these collections. It does not claim a new SOH estimator, persistence-anchor superiority, or unrestricted cross-protocol transfer. Instead, it asks a narrower reliability-engineering question: how much of the apparent validity of conformal SOH evidence depends on access to the most recent measured SOH, and what remains interpretable after schema, protocol, and decision-level checks?
+
+The main contributions of this case study are as follows:
+
+1. It defines a benchmark-integrity audit for conformal SOH evidence, treating the benchmark and its information set as the measurement object.
+2. It separates a method-selection ablation from method-matched contrasts and shows that recent-SOH access is a load-bearing, task-dependent measurement condition.
+3. It tests as-used schema-bundle sensitivity with multiplicity-adjusted intervals and an independently permuted-feature negative control; because the control gate fails, bundle effects are not promoted as a validated field-specific mechanism.
+4. It reports a corrected leave-NASA (LNAS) schema-bundle false-acceptance increase of `{python} lnas_bundle_fs_delta_s` at threshold `{python} lnas_bundle_fs_threshold_s` (exact paired-cell p = `{python} lnas_bundle_fs_exact_p_s`, n = `{python} lnas_bundle_fs_n_s`) while retaining the bundled, noncausal interpretation.
+5. It uses a localized-residual comparator only as a diagnostic envelope, thereby distinguishing empirical recovery from a formal covariate-shift guarantee.
+
+The intended takeaway is cautionary and operational: raw cross-dataset conformal coverage is not battery SOH deployment evidence unless the benchmark's prediction-time information, split construction, controls, and decision consequences have been audited.
+
+
+The remainder of the paper is organized as follows. @sec-related-work reviews related work on conformal prediction, battery SOH uncertainty, and benchmark integrity. @sec-methodology defines the pre-specified audit design and claim boundaries. @sec-results reports evidence on recent-label dependence, schema-bundle sensitivity, residual drift, decision consequences, and localized calibration. @sec-discussion discusses implications and limitations, and @sec-conclusion gives concluding remarks.

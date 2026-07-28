@@ -1,0 +1,125 @@
+## Methodology {#sec-methodology}
+
+
+The audit is organized around pre-specified diagnostic analyses rather than ad hoc result selection. A scripted results table aggregates the outputs used for the manuscript, and the reported values are taken from that table. All active rows are real battery state-of-health (SOH) records from CALCE, NASA, and Oxford; no synthetic records are included in the reported evidence. The case object is therefore the benchmark evidence produced by these public cycle-level datasets, not a proposed battery-management algorithm. Table \ref{tbl-datasets} summarizes the 45-cell source evidence base of `{python} source_cycle_rows_s` cycle rows and the `{python} eligible_cycle_rows_s` rows eligible for a strictly prior recent-SOH feature. The `{python} source_experiment_count` completed diagnostic analyses are a same-protocol coverage baseline, a recent-label ablation, a cross-protocol transfer diagnostic, a residual-stress robustness screen, a host-timing robustness screen, a negative-control check, a method-family robustness comparison, a threshold decision-utility audit, a schema-cleaning audit, a hard-regime audit, the schema-to-decision audit, and a localized-residual comparator.
+
+```{python}
+#| echo: false
+#| output: asis
+from IPython.display import Markdown
+dataset_rows = main_split_design["eligible_domain_rows"]
+Markdown(rf"""
+\begin{{table}}[!htbp]
+\centering
+\footnotesize
+\caption{{Real cycle-level SOH evidence base after preprocessing and quality assurance. Eligible rows have a strictly earlier same-cell SOH record.}}
+\label{{tbl-datasets}}
+\begin{{tabular}}{{lrrrc}}
+\toprule
+Dataset & Cells & Source rows & Eligible rows & SOH range \\
+\midrule
+CALCE & 12 & 11{{,}}604 & {dataset_rows['CALCE']:,} & 0.40--1.01 \\
+NASA & 25 & 1{{,}}753 & {dataset_rows['NASA']:,} & 0.41--1.00 \\
+Oxford & 8 & 519 & {dataset_rows['Oxford']:,} & 0.62--1.00 \\
+\midrule
+Total & 45 & {main_split_design['source_cycle_rows']:,} & {main_split_design['eligible_cycle_rows']:,} & 0.40--1.01 \\
+\bottomrule
+\end{{tabular}}
+\end{{table}}
+""")
+```
+
+The seven evaluation tasks use the same model families but change the target-domain role. Leave-domain-out tasks fit, select, and calibrate on the other two domains and test on all eligible rows of the named held-out domain. Target-recalibrated tasks add early target-domain rows: progress 0--20% enters training, 20--35% calibration, 35--55% validation, and rows after 55% form the test set. These boundaries are pairwise disjoint. Table \ref{tbl-task-design} reports the resulting row counts; the held-out target contains 12 CALCE, 25 NASA, or 8 Oxford cells, while the same-protocol held-out task (Main) uses 10 test cells.
+
+```{python}
+#| echo: false
+#| output: asis
+from IPython.display import Markdown
+
+task_design = [
+    ("Main", "Cell-disjoint mixed-domain held-out split", 10, "main_heldout"),
+    ("LCAL", "Other domains to all CALCE rows", 12, "leave_CALCE_out"),
+    ("TCAL", "Other domains + early CALCE to late CALCE", 12, "target_recalibrated_CALCE"),
+    ("LNAS", "Other domains to all NASA rows", 25, "leave_NASA_out"),
+    ("TNAS", "Other domains + early NASA to late NASA", 25, "target_recalibrated_NASA"),
+    ("LOxf", "Other domains to all Oxford rows", 8, "leave_Oxford_out"),
+    ("TOxf", "Other domains + early Oxford to late Oxford", 8, "target_recalibrated_Oxford"),
+]
+task_latex_rows = "\n".join(
+    f"{label} & {construction} & {cells} & "
+    f"{scoped_tasks[key]['n_train']}/{scoped_tasks[key]['n_cal']}/{scoped_tasks[key]['n_val']}/{scoped_tasks[key]['n_test']} \\\\"
+    for label, construction, cells, key in task_design
+)
+Markdown(rf"""
+\begin{{table}}[!htbp]
+\centering
+\scriptsize
+\caption{{Operational task construction. Row counts are training/calibration/validation/test; target-recalibrated boundaries are time-forward and pairwise disjoint.}}
+\label{{tbl-task-design}}
+\begin{{tabular}}{{llrl}}
+\toprule
+Task & Construction & Test cells & Train/Cal/Val/Test rows \\
+\midrule
+{task_latex_rows}
+\bottomrule
+\end{{tabular}}
+\end{{table}}
+""")
+```
+
+Main is a seed-`{python} main_split_design['seed']`, domain-stratified cell split, not a within-cell forecasting split. Within each domain, shuffled cells are assigned 55%/20%/10%/remainder to training/calibration/validation/test; calibration retains progress at most 0.55 and test retains progress at least 0.35. The four cell sets are disjoint, and no test cell contributes an earlier row to model fitting, selection, or calibration. The complete cell membership is recorded below; the governed split manifest preserves row indices and its checksum.
+
+```{python}
+#| echo: false
+#| output: asis
+
+def domain_row_summary(partition):
+    return "; ".join(f"{domain} {n:,}" for domain, n in partition["domain_rows"].items())
+
+def tex_cell_ids(partition):
+    return ", ".join(partition["cell_ids"]).replace("_", r"\_")
+
+main_membership_lines = "\n\n".join(
+    f"\\textbf{{{name.capitalize()}}} "
+    f"({part['n_rows']:,} rows; {domain_row_summary(part)}): "
+    f"{tex_cell_ids(part)}."
+    for name, part in main_split_partitions.items()
+)
+Markdown(rf"""
+\begin{{quote}}
+\scriptsize
+\textbf{{Complete Main split membership}} (domain entries are row counts).\par
+{main_membership_lines}
+\end{{quote}}
+""")
+```
+
+For cell $i$ and recorded cycle $t$, `prev_soh` is $SOH_{i,t-1}$: the immediately preceding recorded same-cell capacity-SOH after sorting by dataset, cell identifier, and cycle index. The $t-1$ measurement must occur before the prediction event at $t$. Each cell's first row has no such measurement and is excluded before every split is constructed (`{python} excluded_first_rows_s` rows in total); no same-row target fill or other imputation is used. Thus recent-SOH is an oracle only in the sense that it assumes a previous capacity measurement is actually available at prediction time, not because it accesses $SOH_{i,t}$.
+
+The primary nominal coverage level is `{python} target_coverage_s`. The manuscript reports coverage, width, dependence-aware uncertainty, threshold decision utilities, schema diagnostics, and localized-residual comparator outcomes from the scripted results table. The schema family contains five pre-specified contrasts across seven tasks and seven endpoints (one coverage endpoint plus six SOH thresholds), giving `{python} artifact_family_n` tests. Coverage and false-acceptance deltas in Tables \ref{tbl-schema-deltas} and \ref{tbl-false-acceptance-deltas} use Bonferroni-adjusted, SE-based normal intervals from 1000 cell-block resamples; the family-wise level `{python} artifact_alpha_s` gives a per-test level near $2\times10^{-4}$ and z $\approx$ `{python} artifact_bonferroni_z_s`. Zero-SE boundaries use the exact paired-cell sign test. By contrast, the Main `{python} main_ci_low_s`--`{python} main_ci_high_s` interval and the lower bounds in Table \ref{tbl-adaptive-envelope} are 2.5/97.5-percentile cell-block bootstrap intervals, while Table \ref{tbl-decision-tradeoff} reports uncorrected 95% cell-block normal intervals. The limited number of battery-cell blocks makes extreme-tail normal widths uncertain; this is an additional reason to treat coverage flags as sensitivity signals and require a negative-control gate. The same data interface generates text, tables, and captions to avoid manual transcription.
+
+The nominal target is used as the evaluation criterion, while individual conformal variants select their calibration quantiles strictly on a disjoint validation split (never tuned on the test set). For the same-protocol diagnostic baseline, the selected operating point uses q-level `{python} main_q_level`. This yields a realized test coverage of `{python} main_cov_s`; the benign validation-to-test over-coverage is not treated as a new performance claim, but as the baseline's 'apparent reliability' before domain shift or artifact removal, setting the reference for subsequent measurement-validity checks relative to the `{python} target_coverage_s` coverage target.
+
+
+Persistence-anchor behavior is used as a diagnostic probe because it exposes recent-label and anchor dependence. It is not presented as a deployable or superior method. Cross-protocol failures are interpreted as validity evidence, not as a failed attempt to force a positive transfer claim. The analysis therefore treats negative and heterogeneous findings as informative: a failure after schema cleaning is evidence consistent with residual protocol drift, while a small, directionally heterogeneous, or control-inconsistent schema effect bounds the claim rather than generalizing it. Residual drift is retained as a boundary that is not fully separable from recent-label dependence in this evidence base.
+
+
+The audit examines four diagnostic dimensions:
+
+1. recent-label / anchor dependence;
+2. as-used schema-bundle sensitivity;
+3. residual protocol drift after schema checks;
+4. SOH serviceability-threshold decision risk under finite-cell evidence.
+
+The main same-protocol diagnostic baseline is the selected persistence-anchor protocol Mondrian conformal predictor [@vovk2005algorithmic]. The diagnostic families include quantile regression (QR), conformalized quantile regression (CQR) [@romano2019conformalized], and natural-gradient boosting (NGBoost) [@duan2020ngboost]. For the no-recent-SOH ablation condition, the selected diagnostic is a gradient-boosting non-exchangeable conformal variant [@barber2023beyond]; it is used only to quantify the dependence of the benchmark on recent-label access and is not presented as a method contribution. Because the calibration-selection rule, not the analyst, chooses the per-condition operating point, the full-feature and no-recent-SOH conditions can select different conformal families; the resulting same-protocol coverage change therefore reflects the selection rule's response to removing recent labels rather than a same-method feature ablation, and the method-matched feature-isolation contrast is supplied separately by the row-matched recent-label reference comparison reported in Section \ref{sec-results}. Gradient-boosting CQR is used for decision-utility diagnostics, schema comparisons, and the localized-residual comparator. Training, validation, calibration, and test indices are pairwise disjoint per task. The as-used bundle contains `source_row_id`, `target_cycle_index`, and the permuted control column, whereas the clean-original schema removes all three; the bundle contrast therefore cannot isolate a bookkeeping-specific effect. The independent control adds a fixed-seed (seed 1033) permutation of `log_cycle_index` to the clean schema and refits the complete pipeline on the same rows.
+
+A decision-risk cell is defined relative to a capacity-SOH serviceability threshold and a predicted SOH interval with lower bound L and upper bound U for a test record with true SOH y. The record is threshold-acceptable when its lower bound L is at or above the threshold, threshold-unacceptable when its upper bound U is below the threshold, and uncertain when the interval straddles the threshold. A false-acceptance event is a threshold-acceptable record whose true SOH y is below the threshold; a false-rejection event is a threshold-unacceptable record whose true SOH y is at or above the threshold. The reported false-acceptance rate divides false-acceptance events by the number of actually threshold-unacceptable records, the false-rejection rate divides false-rejection events by the number of actually threshold-acceptable records, and the uncertain rate divides uncertain records by all records; each rate carries a cell-block bootstrap confidence interval that resamples battery cells with replacement. These thresholds are capacity-based decision cutoffs, not demonstrated electrochemical or thermal safety boundaries. To avoid over-reading sparse cells, a small-denominator suppression rule flags any decision cell whose denominator is below `{python} decision_min_denominator` as exploratory rather than as a headline rate.
+
+Schema-bundle sensitivity is adjudicated by a pre-specified rule applied identically to every task. A task is flagged when the as-used-minus-clean coverage interval excludes zero and the absolute delta is at least `{python} artifact_coverage_min_pp` pp. This flag is necessary but not sufficient for a mechanistic claim: the independent permuted-feature control must remain null across both its coverage contrast and all six false-acceptance endpoints. The bundle's false-acceptance-rate delta is evaluated separately with multiplicity adjustment or, for zero-standard-error boundaries, an exact paired-cell sign test; cells below `{python} decision_min_denominator` effective observations are exploratory. This hierarchy prevents a bundled association from being relabeled as a bookkeeping mechanism, while still allowing a corrected bundle-level decision association to be reported without field-specific attribution.
+
+Two dependence boundaries are explicit. First, the conformal calibration objects are cycle-level residuals from longitudinal cell records, so the usual exchangeability interpretation is conditional on the task construction rather than a free guarantee for independent operating histories. The uncertainty intervals therefore resample cells as blocks and are read as dependence-aware diagnostics, but the present evidence does not replace a fully cell-independent prospective forecasting design. Second, recent-SOH is treated as an oracle recent label in the main dependence probe: it may be a legitimate autoregressive measurement in a laboratory setting where the previous capacity has just been measured, but it is not automatically available in an online battery-management setting. The audit therefore interprets recent-SOH access as a measurement condition to be declared, not as leakage in every possible deployment scenario.
+
+The SOH label is capacity-normalized within the harmonized project data interface, and Table \ref{tbl-datasets} reports the ranges after quality assurance (QA). Because the source datasets differ in cycling protocol, temperature range, and capacity measurement practice, the analysis treats cross-dataset label comparability as part of the benchmark-validity boundary. The current manuscript does not establish a full label-harmonization audit over alternative denominators, smoothing rules, or anomaly-removal policies; such sensitivity analysis would be needed before attributing every cross-dataset coverage failure to physical protocol drift or model behavior.
+
+
+Because a standard conformal failure is incomplete without a localization sensitivity check, the audit also evaluates a heuristic localized-residual CQR comparator. Calibration and target features are standardized by calibration means and standard deviations. For target row $x$, calibration score $r_i$ receives Gaussian weight $w_i(x)=\exp\{-d_i(x)^2/(2h^2)\}+10^{-12}$, where $d_i^2$ is the mean squared standardized distance over the recorded common shift features. The local radius is the weighted conformal quantile. Bandwidth $h\in\{0.25,0.50,1,2,4,\infty\}$ is selected only on validation data by the predeclared coverage-first, then width, objective; test metrics are not used. This is motivated by covariate-shift conformal work [@tibshirani2019covariate], but it does not estimate a density ratio and carries no formal covariate-shift guarantee. Meeting the envelope means that point coverage reaches nominal; a lower-bound shortfall crosses only when the standard percentile lower bound is below nominal and the localized lower bound is at or above it. The result is not interpreted as method superiority.

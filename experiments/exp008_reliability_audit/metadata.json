@@ -1,0 +1,21 @@
+{
+  "status": "closed",
+  "experiment_tier": "major",
+  "route": "A",
+  "result_type": "reliability_safety_audit_positive",
+  "synthetic_data_used": false,
+  "target_journal": "Reliability Engineering & System Safety",
+  "source_global_diagnosis_joa": "docs/reports/20260530_172158_global_diagnosis_joa.md",
+  "source_jump_contract": "docs/jumps/20260530_172158/contract.json",
+  "execution_log": "experiments/exp008_reliability_audit/execution-log.md",
+  "latest_metrics": "experiments/exp008_reliability_audit/results/metrics.json",
+  "run_manifest": "experiments/exp008_reliability_audit/results/run_manifest.json",
+  "latest_external_review": "docs/reports/20260530_173340_D-EXP-exp008_reliability_audit_codex.md",
+  "planned_outputs": [
+    "experiments/exp008_reliability_audit/results/metrics.json",
+    "experiments/exp008_reliability_audit/results/decision_utility_ci.json",
+    "experiments/exp008_reliability_audit/results/shift_diagnostics.json",
+    "experiments/exp008_reliability_audit/results/baseline_alignment.json",
+    "experiments/exp008_reliability_audit/results/run_manifest.json"
+  ]
+}

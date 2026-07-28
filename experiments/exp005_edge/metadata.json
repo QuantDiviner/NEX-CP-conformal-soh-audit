@@ -1,0 +1,9 @@
+{
+  "status": "closed",
+  "route": "A_after_bounded_documentation_fixes",
+  "result_type": "host_compute_cost_supporting",
+  "synthetic_data_used": false,
+  "edge_or_deployment_evidence": false,
+  "latest_record": "experiments/exp005_edge/records/20260520_032355_record.md",
+  "latest_external_review": "docs/reports/20260520_032355_R1_exp005_edge_opus.md"
+}

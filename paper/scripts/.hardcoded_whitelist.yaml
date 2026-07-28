@@ -1,0 +1,16 @@
+{
+  "line_allow_regex": [
+    "SOH threshold 0\\.70",
+    "3 to 5",
+    "1 to 7",
+    "Section \\d",
+    "124 lithium-iron-phosphate cells",
+    "study delivers \\(1\\).*\\(5\\)",
+    "grant no\\. 25BTJ045.*20232BAB201025",
+    "Open Researcher and Contributor Identifier \\(ORCID\\):"
+    ,"The seven evaluation tasks use the same model families"
+    ,"fixed-seed \\(seed 1033\\) permutation"
+    ,"Bandwidth"
+    ,"Python 3\\.11\\.15 and scikit-learn 1\\.7\\.2"
+  ]
+}

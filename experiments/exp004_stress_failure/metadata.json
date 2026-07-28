@@ -1,0 +1,8 @@
+{
+  "status": "closed",
+  "route": "A_after_bounded_documentation_fixes",
+  "result_type": "stress_probe_valid_supporting",
+  "synthetic_data_used": false,
+  "latest_record": "experiments/exp004_stress_failure/records/20260520_030723_record.md",
+  "latest_external_review": "docs/reports/20260520_030723_R1_exp004_stress_failure_opus.md"
+}

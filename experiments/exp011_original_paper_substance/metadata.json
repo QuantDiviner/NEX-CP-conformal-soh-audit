@@ -1,0 +1,32 @@
+{
+  "experiment_id": "exp011_original_paper_substance",
+  "status": "validated_route_A",
+  "experiment_tier": "major",
+  "target_journal": "Reliability Engineering & System Safety",
+  "source_gate": "Round 8 user option 2: approve new substance for RESS Original Paper",
+  "synthetic_data_used": false,
+  "dependencies": [
+    "exp009_fpa_round4_repair",
+    "exp010_hard_regime_audit"
+  ],
+  "planned_outputs": [
+    "experiments/exp011_original_paper_substance/results/metrics.json",
+    "experiments/exp011_original_paper_substance/results/schema_delta_summary.json",
+    "experiments/exp011_original_paper_substance/results/multiplicity_control.json",
+    "experiments/exp011_original_paper_substance/results/external_dataset_inventory.json",
+    "experiments/exp011_original_paper_substance/results/run_manifest.json",
+    "experiments/exp011_original_paper_substance/results/split_manifest.json"
+  ],
+  "result_files": [
+    "experiments/exp011_original_paper_substance/results/metrics.json",
+    "experiments/exp011_original_paper_substance/results/schema_delta_summary.json",
+    "experiments/exp011_original_paper_substance/results/multiplicity_control.json",
+    "experiments/exp011_original_paper_substance/results/external_dataset_inventory.json",
+    "experiments/exp011_original_paper_substance/results/run_manifest.json",
+    "experiments/exp011_original_paper_substance/results/split_manifest.json"
+  ],
+  "external_plan_review": "docs/reports/20260531_105241_D-PLAN-exp011_original_paper_substance_opus.md",
+  "external_review": "docs/reports/20260531_113935_T_experiment_reviewer_exp011_original_paper_substance.md",
+  "route": "A",
+  "confidence": "high"
+}

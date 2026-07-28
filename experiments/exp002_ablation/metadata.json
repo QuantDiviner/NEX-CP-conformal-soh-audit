@@ -1,0 +1,9 @@
+{
+  "status": "closed",
+  "route": "A_after_bounded_documentation_fixes",
+  "result_type": "ablation_valid_scope_limiting",
+  "synthetic_data_used": false,
+  "latest_record": "experiments/exp002_ablation/records/20260520_025559_record.md",
+  "split_audit": "experiments/exp002_ablation/records/20260520_025559_split_audit.md",
+  "latest_external_review": "docs/reports/20260520_025559_R1_exp002_ablation_opus.md"
+}

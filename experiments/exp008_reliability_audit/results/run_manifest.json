@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-07-18T04:58:22.508379",
+  "script": "scripts/run_reliability_audit_experiment.py",
+  "argv": [
+    "scripts/run_reliability_audit_experiment.py",
+    "--output-exp",
+    "exp008_reliability_audit",
+    "--seed",
+    "42",
+    "--bootstrap-reps",
+    "1000",
+    "--min-decision-denominator",
+    "5",
+    "--include-ngboost"
+  ],
+  "experiment_id": "exp008_reliability_audit",
+  "seed": 42,
+  "bootstrap_reps": 1000,
+  "include_ngboost": true,
+  "min_decision_denominator": 5,
+  "add_harmonized_leave_nasa": false,
+  "python": "3.11.15",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "runtime_packages": {
+    "python": "3.11.15",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.7.2"
+  },
+  "git_commit": "d9345592979d2c929e611b54056b4176e79dbe15",
+  "synthetic_data_used": false,
+  "target_journal": "Reliability Engineering & System Safety",
+  "claim_type": "reliability_safety_audit",
+  "deterministic_regeneration_command": "python scripts/run_reliability_audit_experiment.py --output-exp exp008_reliability_audit --seed 42 --bootstrap-reps 1000 --min-decision-denominator 5 --include-ngboost",
+  "fpa_revision_plan": "docs/reports/20260530_210059_fpa_revision_20260530_205235_revision_plan.md"
+}

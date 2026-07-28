@@ -1,0 +1,24 @@
+# Quarto 项目配置
+# 文档: https://quarto.org/docs/projects/quarto-projects.html
+# ⚠️ 严禁使用 type: book — 会生成 "Chapter N" 标题，与期刊论文格式不符
+
+project:
+  type: default
+  output-dir: ../output
+  pre-render:
+    - python ../scripts/generate_elsevier_metadata.py
+
+# 启用 Jupyter 以支持动态引用
+jupyter: python3
+
+# 执行选项
+execute:
+  echo: false      # 不显示代码
+  warning: false   # 不显示警告
+  freeze: auto     # 自动缓存结果
+
+# 交叉引用
+crossref:
+  fig-prefix: "Figure"
+  tbl-prefix: "Table"
+  eq-prefix: "Equation"

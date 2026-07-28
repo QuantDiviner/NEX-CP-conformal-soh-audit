@@ -1,0 +1,30 @@
+{
+  "policy": "External datasets may only be used after the real-data QA preprocessor accepts them; no synthetic or hand-fabricated rows are allowed.",
+  "entries": [
+    {
+      "entry": "data/raw/CALCE",
+      "is_symlink": true,
+      "exists": true,
+      "resolved_path": "/Users/qianningliu/Desktop/仓库/BMS-Conformal-UQ/data/raw/calce",
+      "qa_usable_now": true,
+      "reason": "already_in_real_battery_preprocess_manifest"
+    },
+    {
+      "entry": "data/raw/NASA",
+      "is_symlink": true,
+      "exists": true,
+      "resolved_path": "/Users/qianningliu/Desktop/仓库/BMS-Conformal-UQ/data/raw/nasa",
+      "qa_usable_now": true,
+      "reason": "already_in_real_battery_preprocess_manifest"
+    },
+    {
+      "entry": "data/raw/Oxford",
+      "is_symlink": true,
+      "exists": true,
+      "resolved_path": "/Users/qianningliu/Desktop/仓库/BMS-Conformal-UQ/data/raw/oxford",
+      "qa_usable_now": true,
+      "reason": "already_in_real_battery_preprocess_manifest"
+    }
+  ],
+  "additional_qa_usable_dataset_available": false
+}

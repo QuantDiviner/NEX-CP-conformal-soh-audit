@@ -1,0 +1,1064 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  number,
+  preprint]{elsarticle}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+\usepackage[]{natbib}
+\bibliographystyle{elsarticle-num}
+
+
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\journal{Reliability Engineering & System Safety}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Recent-Label Dependence in Cross-Dataset Conformal SOH Evaluation: A Benchmark-Integrity Case Study},
+  pdfauthor={Qingsong Shan; Qianning Liu},
+  pdfkeywords={conformal prediction, measurement validity, battery
+state-of-health, benchmark integrity, covariate shift, reliability
+engineering},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\setlength{\parindent}{6pt}
+\begin{document}
+
+\begin{frontmatter}
+\title{Recent-Label Dependence in Cross-Dataset Conformal SOH
+Evaluation: A Benchmark-Integrity Case Study}
+\author[1]{Qingsong Shan%
+%
+\fnref{fn1}}
+ \ead{shanqingsong@jxufe.edu.cn} 
+\author[1]{Qianning Liu%
+\corref{cor1}%
+\fnref{fn2}}
+ \ead{liuqianning@jxufe.edu.cn} 
+
+\affiliation[1]{organization={Jiangxi University of Finance and
+Economics, School of Statistics and Data Science, Key Laboratory of Data
+Science in Finance and
+Economics},city={Nanchang},country={China},countrysep={,},postcodesep={}}
+
+\cortext[cor1]{Corresponding author}
+\fntext[fn1]{Open Researcher and Contributor Identifier (ORCID):
+0000-0001-9231-5699}
+\fntext[fn2]{Open Researcher and Contributor Identifier (ORCID):
+0000-0002-7654-6451}
+        
+\begin{abstract}
+Cross-dataset conformal prediction can provide misleading battery
+state-of-health (SOH) evidence when prediction-time information and
+benchmark construction are unclear. We audit real CALCE, NASA, and
+Oxford cycle-level records through 12 diagnostic analyses, treating the
+benchmark as the measurement object. A same-protocol baseline reaches
+94.8\% coverage with a cell-block confidence-interval lower bound of
+94.2\%, but this result uses the most recent measured SOH. In
+method-matched comparisons, removing that reference changes coverage by
+as much as -60.4 percentage points; the leave-NASA contrast is -31.9
+points. The as-used schema bundle changes leave-NASA coverage by -12.0
+points and increases false acceptance by +100 points at SOH 0.90 (exact
+p=9.54e-07). The bundle changes multiple columns and the
+independent-control gate fails, blocking field-specific causal
+attribution. A heuristic localized-residual comparator reaches nominal
+point coverage on 3 of 7 tasks and recovers 1 standard point failure.
+Conformal SOH coverage should therefore not be treated as deployment
+reliability until recent-label availability, split integrity, controls,
+cell-aware uncertainty, and threshold decisions are audited.
+\end{abstract}
+
+
+
+
+
+\begin{keyword}
+    conformal prediction \sep measurement validity \sep battery
+state-of-health \sep benchmark integrity \sep covariate shift \sep 
+    reliability engineering
+\end{keyword}
+\end{frontmatter}
+    
+
+\section{Introduction}\label{introduction}
+
+Lithium-ion battery state-of-health (SOH) uncertainty estimates are
+often evaluated through cross-dataset benchmarks, where a model
+calibrated on one collection is tested on another. In maintenance- and
+reliability-facing uses, it is tempting to read those intervals as
+evidence that threshold decisions remain trustworthy under protocol
+shift. This paper argues that such a reading is not warranted unless the
+benchmark itself is audited as a measurement instrument and the
+information available at prediction time is stated explicitly.
+
+This case study uses only real cycle-level SOH records from the Center
+for Advanced Life Cycle Engineering (CALCE), the National Aeronautics
+and Space Administration (NASA), and Oxford, bounding external validity
+to these collections. It does not claim a new SOH estimator,
+persistence-anchor superiority, or unrestricted cross-protocol transfer.
+Instead, it asks a narrower reliability-engineering question: how much
+of the apparent validity of conformal SOH evidence depends on access to
+the most recent measured SOH, and what remains interpretable after
+schema, protocol, and decision-level checks?
+
+The main contributions of this case study are as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  It defines a benchmark-integrity audit for conformal SOH evidence,
+  treating the benchmark and its information set as the measurement
+  object.
+\item
+  It separates a method-selection ablation from method-matched contrasts
+  and shows that recent-SOH access is a load-bearing, task-dependent
+  measurement condition.
+\item
+  It tests as-used schema-bundle sensitivity with multiplicity-adjusted
+  intervals and an independently permuted-feature negative control;
+  because the control gate fails, bundle effects are not promoted as a
+  validated field-specific mechanism.
+\item
+  It reports a corrected leave-NASA (LNAS) schema-bundle
+  false-acceptance increase of +100.0 pp at threshold 0.90 (exact
+  paired-cell p = 9.54e-07, n = 1127) while retaining the bundled,
+  noncausal interpretation.
+\item
+  It uses a localized-residual comparator only as a diagnostic envelope,
+  thereby distinguishing empirical recovery from a formal
+  covariate-shift guarantee.
+\end{enumerate}
+
+The intended takeaway is cautionary and operational: raw cross-dataset
+conformal coverage is not battery SOH deployment evidence unless the
+benchmark's prediction-time information, split construction, controls,
+and decision consequences have been audited.
+
+The remainder of the paper is organized as follows.
+Section~\ref{sec-related-work} reviews related work on conformal
+prediction, battery SOH uncertainty, and benchmark integrity.
+Section~\ref{sec-methodology} defines the pre-specified audit design and
+claim boundaries. Section~\ref{sec-results} reports evidence on
+recent-label dependence, schema-bundle sensitivity, residual drift,
+decision consequences, and localized calibration.
+Section~\ref{sec-discussion} discusses implications and limitations, and
+Section~\ref{sec-conclusion} gives concluding remarks.
+
+\section{Related Work}\label{sec-related-work}
+
+Conformal prediction provides finite-sample predictive-coverage
+guarantees under exchangeability
+\citep{vovk2005algorithmic, lei2018distributionfree}. Weighted conformal
+variants extend this logic to covariate shift when the shift mechanism
+can be estimated \citep{tibshirani2019covariate}. Conformalized quantile
+regression calibrates quantile-regression estimates to retain
+finite-sample coverage \citep{romano2019conformalized}, and adaptive
+conformal inference addresses distribution shift over time
+\citep{gibbs2021adaptive}. These guarantees do not by themselves certify
+a reliability benchmark. If the information set includes recent labels,
+dataset identity, or bookkeeping fields unavailable in the intended
+decision setting, nominal coverage can describe the constructed
+benchmark rather than the intended threshold-decision problem. The
+localized-residual analysis used here is only a diagnostic inspired by
+this literature, not an implementation of density-ratio weighted
+conformal prediction.
+
+Battery SOH and remaining useful life (RUL) studies increasingly report
+probabilistic forecasts, predictive intervals, and prognostic
+performance under uncertainty
+\citep{saxena2010evaluating, he2011remaining, liu2020futurecapacity}. A
+parallel transfer-learning literature studies how SOH estimators adapt
+across batteries, operating conditions, and laboratory or field domains
+\citep{ye2021domainadversarial, vilsen2022field, shen2024review}. These
+studies motivate cross-domain evaluation, but they usually treat the
+benchmark schema as a prerequisite for model comparison rather than as
+the primary object of reliability analysis.
+
+The benchmark-integrity concern is also connected to broader
+machine-learning reliability work on dataset documentation, shortcut
+learning, and leakage
+\citep{gebru2021datasheets, geirhos2020shortcut, kapoor2023leakage}.
+Those literatures warn that apparent predictive performance can be
+driven by unintended signals or by data-splitting and
+feature-availability choices. In a battery SOH benchmark, the
+corresponding risk is not merely a statistical nuisance: a
+feature-schema artifact can be mistaken for protocol drift, or a
+recent-label proxy can make a maintenance-facing forecast look reliable
+under conditions that are unavailable at decision time.
+
+This paper therefore occupies a narrower gap. It is not a new SOH
+estimator and not a broad survey of battery transfer learning. It is a
+measurement-validity case study: the unit of analysis is the reliability
+of the benchmark evidence itself, especially how conformal interval
+behavior changes across recent-label, split, schema-bundle,
+residual-drift, and SOH-threshold diagnostics.
+
+\section{Methodology}\label{sec-methodology}
+
+The audit is organized around pre-specified diagnostic analyses rather
+than ad hoc result selection. A scripted results table aggregates the
+outputs used for the manuscript, and the reported values are taken from
+that table. All active rows are real battery state-of-health (SOH)
+records from CALCE, NASA, and Oxford; no synthetic records are included
+in the reported evidence. The case object is therefore the benchmark
+evidence produced by these public cycle-level datasets, not a proposed
+battery-management algorithm. Table \ref{tbl-datasets} summarizes the
+45-cell source evidence base of 13,876 cycle rows and the 13,831 rows
+eligible for a strictly prior recent-SOH feature. The 12 completed
+diagnostic analyses are a same-protocol coverage baseline, a
+recent-label ablation, a cross-protocol transfer diagnostic, a
+residual-stress robustness screen, a host-timing robustness screen, a
+negative-control check, a method-family robustness comparison, a
+threshold decision-utility audit, a schema-cleaning audit, a hard-regime
+audit, the schema-to-decision audit, and a localized-residual
+comparator.
+
+\begin{table}
+
+\caption{\label{tbl-datasets}Real cycle-level SOH evidence base after preprocessing and quality assurance. Eligible rows have a strictly earlier same-cell SOH record.}
+
+\centering{
+
+\centering
+\footnotesize
+
+
+\begin{tabular}{lrrrc}
+\toprule
+Dataset & Cells & Source rows & Eligible rows & SOH range \\
+\midrule
+CALCE & 12 & 11{,}604 & 11,592 & 0.40--1.01 \\
+NASA & 25 & 1{,}753 & 1,728 & 0.41--1.00 \\
+Oxford & 8 & 519 & 511 & 0.62--1.00 \\
+\midrule
+Total & 45 & 13,876 & 13,831 & 0.40--1.01 \\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{table}%
+
+The seven evaluation tasks use the same model families but change the
+target-domain role. Leave-domain-out tasks fit, select, and calibrate on
+the other two domains and test on all eligible rows of the named
+held-out domain. Target-recalibrated tasks add early target-domain rows:
+progress 0--20\% enters training, 20--35\% calibration, 35--55\%
+validation, and rows after 55\% form the test set. These boundaries are
+pairwise disjoint. Table \ref{tbl-task-design} reports the resulting row
+counts; the held-out target contains 12 CALCE, 25 NASA, or 8 Oxford
+cells, while the same-protocol held-out task (Main) uses 10 test cells.
+
+\begin{table}
+
+\caption{\label{tbl-task-design}Operational task construction. Row counts are training/calibration/validation/test; target-recalibrated boundaries are time-forward and pairwise disjoint.}
+
+\centering{
+
+\centering
+\scriptsize
+
+
+\begin{tabular}{llrl}
+\toprule
+Task & Construction & Test cells & Train/Cal/Val/Test rows \\
+\midrule
+Main & Cell-disjoint mixed-domain held-out split & 10 & 7961/880/680/2323 \\
+LCAL & Other domains to all CALCE rows & 12 & 1122/241/116/11592 \\
+TCAL & Other domains + early CALCE to late CALCE & 12 & 4566/1754/2344/5167 \\
+LNAS & Other domains to all NASA rows & 25 & 7082/664/636/1728 \\
+TNAS & Other domains + early NASA to late NASA & 25 & 12447/279/322/783 \\
+LOxf & Other domains to all Oxford rows & 8 & 7718/855/608/511 \\
+TOxf & Other domains + early Oxford to late Oxford & 8 & 13421/71/106/233 \\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{table}%
+
+Main is a seed-42, domain-stratified cell split, not a within-cell
+forecasting split. Within each domain, shuffled cells are assigned
+55\%/20\%/10\%/remainder to training/calibration/validation/test;
+calibration retains progress at most 0.55 and test retains progress at
+least 0.35. The four cell sets are disjoint, and no test cell
+contributes an earlier row to model fitting, selection, or calibration.
+The complete cell membership is recorded below; the governed split
+manifest preserves row indices and its checksum.
+
+\begin{quote}
+\scriptsize
+\textbf{Complete Main split membership} (domain entries are row counts).\par
+\textbf{Train} (7,961 rows; CALCE 6,839; NASA 879; Oxford 243): CALCE\_CS2\_33, CALCE\_CS2\_36, CALCE\_CX2\_33, CALCE\_CX2\_34, CALCE\_CX2\_36, CALCE\_CX2\_38, NASA\_B0007, NASA\_B0025, NASA\_B0026, NASA\_B0028, NASA\_B0029, NASA\_B0031, NASA\_B0042, NASA\_B0043, NASA\_B0048, NASA\_B0053, NASA\_B0054, NASA\_B0055, NASA\_B0056, Oxford\_Cell1, Oxford\_Cell3, Oxford\_Cell4, Oxford\_Cell6.
+
+\textbf{Cal} (880 rows; CALCE 639; NASA 216; Oxford 25): CALCE\_CS2\_35, CALCE\_CS2\_38, NASA\_B0006, NASA\_B0027, NASA\_B0045, NASA\_B0046, NASA\_B0047, Oxford\_Cell5.
+
+\textbf{Val} (680 rows; CALCE 564; NASA 44; Oxford 72): CALCE\_CS2\_37, NASA\_B0032, NASA\_B0051, Oxford\_Cell2.
+
+\textbf{Test} (2,323 rows; CALCE 1,968; NASA 255; Oxford 100): CALCE\_CS2\_34, CALCE\_CX2\_35, CALCE\_CX2\_37, NASA\_B0005, NASA\_B0018, NASA\_B0030, NASA\_B0044, NASA\_B0049, Oxford\_Cell7, Oxford\_Cell8.
+\end{quote}
+
+For cell \(i\) and recorded cycle \(t\), \texttt{prev\_soh} is
+\(SOH_{i,t-1}\): the immediately preceding recorded same-cell
+capacity-SOH after sorting by dataset, cell identifier, and cycle index.
+The \(t-1\) measurement must occur before the prediction event at \(t\).
+Each cell's first row has no such measurement and is excluded before
+every split is constructed (45 rows in total); no same-row target fill
+or other imputation is used. Thus recent-SOH is an oracle only in the
+sense that it assumes a previous capacity measurement is actually
+available at prediction time, not because it accesses \(SOH_{i,t}\).
+
+The primary nominal coverage level is 90\%. The manuscript reports
+coverage, width, dependence-aware uncertainty, threshold decision
+utilities, schema diagnostics, and localized-residual comparator
+outcomes from the scripted results table. The schema family contains
+five pre-specified contrasts across seven tasks and seven endpoints (one
+coverage endpoint plus six SOH thresholds), giving 245 tests. Coverage
+and false-acceptance deltas in Tables \ref{tbl-schema-deltas} and
+\ref{tbl-false-acceptance-deltas} use Bonferroni-adjusted, SE-based
+normal intervals from 1000 cell-block resamples; the family-wise level
+0.05 gives a per-test level near \(2\times10^{-4}\) and z \(\approx\)
+3.7. Zero-SE boundaries use the exact paired-cell sign test. By
+contrast, the Main 94.2\%--97.1\% interval and the lower bounds in Table
+\ref{tbl-adaptive-envelope} are 2.5/97.5-percentile cell-block bootstrap
+intervals, while Table \ref{tbl-decision-tradeoff} reports uncorrected
+95\% cell-block normal intervals. The limited number of battery-cell
+blocks makes extreme-tail normal widths uncertain; this is an additional
+reason to treat coverage flags as sensitivity signals and require a
+negative-control gate. The same data interface generates text, tables,
+and captions to avoid manual transcription.
+
+The nominal target is used as the evaluation criterion, while individual
+conformal variants select their calibration quantiles strictly on a
+disjoint validation split (never tuned on the test set). For the
+same-protocol diagnostic baseline, the selected operating point uses
+q-level 0.93. This yields a realized test coverage of 94.8\%; the benign
+validation-to-test over-coverage is not treated as a new performance
+claim, but as the baseline's `apparent reliability' before domain shift
+or artifact removal, setting the reference for subsequent
+measurement-validity checks relative to the 90\% coverage target.
+
+Persistence-anchor behavior is used as a diagnostic probe because it
+exposes recent-label and anchor dependence. It is not presented as a
+deployable or superior method. Cross-protocol failures are interpreted
+as validity evidence, not as a failed attempt to force a positive
+transfer claim. The analysis therefore treats negative and heterogeneous
+findings as informative: a failure after schema cleaning is evidence
+consistent with residual protocol drift, while a small, directionally
+heterogeneous, or control-inconsistent schema effect bounds the claim
+rather than generalizing it. Residual drift is retained as a boundary
+that is not fully separable from recent-label dependence in this
+evidence base.
+
+The audit examines four diagnostic dimensions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  recent-label / anchor dependence;
+\item
+  as-used schema-bundle sensitivity;
+\item
+  residual protocol drift after schema checks;
+\item
+  SOH serviceability-threshold decision risk under finite-cell evidence.
+\end{enumerate}
+
+The main same-protocol diagnostic baseline is the selected
+persistence-anchor protocol Mondrian conformal predictor
+\citep{vovk2005algorithmic}. The diagnostic families include quantile
+regression (QR), conformalized quantile regression (CQR)
+\citep{romano2019conformalized}, and natural-gradient boosting (NGBoost)
+\citep{duan2020ngboost}. For the no-recent-SOH ablation condition, the
+selected diagnostic is a gradient-boosting non-exchangeable conformal
+variant \citep{barber2023beyond}; it is used only to quantify the
+dependence of the benchmark on recent-label access and is not presented
+as a method contribution. Because the calibration-selection rule, not
+the analyst, chooses the per-condition operating point, the full-feature
+and no-recent-SOH conditions can select different conformal families;
+the resulting same-protocol coverage change therefore reflects the
+selection rule's response to removing recent labels rather than a
+same-method feature ablation, and the method-matched feature-isolation
+contrast is supplied separately by the row-matched recent-label
+reference comparison reported in Section \ref{sec-results}.
+Gradient-boosting CQR is used for decision-utility diagnostics, schema
+comparisons, and the localized-residual comparator. Training,
+validation, calibration, and test indices are pairwise disjoint per
+task. The as-used bundle contains \texttt{source\_row\_id},
+\texttt{target\_cycle\_index}, and the permuted control column, whereas
+the clean-original schema removes all three; the bundle contrast
+therefore cannot isolate a bookkeeping-specific effect. The independent
+control adds a fixed-seed (seed 1033) permutation of
+\texttt{log\_cycle\_index} to the clean schema and refits the complete
+pipeline on the same rows.
+
+A decision-risk cell is defined relative to a capacity-SOH
+serviceability threshold and a predicted SOH interval with lower bound L
+and upper bound U for a test record with true SOH y. The record is
+threshold-acceptable when its lower bound L is at or above the
+threshold, threshold-unacceptable when its upper bound U is below the
+threshold, and uncertain when the interval straddles the threshold. A
+false-acceptance event is a threshold-acceptable record whose true SOH y
+is below the threshold; a false-rejection event is a
+threshold-unacceptable record whose true SOH y is at or above the
+threshold. The reported false-acceptance rate divides false-acceptance
+events by the number of actually threshold-unacceptable records, the
+false-rejection rate divides false-rejection events by the number of
+actually threshold-acceptable records, and the uncertain rate divides
+uncertain records by all records; each rate carries a cell-block
+bootstrap confidence interval that resamples battery cells with
+replacement. These thresholds are capacity-based decision cutoffs, not
+demonstrated electrochemical or thermal safety boundaries. To avoid
+over-reading sparse cells, a small-denominator suppression rule flags
+any decision cell whose denominator is below 5 as exploratory rather
+than as a headline rate.
+
+Schema-bundle sensitivity is adjudicated by a pre-specified rule applied
+identically to every task. A task is flagged when the
+as-used-minus-clean coverage interval excludes zero and the absolute
+delta is at least 3 pp.~This flag is necessary but not sufficient for a
+mechanistic claim: the independent permuted-feature control must remain
+null across both its coverage contrast and all six false-acceptance
+endpoints. The bundle's false-acceptance-rate delta is evaluated
+separately with multiplicity adjustment or, for zero-standard-error
+boundaries, an exact paired-cell sign test; cells below 5 effective
+observations are exploratory. This hierarchy prevents a bundled
+association from being relabeled as a bookkeeping mechanism, while still
+allowing a corrected bundle-level decision association to be reported
+without field-specific attribution.
+
+Two dependence boundaries are explicit. First, the conformal calibration
+objects are cycle-level residuals from longitudinal cell records, so the
+usual exchangeability interpretation is conditional on the task
+construction rather than a free guarantee for independent operating
+histories. The uncertainty intervals therefore resample cells as blocks
+and are read as dependence-aware diagnostics, but the present evidence
+does not replace a fully cell-independent prospective forecasting
+design. Second, recent-SOH is treated as an oracle recent label in the
+main dependence probe: it may be a legitimate autoregressive measurement
+in a laboratory setting where the previous capacity has just been
+measured, but it is not automatically available in an online
+battery-management setting. The audit therefore interprets recent-SOH
+access as a measurement condition to be declared, not as leakage in
+every possible deployment scenario.
+
+The SOH label is capacity-normalized within the harmonized project data
+interface, and Table \ref{tbl-datasets} reports the ranges after quality
+assurance (QA). Because the source datasets differ in cycling protocol,
+temperature range, and capacity measurement practice, the analysis
+treats cross-dataset label comparability as part of the
+benchmark-validity boundary. The current manuscript does not establish a
+full label-harmonization audit over alternative denominators, smoothing
+rules, or anomaly-removal policies; such sensitivity analysis would be
+needed before attributing every cross-dataset coverage failure to
+physical protocol drift or model behavior.
+
+Because a standard conformal failure is incomplete without a
+localization sensitivity check, the audit also evaluates a heuristic
+localized-residual CQR comparator. Calibration and target features are
+standardized by calibration means and standard deviations. For target
+row \(x\), calibration score \(r_i\) receives Gaussian weight
+\(w_i(x)=\exp\{-d_i(x)^2/(2h^2)\}+10^{-12}\), where \(d_i^2\) is the
+mean squared standardized distance over the recorded common shift
+features. The local radius is the weighted conformal quantile. Bandwidth
+\(h\in\{0.25,0.50,1,2,4,\infty\}\) is selected only on validation data
+by the predeclared coverage-first, then width, objective; test metrics
+are not used. This is motivated by covariate-shift conformal work
+\citep{tibshirani2019covariate}, but it does not estimate a density
+ratio and carries no formal covariate-shift guarantee. Meeting the
+envelope means that point coverage reaches nominal; a lower-bound
+shortfall crosses only when the standard percentile lower bound is below
+nominal and the localized lower bound is at or above it. The result is
+not interpreted as method superiority.
+
+\section{Results}\label{sec-results}
+
+The engineering object in this case study is not a new SOH estimator but
+the reliability evidence produced by a cross-dataset conformal SOH
+benchmark. The decision question is how interval coverage and SOH
+threshold decisions change across recent-label access, split
+construction, feature-schema sensitivity, residual protocol drift, and
+localized residual weighting diagnostics.
+
+The evidence base is a set of diagnostic contrasts over the same
+real-data benchmark splits. Task abbreviations use Main for the
+same-protocol held-out task, leave-CALCE (LCAL), target-CALCE (TCAL),
+leave-NASA (LNAS), target-NASA (TNAS), leave-Oxford (LOxf), and
+target-Oxford (TOxf). Table \ref{tbl-evidence-map} reports the
+argument-bearing contrasts needed to interpret reliability evidence;
+ancillary timing and residual-stress screens are treated as robustness
+checks rather than headline findings.
+
+\begin{table}
+
+\caption{\label{tbl-evidence-map}Audit evidence map. Intervals are 95\% confidence intervals where shown; pp denotes percentage points and SMD denotes standardized mean difference.}
+
+\centering{
+
+\centering
+\scriptsize
+
+
+\begin{tabular}{p{0.14\linewidth}p{0.57\linewidth}p{0.20\linewidth}}
+\toprule
+Component & Evidence & Reading \\
+\midrule
+Baseline & Main held-out coverage 94.8\%, width 0.038 & conditional reliability \\
+Recent labels & Pipeline-selection Main ablation -11.8 pp; method-matched TCAL -60.4 pp & load-bearing condition \\
+Schema & LNAS sensitivity -12.0 pp; SMD 7.15 to 1.32 & sensitivity; control failed \\
+No recent labels & Main 92.9\%; LNAS 29.5\%; LOxf 3.1\% & task dependent \\
+Decision risk & LNAS NGBoost false acceptance 69.2\%, n=627 & finite-cell risk \\
+Localized CQR & 3/7 point envelopes met; one standard point-coverage failure; no lower-bound shortfall & heuristic diagnostic \\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{table}%
+
+The main baseline selected method is the persistence-anchor Mondrian
+conformal diagnostic. On the same-protocol held-out task it reaches
+coverage 94.8\% with CI 94.2\%-97.1\%, mean width 0.038, and sample size
+2323. Removing the recent-SOH feature from the ablation package changes
+the selected condition to the gradient-boosting non-exchangeable
+conformal diagnostic, with coverage 80.8\% and mean width 0.221;
+relative to the full feature condition, this is a coverage change of
+-11.8 pp and a width increase of 0.193. Figure \ref{fig-evidence-flow}
+summarizes the resulting audit logic: raw coverage is interpreted only
+after the measurement conditions are examined.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/evidence-flow.pdf}
+\caption{Evidence-flow schematic for the benchmark-integrity audit. Each diagnostic examines a measurement-validity condition before conformal SOH intervals are interpreted as reliability evidence.}
+\label{fig-evidence-flow}
+\end{figure}
+
+The cross-protocol diagnostics keep the result from becoming a simple
+method-success story. Same-split QR/CQR/NGBoost comparisons show that
+coverage can change only by changing the uncertainty family or accepting
+wider intervals; for example, in the main held-out task, CQR is
+coverage-aligned but has 2.72 times the persistence-anchor width. In the
+common-cycle, no-recent-label audit, coverage is 92.9\% on Main, 29.5\%
+on LNAS, and 3.1\% on LOxf. These values demonstrate heterogeneity, not
+a universal monotone benefit of recent labels. On Main, the
+clean-original no-recent schema attains a coverage of 92.4\%. Because
+the as-used no-recent schema is flagged as contaminated in two tasks,
+conclusions are based on the row-matched common-schema contrasts rather
+than the contaminated hard-regime rows. Ancillary host-timing and
+residual-bias screens are robustness checks only; they are not
+interpreted as hardware or physical-degradation evidence.
+
+The method-matched recent-label delta is gradient-boosting CQR coverage
+under the common no-recent-SOH schema minus coverage with the recent-SOH
+reference, evaluated on identical task rows. This comparison is
+heterogeneous across tasks, which is central to the measurement-validity
+interpretation. Table \ref{tbl-schema-deltas} reports it beside the
+as-used schema-bundle contrast and its independent permuted-feature
+control.
+
+\begin{table}
+
+\caption{\label{tbl-schema-deltas}Method- and row-matched coverage deltas (pp; Bonferroni-adjusted cell-block normal intervals). Recent is common-schema no-recent minus recent-SOH reference; Bundle is as-used minus clean; Control is the negative-control coverage contrast. NC gate fails if that control is non-null for coverage or any false-acceptance endpoint.}
+
+\centering{
+
+\centering
+\scriptsize
+
+
+\begin{tabular}{llllcc}
+\toprule
+Task & No-recent $-$ recent & Bundle & Control & Flag & NC gate \\
+\midrule
+Main & +1.3 [-18.7, +21.4] & -4.1 [-21.6, +13.4] & -1.1 [-3.0, +0.7] & No & Pass \\
+LCAL & -10.1 [-16.8, -3.3] & +3.2 [+1.2, +5.1] & -0.6 [-1.0, -0.2] & Yes & Fail \\
+TCAL & -60.4 [-73.6, -47.2] & -2.2 [-6.9, +2.6] & -0.0 [-2.7, +2.6] & No & Fail \\
+LNAS & -31.9 [-40.7, -23.1] & -12.0 [-20.5, -3.4] & -1.0 [-2.0, +0.1] & Yes & Pass \\
+TNAS & -41.5 [-73.4, -9.7] & -10.0 [-31.2, +11.2] & -0.1 [-1.6, +1.3] & No & Pass \\
+LOxf & -37.6 [-53.1, -22.0] & +0.4 [-0.5, +1.3] & -0.2 [-1.0, +0.6] & No & Pass \\
+TOxf & +4.3 [-1.6, +10.2] & +0.0 [+0.0, +0.0] & -0.4 [-2.1, +1.2] & No & Pass \\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{table}%
+
+The largest method-matched recent-label contrast occurs in TCAL, where
+removing the recent-SOH reference changes coverage by 60.4 pp; LNAS
+changes by 31.9 pp, and TOxf reverses direction. Because these
+comparisons hold the conformal family and task rows fixed, they isolate
+information-set sensitivity more cleanly than the Main ablation in Table
+\ref{tbl-evidence-map}. The Main ablation changes -11.8 pp, but its
+selection rule switches conformal families and therefore measures the
+response of the complete selection pipeline, not a same-method feature
+effect.
+
+The as-used schema-bundle contrast passes the pre-specified coverage
+flag in 2 tasks: LCAL, LNAS. LNAS changes by -12.0 pp; its maximum SMD
+falls from 7.15 in the raw schema to 1.32 in the common schema. However,
+the as-used bundle jointly changes \texttt{source\_row\_id},
+\texttt{target\_cycle\_index}, and the permuted control column, while
+the independent permuted-feature control is also non-null in LCAL, TCAL.
+The pre-specified claim gate therefore returns false. The contrast
+cannot isolate a bookkeeping-field effect. We interpret it only as a
+schema-bundle sensitivity warning that may combine schema identity,
+finite-cell structure, and residual shift. This negative-control failure
+blocks the stronger original artifact-mechanism story.
+
+LNAS shows a multiplicity-adjusted schema-bundle false-acceptance
+increase of +100.0 pp at SOH threshold 0.90 (exact paired-cell p =
+9.54e-07, n = 1127); no other task passes the corrected criterion. Table
+\ref{tbl-false-acceptance-deltas} reports the largest observed eligible
+contrast for each task, and the complete 245-contrast ledger remains in
+the machine-readable SSOT. This is a bundle-level decision association,
+not an isolated bookkeeping effect or a deployment-safety rate. Absolute
+decision risk must therefore also be read directly from Table
+\ref{tbl-decision-tradeoff}. Figure \ref{fig-coverage-deltas} visualizes
+the task-dependent information-set and schema-bundle sensitivities.
+
+\begin{table}
+
+\caption{\label{tbl-false-acceptance-deltas}Largest eligible schema-bundle false-acceptance contrast by task (pp). Intervals are Bonferroni-adjusted; zero-SE cells show exact paired-cell p-values. LNAS passes correction.}
+
+\centering{
+
+\centering
+\scriptsize
+
+
+\begin{tabular}{llrrrc}
+\toprule
+Task & Delta [CI] & SOH & n & Exact p & Corrected? \\
+\midrule
+Main & +4.4 [-35.9, +44.6] & 0.75 & 712 & -- & No \\
+LCAL & -100.0 & 0.65 & 1936 & 0.000488 & No \\
+TCAL & +21.5 [-25.9, +68.8] & 0.85 & 5036 & -- & No \\
+LNAS & +100.0 & 0.90 & 1127 & 9.54e-07 & Yes \\
+TNAS & +45.8 [-19.8, +100.0] & 0.75 & 288 & -- & No \\
+LOxf & +0.0 & 0.90 & 342 & 1 & No \\
+TOxf & +0.0 & 0.90 & 233 & 1 & No \\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{table}%
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/coverage-deltas.pdf}
+\caption{Per-task recent-label and as-used schema-bundle coverage deltas (percentage points) with Bonferroni-corrected normal intervals. Recent-label deltas are large and negative in several tasks; bundle deltas are smaller, with LCAL and LNAS meeting the coverage flag. The endpoint-wide negative-control gate fails in LCAL and TCAL. The dashed line marks zero.}
+\label{fig-coverage-deltas}
+\end{figure}
+
+Decision-utility rates are reported with denominators and cell-block
+intervals rather than as unqualified safety claims. Here, a
+false-acceptance event occurs when the actual SOH falls below the
+serviceability threshold but the predicted interval incorrectly implies
+threshold acceptability, while a false-rejection event occurs when an
+actually threshold-acceptable SOH is incorrectly flagged as
+threshold-unacceptable. Table \ref{tbl-decision-tradeoff} reports
+representative SOH threshold decision cells at threshold 0.80. The table
+illustrates why coverage alone is insufficient for a threshold-decision
+interpretation: the leave-NASA CQR cell has a lower false-acceptance
+point estimate but leaves a large uncertain region, whereas NGBoost has
+a high false-acceptance diagnostic. These thresholds and cells are
+illustrative boundary evidence, not deployment-safety rates; application
+use requires threshold-specific validation.
+
+\begin{table}
+
+\caption{\label{tbl-decision-tradeoff}Illustrative threshold-0.80 decision-risk cells (percent; uncorrected 95\% cell-block CI; n = denominator).}
+
+\centering{
+
+\centering
+\footnotesize
+
+
+\begin{tabular}{llll}
+\toprule
+Task & Method & False acceptance & Uncertain \\
+\midrule
+Main & Persistence anchor & 1.4 [0.1, 2.7]; n=1270 & 18.1 [12.0, 24.1]; n=2323 \\
+Main & CQR & 1.1 [0.0, 2.4]; n=1270 & 30.9 [12.4, 49.4]; n=2323 \\
+Main & NGBoost & 1.0 [0.0, 2.3]; n=1270 & 33.3 [25.3, 41.3]; n=2323 \\
+LNAS & Persistence anchor & 1.9 [0.3, 3.5]; n=627 & 6.1 [3.9, 8.4]; n=1728 \\
+LNAS & CQR & 1.4 [0.1, 2.7]; n=627 & 39.6 [28.2, 51.0]; n=1728 \\
+LNAS & NGBoost & 69.2 [46.8, 91.6]; n=627 & 11.5 [1.1, 21.8]; n=1728 \\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{table}%
+
+The localized-residual comparator reaches nominal point coverage on 3 of
+7 tasks: LNAS, TNAS, TOxf. It recovers one standard point-coverage
+failure; no lower-bound shortfall crosses the nominal boundary. The
+remaining tasks are below the point target: Main, LCAL, TCAL, LOxf.
+Because the comparator uses distance-based residual localization rather
+than density-ratio weighting, these are empirical diagnostic outcomes
+without a covariate-shift coverage guarantee. Table
+\ref{tbl-adaptive-envelope} is therefore a sensitivity envelope, not
+evidence of conformal superiority.
+
+\begin{table}
+
+\caption{\label{tbl-adaptive-envelope}Heuristic localized-residual CQR coverage by task. Std (low) and Local (low) give point coverage with the 95\% cell-block lower bound in parentheses; Delta is local minus standard coverage (pp). Pt $\geq$ nom marks nominal point coverage, not a formal coverage guarantee.}
+
+\centering{
+
+\centering
+\footnotesize
+
+
+\begin{tabular}{lllcc}
+\toprule
+Task & Std (low) & Local (low) & Delta & Pt $\geq$ nom \\
+\midrule
+Main & 95.9\% (95.0\%) & 89.4\% (83.7\%) & -6.5 pp & N \\
+LCAL & 75.5\% (69.1\%) & 67.2\% (60.9\%) & -8.3 pp & N \\
+TCAL & 65.6\% (52.9\%) & 68.0\% (56.5\%) & +2.4 pp & N \\
+LNAS & 90.4\% (86.0\%) & 91.2\% (87.0\%) & +0.8 pp & Y \\
+TNAS & 88.0\% (83.6\%) & 93.7\% (89.7\%) & +5.7 pp & Y \\
+LOxf & 42.9\% (35.0\%) & 42.9\% (35.0\%) & +0.0 pp & N \\
+TOxf & 98.7\% (96.9\%) & 98.7\% (96.9\%) & +0.0 pp & Y \\
+\bottomrule
+\end{tabular}
+
+}
+
+\end{table}%
+
+\section{Discussion}\label{sec-discussion}
+
+The audit changes the interpretation of cross-dataset conformal SOH
+benchmarks. Coverage is conditional on the benchmark's measurement
+validity and information set; it is not automatically a reliability or
+serviceability result. Recent-label access can make a benchmark easier
+than the intended forecasting problem. The as-used schema-bundle
+contrast reveals an unstable evaluation design, but it jointly changes
+multiple columns, and the endpoint-wide independent-control gate fails
+in LCAL and TCAL. The corrected LNAS false-acceptance association is
+therefore retained at the bundle level without attribution to
+bookkeeping fields or promotion to a causal schema mechanism. Residual
+drift, finite-cell variation, and label-definition differences remain
+plausible contributors.
+
+For reliability and battery-health practitioners, the engineering
+implication is a pre-submission benchmark-integrity discipline. Analysts
+should declare whether a recent measured SOH is available at prediction
+time, demonstrate that training, validation, calibration, and test
+indices are disjoint, use cell-aware uncertainty, test schema claims
+against independent negative controls, and report threshold decisions
+with their denominators. A localization comparator can test sensitivity,
+but it cannot substitute for a valid conformal guarantee.
+
+The recent-label finding is deliberately not stated as a monotone
+benefit. Method-matched deltas are strongly negative in TCAL, LNAS,
+TNAS, and LOxf, smaller but still negative in LCAL, near zero in Main,
+and positive in TOxf. That reversal matters: recent-SOH is not simply a
+universally helpful covariate; it changes the estimand and interacts
+with the target task. The practical failure is therefore undeclared
+information availability. A benchmark using an oracle recent label
+cannot support a no-recent-label deployment claim without a separate
+evaluation.
+
+The localized-residual comparator sharpens the interpretation without
+turning the study into a method-success paper. It changes empirical
+coverage in several tasks and recovers exactly one standard
+point-coverage failure, but other tasks remain below target. Because it
+is not a density-ratio conformal method, its results show only that
+calibration is sensitive to local residual composition; they do not
+establish shift-robust coverage.
+
+The main limitation is external breadth. The evidence base is limited to
+CALCE, NASA, and Oxford, so the case-study claim is not that every
+battery SOH benchmark has the same sensitivity. A Massachusetts
+Institute of Technology (MIT)-Stanford-Toyota fast-charge dataset
+\citep{severson2019datadriven} is excluded because its
+lithium-iron-phosphate chemistry and fast-charge-to-failure protocol
+would add chemistry and protocol confounding, and its records did not
+pass the same preprocessing and schema-compatibility checks. Broader
+modern and field datasets are needed for external validation.
+
+Several design limitations follow directly from the audit framing.
+Calibration residuals are cycle-level observations from longitudinal
+cell histories; cell-block intervals quantify rate uncertainty but do
+not create independent exchangeable histories. A stronger follow-up
+should use cell-disjoint prospective splits, report row-weighted and
+cell-macro coverage, and show worst-cell behavior near serviceability
+thresholds. The article treats recent-SOH as an oracle recent label;
+deployment-facing work should compare oracle, estimated, and unavailable
+recent-SOH on identical rows. The capacity-based label is harmonized
+only through the current preprocessing interface. Moreover, the original
+frozen processed CSV could not be recovered byte-for-byte; the repaired
+analyses were regenerated from the preserved raw holdings under Python
+3.11.15 and scikit-learn 1.7.2. Although raw split membership was
+reproduced, this provenance discontinuity limits exact numerical
+replication of the earlier exploratory run and is one reason the present
+conclusions rely only on the corrected rerun.
+
+The serviceability-threshold language is intentional. The audited SOH
+thresholds (0.70, 0.80) are illustrative capacity-SOH cutoffs used to
+demonstrate the diagnostic quantities. Their use in maintenance,
+warranty, or end-of-life decisions requires application-specific
+validation; this manuscript does not establish them as electrochemical
+safety boundaries or thermal-runaway risk thresholds. Additional field
+data, prospective forecasting splits, and application-specific risk
+models are needed before the audit can be treated as a general
+battery-management validation protocol.
+
+\section{Conclusion}\label{sec-conclusion}
+
+This case study shows why conformal battery SOH benchmark results should
+be audited before being treated as reliability evidence. In the
+corrected real-data analyses, recent-label access produces large but
+task-dependent method-matched coverage changes. The as-used schema
+bundle changes coverage in two tasks and increases LNAS false acceptance
+at one corrected threshold, but it jointly changes multiple columns and
+the endpoint-wide independent-control gate fails, blocking attribution
+to bookkeeping fields.
+
+The contribution is therefore a bounded measurement-validity warning:
+conformal SOH intervals may be useful, but their serviceability
+interpretation depends on the benchmark-integrity discipline developed
+and discussed above. Future work should apply this audit to broader
+field data and prospective forecasting settings.
+
+The implication for reliability engineering is simple: coverage must not
+be promoted to deployment reliability until the benchmark's information
+set, split integrity, controls, and decision consequences survive the
+same audit.
+
+\section*{Data Availability}\label{data-availability}
+\addcontentsline{toc}{section}{Data Availability}
+
+This study uses real cycle-level SOH records from public CALCE, NASA,
+and Oxford battery datasets. The dataset source records are the CALCE
+Battery Research Group battery data repository
+(https://calce.umd.edu/battery-data), the NASA Ames Prognostics Center
+of Excellence data repository
+(https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/),
+and the Oxford Battery Degradation Dataset record
+(https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac),
+accessed 2026-06-02. The authors have not yet selected and authorized an
+external archival repository, so a public deposit cannot be completed
+from the present revision environment. Before submission, the versioned
+derived-data package, source-data provenance, and archive DOI or URL
+must be inserted here. The complete package can be supplied to reviewers
+during assessment.
+
+\section*{Code Availability}\label{code-availability}
+\addcontentsline{toc}{section}{Code Availability}
+
+Analysis code, locked dependencies, and run manifests are maintained in
+the project repository. They must be deposited with the derived-data
+package and the archive DOI or URL inserted before submission. Until
+that author-controlled deposit is completed, the versioned analysis
+package can be supplied to reviewers during assessment.
+
+\section*{Declaration of Competing
+Interest}\label{declaration-of-competing-interest}
+\addcontentsline{toc}{section}{Declaration of Competing Interest}
+
+The authors declare that they have no known competing financial
+interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+
+\section*{Funding}\label{funding}
+\addcontentsline{toc}{section}{Funding}
+
+This work was supported by the National Social Science Foundation of
+China (grant no. 25BTJ045) and the Natural Science Foundation of Jiangxi
+Province (grant no. 20232BAB201025), both awarded to Q.L. The funders
+had no role in study design, data collection and analysis, decision to
+publish, or preparation of the manuscript.
+
+\section*{Declaration of Generative AI and AI-Assisted Technologies in
+the Manuscript Preparation
+Process}\label{declaration-of-generative-ai-and-ai-assisted-technologies-in-the-manuscript-preparation-process}
+\addcontentsline{toc}{section}{Declaration of Generative AI and
+AI-Assisted Technologies in the Manuscript Preparation Process}
+
+During the preparation of this work, the authors used OpenAI Codex and
+Anthropic Claude to support manuscript organization, language editing,
+and critical review. The authors subsequently reviewed and edited the
+content, verified the cited evidence and reported results, and take full
+responsibility for the content of the publication.
+
+\section*{CRediT Authorship Contribution
+Statement}\label{credit-authorship-contribution-statement}
+\addcontentsline{toc}{section}{CRediT Authorship Contribution Statement}
+
+\textbf{Qianning Liu}: Conceptualization, Methodology, Investigation,
+Visualization, Writing - Original Draft, Writing - Review \& Editing,
+Supervision, Funding acquisition. \textbf{Qingsong Shan}: Software, Data
+curation, Formal analysis, Validation, Writing - Review \& Editing.
+
+\section*{Corresponding Author}\label{corresponding-author}
+\addcontentsline{toc}{section}{Corresponding Author}
+
+Qianning Liu\\
+School of Statistics and Data Science\\
+Key Laboratory of Data Science in Finance and Economics\\
+Jiangxi University of Finance and Economics\\
+Nanchang, China\\
+Email: liuqianning@jxufe.edu.cn
+
+
+\bibliography{references/main.bib}
+
+
+
+\end{document}

@@ -1,0 +1,14 @@
+{
+  "experiment_id": "exp004_stress_failure",
+  "reconstructed_at": "2026-07-18T05:11:34.103621",
+  "seed": 42,
+  "metrics_path": "experiments/exp004_stress_failure/results/metrics.json",
+  "metrics_sha256": "b544e1ea40f2963a0c8b6461f696c1e9557e2c02a52327ff88b87e5c19e5832c",
+  "metadata_path": "experiments/exp004_stress_failure/metadata.json",
+  "metadata_sha256": "bea1f1e8a14b52e2aa9f6ee4b15897fac937661a114f297040ea89ba5a939ab1",
+  "split_manifest": "data/splits/real_battery_splits.json",
+  "split_manifest_sha256": "9fce99fb98e70276d7401916a7d1af022a8f6f6fe46db5255b253a2a60ac261e",
+  "processed_data": "data/processed/real_battery_cycle_level_features.csv",
+  "processed_data_sha256": "5d09120003ab3862045b4a312926a22440f8d470a3ff0f8b8e5ded0585974f57",
+  "provenance_limitation": "Reconstructed after the original run from current metrics, metadata, processed data, and split manifest; exact historical shell environment may be unavailable."
+}

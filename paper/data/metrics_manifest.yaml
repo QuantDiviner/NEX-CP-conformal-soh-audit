@@ -1,0 +1,2605 @@
+{
+  "schema_version": "1.0",
+  "project_name": "NEX-CP-NeuralODE RESS Short Communication / Case Study",
+  "unregistered_policy": "fail",
+  "unregistered_allow_list": [],
+  "keys": [
+    {
+      "key": "main_baseline_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp001_main/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp001_main/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "main_baseline_features",
+      "value_type": "array",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp001_main/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp001_main/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "main_baseline_methods",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp001_main/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp001_main/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "main_baseline_selection_rule",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp001_main/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp001_main/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "main_baseline_selected_method",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp001_main/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp001_main/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "main_baseline_selected",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp001_main/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp001_main/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "main_baseline_selection_score",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp001_main/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp001_main/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "main_baseline_group_audit",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp001_main/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp001_main/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "main_baseline_selected_bias_probe",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp001_main/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp001_main/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "main_baseline_persistence_baseline",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp001_main/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp001_main/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "ablation_study_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp002_ablation/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp002_ablation/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "ablation_study_ablation_conditions",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp002_ablation/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp002_ablation/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "ablation_study_conditions",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp002_ablation/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp002_ablation/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "cross_protocol_diagnostic_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp003_cross_protocol/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp003_cross_protocol/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "cross_protocol_diagnostic_methods",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp003_cross_protocol/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp003_cross_protocol/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_features",
+      "value_type": "array",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_methods",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_selection_rule",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_selected_method",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_selected",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_selection_score",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_group_audit",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_selected_bias_probe",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_persistence_baseline",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "stress_failure_probe_bias_probe",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp004_stress_failure/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp004_stress_failure/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_latency_ms_per_sample_mean",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_latency_ms_per_sample_p95",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_latency_ms_per_sample_std",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_comparators",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_n_test_samples_timed",
+      "value_type": "integer",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_n_repetitions",
+      "value_type": "integer",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_n_warmup",
+      "value_type": "integer",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_q_level",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_timed_path",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_timing_semantics",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_platform",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_processor",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_python",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_timer",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_git_commit",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "edge_compute_probe_source",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp005_edge/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp005_edge/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "fpa_repair_negative_diagnostic_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp006_fpa_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp006_fpa_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "fpa_repair_negative_diagnostic_cell_ci_floor",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp006_fpa_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp006_fpa_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "fpa_repair_negative_diagnostic_tasks",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp006_fpa_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp006_fpa_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "fpa_repair_negative_diagnostic_contribution_positioning",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp006_fpa_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp006_fpa_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "fpa_repair_negative_diagnostic_failure_list",
+      "value_type": "array",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp006_fpa_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp006_fpa_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "fpa_repair_negative_diagnostic_split_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp006_fpa_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp006_fpa_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "fpa_repair_negative_diagnostic_run_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp006_fpa_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp006_fpa_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "scoped_method_repair_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp007_fpa_round2_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "scoped_method_repair_cell_ci_floor",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp007_fpa_round2_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "scoped_method_repair_selection_rule",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp007_fpa_round2_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "scoped_method_repair_tasks",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp007_fpa_round2_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "scoped_method_repair_contribution_positioning",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp007_fpa_round2_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "scoped_method_repair_failure_list",
+      "value_type": "array",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp007_fpa_round2_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "scoped_method_repair_split_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp007_fpa_round2_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "scoped_method_repair_run_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp007_fpa_round2_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "scoped_method_repair_legacy_manifest_paths",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp007_fpa_round2_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "reliability_audit_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp008_reliability_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "reliability_audit_cell_ci_floor",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp008_reliability_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "reliability_audit_claim_positioning",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp008_reliability_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "reliability_audit_tasks",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp008_reliability_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "reliability_audit_prev_soh_availability_audit",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp008_reliability_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "reliability_audit_baseline_alignment",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp008_reliability_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "reliability_audit_shift_diagnostics",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp008_reliability_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "reliability_audit_decision_utility_ci",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp008_reliability_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "reliability_audit_claim_boundary_audit",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "claim-boundary audit payload; records prohibited superiority, deployment, and universal-transfer claim patterns",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies claim_boundary_audit from exp008 with the reliability_audit role prefix",
+      "allowed_words": ["bounded", "diagnostic", "case study", "measurement-validity", "benchmark-integrity"],
+      "forbidden_words": ["superior", "deployment-ready", "universal", "Neural-ODE claim", "NEX-CP superiority"]
+    },
+    {
+      "key": "reliability_audit_coverage_alignment_policy",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "coverage-alignment interpretation policy; width comparisons are valid only for coverage-aligned cells",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies coverage_alignment_policy from exp008 with the reliability_audit role prefix",
+      "allowed_words": ["coverage-aligned", "diagnostic", "bounded"],
+      "forbidden_words": ["superior", "best", "unconditionally narrower"]
+    },
+    {
+      "key": "reliability_audit_decision_utility_policy",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "decision-utility reporting policy; contains denominator floor and multiplicity handling",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies decision_utility_policy from exp008 with the reliability_audit role prefix",
+      "allowed_words": ["small-denominator", "exploratory", "multiplicity", "threshold diagnostic"],
+      "forbidden_words": ["safety guarantee", "deployment-safe", "universal"]
+    },
+    {
+      "key": "reliability_audit_feature_schema_policy",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "feature-schema harmonization policy used to separate missingness artifacts from residual protocol shift",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies feature_schema_policy from exp008 with the reliability_audit role prefix",
+      "allowed_words": ["harmonized schema", "residual shift", "diagnostic", "bounded"],
+      "forbidden_words": ["artifact-free", "fully isolated", "universal"]
+    },
+    {
+      "key": "reliability_audit_run_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp008_reliability_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "reliability_audit_split_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp008_reliability_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp008_reliability_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_cell_ci_floor",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_claim_positioning",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_coverage_alignment_policy",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_decision_utility_policy",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_feature_schema_policy",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_claim_boundary_audit",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_tasks",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_prev_soh_availability_audit",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_baseline_alignment",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_shift_diagnostics",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_decision_utility_ci",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_run_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "round4_schema_repair_split_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp009_fpa_round4_repair/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp009_fpa_round4_repair/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "hard_regime_audit_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp010_hard_regime_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp010_hard_regime_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "hard_regime_audit_cell_ci_floor",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp010_hard_regime_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp010_hard_regime_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "hard_regime_audit_hard_regime_policy",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp010_hard_regime_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp010_hard_regime_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "hard_regime_audit_feature_drop",
+      "value_type": "array",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp010_hard_regime_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp010_hard_regime_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "hard_regime_audit_thresholds",
+      "value_type": "array",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp010_hard_regime_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp010_hard_regime_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "hard_regime_audit_horizons",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp010_hard_regime_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp010_hard_regime_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "hard_regime_audit_multiplicity_control",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp010_hard_regime_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp010_hard_regime_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "hard_regime_audit_external_dataset_status",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp010_hard_regime_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp010_hard_regime_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "hard_regime_audit_split_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp010_hard_regime_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp010_hard_regime_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "hard_regime_audit_run_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp010_hard_regime_audit/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp010_hard_regime_audit/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_cell_ci_floor",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_horizon_cycles",
+      "value_type": "integer",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_schema_policy",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_tasks",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_schema_delta_summary",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_multiplicity_control",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_decision_rules",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_external_dataset_inventory",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_split_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "original_paper_substance_run_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp011_original_paper_substance/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp011_original_paper_substance/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_target_coverage",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_cell_ci_floor",
+      "value_type": "number",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_claim_boundary",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_data_policy",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_synthetic_data_used",
+      "value_type": "boolean",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_tasks",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_comparator_summary",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_decision_utility_ci",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_multiplicity_control",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_run_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "shift_adaptive_comparator_split_manifest",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "experiment-role metric payload; preserve nested semantics from source metrics file",
+      "source_raw": "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+      "source_expression": "collect_results.py copies non-private metric fields from experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json with role prefix",
+      "allowed_words": [
+        "bounded",
+        "diagnostic",
+        "case study",
+        "measurement-validity",
+        "benchmark-integrity"
+      ],
+      "forbidden_words": [
+        "superior",
+        "deployment-ready",
+        "universal",
+        "Neural-ODE claim",
+        "NEX-CP superiority"
+      ]
+    },
+    {
+      "key": "fpa_repair_negative_diagnostic_main_split_design",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "deterministic Main split membership and recent-label timing metadata",
+      "source_raw": "experiments/exp006_fpa_repair/results/metrics.json",
+      "source_expression": "run_fpa_repair_experiment.py derives membership from the governed split manifest and processed table",
+      "allowed_words": ["cell-disjoint", "diagnostic", "measurement-validity"],
+      "forbidden_words": ["deployment-ready", "universal"]
+    },
+    {
+      "key": "fpa_repair_negative_diagnostic_selection_rule",
+      "value_type": "string",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "validation-only diagnostic selection rule",
+      "source_raw": "experiments/exp006_fpa_repair/results/metrics.json",
+      "source_expression": "collect_results.py role-prefixed copy",
+      "allowed_words": ["diagnostic", "validation"],
+      "forbidden_words": ["test tuning", "deployment-ready"]
+    },
+    {
+      "key": "scoped_method_repair_main_split_design",
+      "value_type": "object",
+      "aggregation_method": "role_prefixed_copy",
+      "semantic_unit": "deterministic Main split membership and recent-label timing metadata",
+      "source_raw": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+      "source_expression": "run_fpa_repair_experiment.py derives membership from the governed split manifest and processed table",
+      "allowed_words": ["cell-disjoint", "diagnostic", "measurement-validity"],
+      "forbidden_words": ["deployment-ready", "universal"]
+    }
+  ],
+  "method_claims": [
+    {
+      "claim_id": "claim_benchmark_integrity",
+      "statement": "The manuscript may claim a bounded benchmark-integrity and measurement-validity audit, not method superiority.",
+      "code_source": "PROJECT_CHARTER.md; docs/narrative-framework.md; paper/scripts/collect_results.py",
+      "required_metric_keys": [
+        "original_paper_substance_schema_delta_summary",
+        "shift_adaptive_comparator_comparator_summary"
+      ]
+    },
+    {
+      "claim_id": "claim_real_data_only",
+      "statement": "The active manuscript uses real CALCE, NASA, and Oxford cycle-level SOH data only.",
+      "code_source": "PROJECT_CHARTER.md; data/splits/real_battery_manifest.json",
+      "required_metric_keys": [
+        "shift_adaptive_comparator_synthetic_data_used"
+      ]
+    }
+  ]
+}

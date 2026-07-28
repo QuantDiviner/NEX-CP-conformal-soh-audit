@@ -1,0 +1,9 @@
+{
+  "status": "closed",
+  "route": "A_after_bounded_documentation_fixes",
+  "result_type": "positive_scoped",
+  "synthetic_data_used": false,
+  "latest_record": "experiments/exp001_main/records/20260520_023613_record.md",
+  "split_audit": "experiments/exp001_main/records/20260520_023613_split_audit.md",
+  "latest_external_review": "docs/reports/20260520_023613_R1_exp001_main_opus.md"
+}

@@ -1,0 +1,12 @@
+{
+  "processed_data": "data/processed/real_battery_cycle_level_features.csv",
+  "processed_data_sha256": "5d09120003ab3862045b4a312926a22440f8d470a3ff0f8b8e5ded0585974f57",
+  "split_manifest": "data/splits/real_battery_splits.json",
+  "split_manifest_sha256": "9fce99fb98e70276d7401916a7d1af022a8f6f6fe46db5255b253a2a60ac261e",
+  "split_counts": {
+    "train": 7961,
+    "cal": 880,
+    "val": 680,
+    "test": 2323
+  }
+}

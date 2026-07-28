@@ -1,0 +1,14 @@
+{
+  "experiment_id": "exp003_cross_protocol",
+  "reconstructed_at": "2026-07-18T05:11:34.097961",
+  "seed": 42,
+  "metrics_path": "experiments/exp003_cross_protocol/results/metrics.json",
+  "metrics_sha256": "2f3b3e2905656d64771fbddf94a37d351df0b274171c9521a1b3bf589aa3fe06",
+  "metadata_path": "experiments/exp003_cross_protocol/metadata.json",
+  "metadata_sha256": "011855280030abd39ec5c7e3dffbdaf65a9247ef16c11581864e9e01a61d5c96",
+  "split_manifest": "data/splits/real_battery_splits.json",
+  "split_manifest_sha256": "9fce99fb98e70276d7401916a7d1af022a8f6f6fe46db5255b253a2a60ac261e",
+  "processed_data": "data/processed/real_battery_cycle_level_features.csv",
+  "processed_data_sha256": "5d09120003ab3862045b4a312926a22440f8d470a3ff0f8b8e5ded0585974f57",
+  "provenance_limitation": "Reconstructed after the original run from current metrics, metadata, processed data, and split manifest; exact historical shell environment may be unavailable."
+}

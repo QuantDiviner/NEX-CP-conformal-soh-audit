@@ -1,0 +1,6 @@
+/.quarto/
+**/*.quarto_ipynb
+_generated_metadata.yml
+elsarticle.cls
+elsarticle-*.bst
+*.spl

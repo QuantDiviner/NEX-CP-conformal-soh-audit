@@ -1,0 +1,42 @@
+{
+  "experiment_id": "exp012_shift_adaptive_cp_comparator",
+  "status": "validated_route_A",
+  "experiment_tier": "major",
+  "target_journal": "Reliability Engineering & System Safety",
+  "article_type": "Short Communication / Case Study",
+  "source_gate": "Round 10 user direction: continue RESS after methodology_extension better-angle escalation",
+  "synthetic_data_used": false,
+  "dependencies": [
+    "exp008_reliability_audit",
+    "exp009_fpa_round4_repair",
+    "exp010_hard_regime_audit",
+    "exp011_original_paper_substance"
+  ],
+  "planned_outputs": [
+    "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+    "experiments/exp012_shift_adaptive_cp_comparator/results/comparator_summary.json",
+    "experiments/exp012_shift_adaptive_cp_comparator/results/decision_utility_ci.json",
+    "experiments/exp012_shift_adaptive_cp_comparator/results/multiplicity_control.json",
+    "experiments/exp012_shift_adaptive_cp_comparator/results/run_manifest.json",
+    "experiments/exp012_shift_adaptive_cp_comparator/results/split_manifest.json"
+  ],
+  "execution_script": "scripts/run_shift_adaptive_cp_comparator.py",
+  "deterministic_regeneration_command": "python scripts/run_shift_adaptive_cp_comparator.py --output-exp exp012_shift_adaptive_cp_comparator --seed 42 --bootstrap-reps 1000 --min-decision-denominator 5",
+  "result_files": [
+    "experiments/exp012_shift_adaptive_cp_comparator/results/metrics.json",
+    "experiments/exp012_shift_adaptive_cp_comparator/results/comparator_summary.json",
+    "experiments/exp012_shift_adaptive_cp_comparator/results/decision_utility_ci.json",
+    "experiments/exp012_shift_adaptive_cp_comparator/results/multiplicity_control.json",
+    "experiments/exp012_shift_adaptive_cp_comparator/results/run_manifest.json",
+    "experiments/exp012_shift_adaptive_cp_comparator/results/split_manifest.json"
+  ],
+  "external_review": "docs/reports/20260601_115106_T_experiment_reviewer_exp012_shift_adaptive_cp_comparator.md",
+  "route": "A",
+  "confidence": "high",
+  "review_recommended_next_state": "EXP_VALIDATED",
+  "jump_contract_required": true,
+  "jump_contract_target_state": "FWK_DESIGNING",
+  "fpa_round": 10,
+  "fpa_blocker": "C5.COMPARATIVE_VALIDITY",
+  "repair_scope": "shift-adaptive conformal comparator on existing real-data splits"
+}

@@ -1,0 +1,40 @@
+## Conclusion {#sec-conclusion}
+
+This case study shows why conformal battery SOH benchmark results should be audited before being treated as reliability evidence. In the corrected real-data analyses, recent-label access produces large but task-dependent method-matched coverage changes. The as-used schema bundle changes coverage in two tasks and increases LNAS false acceptance at one corrected threshold, but it jointly changes multiple columns and the endpoint-wide independent-control gate fails, blocking attribution to bookkeeping fields.
+
+The contribution is therefore a bounded measurement-validity warning: conformal SOH intervals may be useful, but their serviceability interpretation depends on the benchmark-integrity discipline developed and discussed above. Future work should apply this audit to broader field data and prospective forecasting settings.
+
+The implication for reliability engineering is simple: coverage must not be promoted to deployment reliability until the benchmark's information set, split integrity, controls, and decision consequences survive the same audit.
+
+## Data Availability {.unnumbered}
+
+This study uses real cycle-level SOH records from public CALCE, NASA, and Oxford battery datasets. The dataset source records are the CALCE Battery Research Group battery data repository (https://calce.umd.edu/battery-data), the NASA Ames Prognostics Center of Excellence data repository (https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/), and the Oxford Battery Degradation Dataset record (https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac), accessed 2026-06-02. The authors have not yet selected and authorized an external archival repository, so a public deposit cannot be completed from the present revision environment. Before submission, the versioned derived-data package, source-data provenance, and archive DOI or URL must be inserted here. The complete package can be supplied to reviewers during assessment.
+
+## Code Availability {.unnumbered}
+
+Analysis code, locked dependencies, and run manifests are maintained in the project repository. They must be deposited with the derived-data package and the archive DOI or URL inserted before submission. Until that author-controlled deposit is completed, the versioned analysis package can be supplied to reviewers during assessment.
+
+## Declaration of Competing Interest {.unnumbered}
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+## Funding {.unnumbered}
+
+This work was supported by the National Social Science Foundation of China (grant no. 25BTJ045) and the Natural Science Foundation of Jiangxi Province (grant no. 20232BAB201025), both awarded to Q.L. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+
+## Declaration of Generative AI and AI-Assisted Technologies in the Manuscript Preparation Process {.unnumbered}
+
+During the preparation of this work, the authors used OpenAI Codex and Anthropic Claude to support manuscript organization, language editing, and critical review. The authors subsequently reviewed and edited the content, verified the cited evidence and reported results, and take full responsibility for the content of the publication.
+
+## CRediT Authorship Contribution Statement {.unnumbered}
+
+**Qianning Liu**: Conceptualization, Methodology, Investigation, Visualization, Writing - Original Draft, Writing - Review & Editing, Supervision, Funding acquisition. **Qingsong Shan**: Software, Data curation, Formal analysis, Validation, Writing - Review & Editing.
+
+## Corresponding Author {.unnumbered}
+
+Qianning Liu  
+School of Statistics and Data Science  
+Key Laboratory of Data Science in Finance and Economics  
+Jiangxi University of Finance and Economics  
+Nanchang, China  
+Email: liuqianning@jxufe.edu.cn

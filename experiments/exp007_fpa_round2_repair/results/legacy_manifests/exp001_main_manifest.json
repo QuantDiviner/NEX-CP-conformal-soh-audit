@@ -1,0 +1,14 @@
+{
+  "experiment_id": "exp001_main",
+  "reconstructed_at": "2026-07-18T05:11:34.087949",
+  "seed": 42,
+  "metrics_path": "experiments/exp001_main/results/metrics.json",
+  "metrics_sha256": "ce033bb88ab5cd672d4648055e50647b7cb40895650c473cd6a0874c5fd9706d",
+  "metadata_path": "experiments/exp001_main/metadata.json",
+  "metadata_sha256": "ff56bbe4dc0d366638bd02e9f9e3f16cca6c8bdf46a33e7dc36239f83bbaafe6",
+  "split_manifest": "data/splits/real_battery_splits.json",
+  "split_manifest_sha256": "9fce99fb98e70276d7401916a7d1af022a8f6f6fe46db5255b253a2a60ac261e",
+  "processed_data": "data/processed/real_battery_cycle_level_features.csv",
+  "processed_data_sha256": "5d09120003ab3862045b4a312926a22440f8d470a3ff0f8b8e5ded0585974f57",
+  "provenance_limitation": "Reconstructed after the original run from current metrics, metadata, processed data, and split manifest; exact historical shell environment may be unavailable."
+}

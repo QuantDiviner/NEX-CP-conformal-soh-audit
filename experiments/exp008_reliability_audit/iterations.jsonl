@@ -1,0 +1,2 @@
+{"timestamp":"2026-05-30T17:30:00","event":"planned","state":"EXP_PLANNING","summary":"Created abandon-forward RESS reliability/safety audit plan."}
+{"timestamp":"2026-05-30T17:36:00","event":"executed","state":"EXP_EXECUTING","summary":"Ran scripts/run_reliability_audit_experiment.py with seed 42, 1000 bootstrap reps, NGBoost included."}

@@ -1,0 +1,307 @@
+---
+title: "Recent-Label Dependence in Cross-Dataset Conformal SOH Evaluation: A Benchmark-Integrity Case Study"
+metadata-files:
+  - _generated_metadata.yml
+author:
+  - name: "Qingsong Shan"
+    email: "shanqingsong@jxufe.edu.cn"
+    affiliations:
+      - id: jxufe-stat
+        name: "Jiangxi University of Finance and Economics"
+        department: "School of Statistics and Data Science, Key Laboratory of Data Science in Finance and Economics"
+        city: "Nanchang"
+        country: "China"
+    note: "Open Researcher and Contributor Identifier (ORCID): 0000-0001-9231-5699"
+  - name: "Qianning Liu"
+    email: "liuqianning@jxufe.edu.cn"
+    affiliations:
+      - ref: jxufe-stat
+    attributes:
+      corresponding: true
+    note: "Open Researcher and Contributor Identifier (ORCID): 0000-0002-7654-6451"
+format:
+  elsevier-pdf:
+    keep-tex: true
+    colorlinks: true
+    journal:
+      name: "Reliability Engineering & System Safety"
+      formatting: preprint
+      cite-style: number
+  gfm: default
+bibliography: references/main.bib
+jupyter: python3
+---
+
+```{python}
+#| echo: false
+#| output: false
+
+import json
+from pathlib import Path
+
+data_dir = Path("../data")
+with open(data_dir / "metrics.json") as f:
+    metrics = json.load(f)
+
+def pct(x, digits=1):
+    return f"{100 * x:.{digits}f}%"
+
+def signed_pct(x, digits=1):
+    return f"{100 * x:+.{digits}f}%"
+
+def signed_pp(x, digits=1):
+    return f"{100 * x:+.{digits}f} pp"
+
+def num(x, digits=3):
+    return f"{x:.{digits}f}"
+
+def val(path, default="[metric pending]"):
+    cur = metrics
+    for part in path:
+        if isinstance(cur, dict) and part in cur:
+            cur = cur[part]
+        else:
+            return default
+    return cur
+
+def interval_s(row, key="coverage_delta"):
+    low_key = key + "_ci_low"
+    high_key = key + "_ci_high"
+    if low_key not in row and key == "coverage_delta":
+        low_key = "coverage_ci_low"
+        high_key = "coverage_ci_high"
+    return f"{signed_pp(row[key])} [{signed_pp(row[low_key])}, {signed_pp(row[high_key])}]"
+
+def rate_ci_s(cell):
+    return f"{pct(cell['rate'])} [{pct(cell['ci_low'])}, {pct(cell['ci_high'])}], n={cell['denominator_n']}"
+
+leave_nasa_artifact_delta = next(
+    r for r in metrics["original_paper_substance_schema_delta_summary"]["rows"]
+    if r["task"] == "leave_NASA_out"
+    and r["comparison"] == "artifact_bookkeeping_as_used_minus_clean_original"
+)["coverage_delta"]
+largest_recent_label_delta = metrics["original_paper_substance_schema_delta_summary"]["largest_abs_coverage_delta"]["coverage_delta"]
+largest_recent_label_task = metrics["original_paper_substance_schema_delta_summary"]["largest_abs_coverage_delta"]["task"]
+adaptive_rows = metrics["shift_adaptive_comparator_comparator_summary"]["rows"]
+adaptive_recovered = sum(1 for r in adaptive_rows if r["adaptive_meets_target"])
+adaptive_total = len(adaptive_rows)
+task_label_map = {
+    "main_heldout": "Main",
+    "leave_CALCE_out": "LCAL",
+    "target_recalibrated_CALCE": "TCAL",
+    "leave_NASA_out": "LNAS",
+    "target_recalibrated_NASA": "TNAS",
+    "leave_Oxford_out": "LOxf",
+    "target_recalibrated_Oxford": "TOxf",
+}
+main_cell_block = metrics["scoped_method_repair_tasks"]["main_heldout"]["methods"]["persistence_anchor_protocol_mondrian_cp"]
+main_cov_s = pct(main_cell_block["coverage"])
+main_ci_low_s = pct(main_cell_block["cell_block_ci_low"])
+main_ci_high_s = pct(main_cell_block["cell_block_ci_high"])
+main_width_s = num(main_cell_block["mean_width"])
+main_n = main_cell_block["n"]
+target_coverage_s = pct(metrics["main_baseline_target_coverage"], 0)
+main_q_level = main_cell_block["q_level"]
+source_experiment_count = len(metrics["_meta"]["source_experiments"])
+main_selected_method = metrics["main_baseline_selected_method"]
+scoped_tasks = metrics["scoped_method_repair_tasks"]
+main_split_design = metrics["scoped_method_repair_main_split_design"]
+main_split_partitions = main_split_design["partitions"]
+source_cycle_rows_s = f"{main_split_design['source_cycle_rows']:,}"
+eligible_cycle_rows_s = f"{main_split_design['eligible_cycle_rows']:,}"
+excluded_first_rows_s = f"{main_split_design['excluded_first_rows']:,}"
+main_selected_method_s = "persistence-anchor Mondrian conformal diagnostic"
+without_prev = metrics["ablation_study_conditions"]["without_prev_soh"]
+without_prev_method = without_prev["selected_method"]
+without_prev_method_s = "gradient-boosting non-exchangeable conformal diagnostic"
+without_prev_cov_s = pct(without_prev["selected"]["coverage"])
+without_prev_width_s = num(without_prev["selected"]["mean_width"])
+without_prev_delta_cov_s = signed_pp(without_prev["delta_vs_full"]["coverage"])
+without_prev_delta_width_s = num(without_prev["delta_vs_full"]["mean_width"])
+du_false_safe_s = rate_ci_s(metrics["reliability_audit_decision_utility_ci"]["leave_CALCE_out"]["cqr_gradient_boosting"]["soh_threshold_0.70"]["false_safe_per_actual_unsafe"])
+du_false_alarm_s = rate_ci_s(metrics["reliability_audit_decision_utility_ci"]["leave_CALCE_out"]["cqr_gradient_boosting"]["soh_threshold_0.70"]["false_alarm_per_actual_safe"])
+du_threshold_080_s = "0.80"
+serviceability_thresholds = sorted({
+    float(key.rsplit("_", 1)[1])
+    for task in metrics["reliability_audit_decision_utility_ci"].values()
+    for method in task.values()
+    for key in method
+    if key.startswith("soh_threshold_")
+})
+serviceability_thresholds_s = ", ".join(f"{threshold:.2f}" for threshold in serviceability_thresholds)
+adaptive_recovered_tasks_s = ", ".join(
+    task_label_map[t] for t in metrics["shift_adaptive_comparator_comparator_summary"]["tasks_recovered_by_adaptive"]
+)
+adaptive_unrecovered_tasks_s = ", ".join(
+    task_label_map[t] for t in metrics["shift_adaptive_comparator_comparator_summary"]["tasks_not_recovered_by_adaptive"]
+)
+adaptive_point_failure_recovered = sum(
+    1 for r in adaptive_rows
+    if r["adaptive_meets_target"] and r["standard_coverage"] < metrics["main_baseline_target_coverage"]
+)
+adaptive_point_failure_recovered_s = str(adaptive_point_failure_recovered)
+adaptive_point_failure_summary_s = (
+    "one standard point-coverage failure"
+    if adaptive_point_failure_recovered == 1
+    else f"{adaptive_point_failure_recovered} standard point-coverage failures"
+)
+adaptive_lower_bound_recovered_rows = [
+    r for r in adaptive_rows
+    if r["adaptive_meets_target"]
+    and r["standard_cell_ci_low"] < metrics["main_baseline_target_coverage"]
+    and r["adaptive_cell_ci_low"] >= metrics["main_baseline_target_coverage"]
+]
+adaptive_lower_bound_recovered_s = str(len(adaptive_lower_bound_recovered_rows))
+adaptive_lower_bound_summary_s = (
+    "no lower-bound shortfall"
+    if len(adaptive_lower_bound_recovered_rows) == 0
+    else (
+        "one lower-bound shortfall"
+        if len(adaptive_lower_bound_recovered_rows) == 1
+        else f"{len(adaptive_lower_bound_recovered_rows)} lower-bound shortfalls"
+    )
+)
+adaptive_lower_bound_recovered_tasks_s = ", ".join(
+    task_label_map[r["task"]] for r in adaptive_lower_bound_recovered_rows
+)
+adaptive_leave_nasa_row = next(r for r in adaptive_rows if r["task"] == "leave_NASA_out")
+adaptive_leave_nasa_standard_low_s = pct(adaptive_leave_nasa_row["standard_cell_ci_low"])
+adaptive_leave_nasa_adaptive_low_s = pct(adaptive_leave_nasa_row["adaptive_cell_ci_low"])
+leave_nasa_raw_smd_s = num(metrics["round4_schema_repair_shift_diagnostics"]["leave_NASA_out"]["max_abs_standardized_mean_diff"], 2)
+leave_nasa_common_smd_s = num(metrics["round4_schema_repair_shift_diagnostics"]["leave_NASA_out_common_feature_schema"]["max_abs_standardized_mean_diff"], 2)
+largest_recent_label_delta_s = f"{100*abs(largest_recent_label_delta):.1f} pp"
+largest_recent_label_delta_signed_s = signed_pp(largest_recent_label_delta)
+lnas_recent_label_delta_s = f"{100*abs(next(r for r in metrics['original_paper_substance_schema_delta_summary']['rows'] if r['task'] == 'leave_NASA_out' and r['comparison'] == 'recent_label_reference_common_no_recent_minus_prev_soh_reference')['coverage_delta']):.1f} pp"
+du_threshold_s = "0.70"
+leave_nasa_artifact_delta_s = f"{100*abs(leave_nasa_artifact_delta):.1f} pp"
+leave_nasa_artifact_delta_signed_s = signed_pp(leave_nasa_artifact_delta)
+fpa_negative_failure_count = len(metrics["fpa_repair_negative_diagnostic_failure_list"])
+main_cqr_width_ratio_s = num(
+    metrics["round4_schema_repair_baseline_alignment"]["main_heldout"]
+    ["coverage_aligned_baseline_view"]["cqr_gradient_boosting"]["width_ratio_vs_persistence"],
+    2,
+)
+leave_nasa_ngboost_false_safe_s = rate_ci_s(
+    metrics["reliability_audit_decision_utility_ci"]["leave_NASA_out"]
+    ["ngboost_normal_cqr"]["soh_threshold_0.80"]["false_safe_per_actual_unsafe"]
+)
+no_recent_tasks = metrics["original_paper_substance_tasks"]
+no_recent_common_main = no_recent_tasks["main_heldout"]["schemas"]["common_cycle_no_recent_schema"]["metrics"]
+no_recent_common_leave_nasa = no_recent_tasks["leave_NASA_out"]["schemas"]["common_cycle_no_recent_schema"]["metrics"]
+no_recent_common_leave_oxford = no_recent_tasks["leave_Oxford_out"]["schemas"]["common_cycle_no_recent_schema"]["metrics"]
+no_recent_clean_main = no_recent_tasks["main_heldout"]["schemas"]["clean_original_no_recent_schema"]["metrics"]
+no_recent_common_main_s = pct(no_recent_common_main["coverage"])
+no_recent_common_leave_nasa_s = pct(no_recent_common_leave_nasa["coverage"])
+no_recent_common_leave_oxford_s = pct(no_recent_common_leave_oxford["coverage"])
+no_recent_clean_main_s = pct(no_recent_clean_main["coverage"])
+
+# --- Schema-artifact determination: coverage-lens headline + false-acceptance signed diagnostic ---
+from statistics import NormalDist
+substance_decision_rules = metrics["original_paper_substance_decision_rules"]
+substance_multiplicity = metrics["original_paper_substance_multiplicity_control"]
+substance_tasks_raw = metrics["original_paper_substance_tasks"]
+artifact_rows = substance_decision_rules["rows"]
+artifact_by_task = {r["task"]: r for r in artifact_rows}
+lnas_bundle_fs_rule = artifact_by_task["leave_NASA_out"]
+lnas_bundle_fs_delta_s = signed_pp(lnas_bundle_fs_rule["fs_delta"])
+lnas_bundle_fs_threshold_s = lnas_bundle_fs_rule["fs_threshold"].replace("soh_threshold_", "")
+lnas_bundle_fs_exact_p_s = f"{lnas_bundle_fs_rule['fs_exact_pvalue']:.3g}"
+lnas_bundle_fs_n_s = str(lnas_bundle_fs_rule["fs_denominator_n"])
+artifact_family_n = substance_multiplicity["family_n"]
+artifact_alpha_s = num(substance_multiplicity["alpha"], 2)
+import math as _math
+_ba = substance_multiplicity['bonferroni_alpha']
+_be = int(_math.floor(_math.log10(_ba)))
+_sup = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
+artifact_bonferroni_alpha_s = f"{_ba/10**_be:.1f}×10{str(_be).translate(_sup)}"
+artifact_bonferroni_z_s = num(NormalDist().inv_cdf(1 - substance_multiplicity['bonferroni_alpha'] / 2), 1)
+artifact_coverage_min_pp = int(round(100 * substance_decision_rules["artifact_delta_min_abs"]))
+decision_min_denominator = metrics["round4_schema_repair_decision_utility_policy"]["min_denominator"]
+artifact_total_count_s = str(len(artifact_rows))
+# Headline schema artifact = COVERAGE lens only (robust criterion: CI excludes 0 and |delta| >= 3pp)
+coverage_artifact_keys = substance_decision_rules["artifact_positive_tasks"]
+coverage_artifact_tasks_s = ", ".join(task_label_map[t] for t in coverage_artifact_keys) if coverage_artifact_keys else "none"
+coverage_artifact_count_s = str(len(coverage_artifact_keys))
+negative_control_failure_keys = substance_decision_rules["negative_control_failures"]
+negative_control_failure_tasks_s = ", ".join(task_label_map[t] for t in negative_control_failure_keys) if negative_control_failure_keys else "none"
+schema_claim_allowed = bool(substance_decision_rules["claim_allowed"])
+# False acceptance reported as a SIGNED diagnostic (not a headline trigger)
+fs_degrading_keys = substance_decision_rules["fs_safety_degrading_tasks"]
+fs_improving_keys = substance_decision_rules["fs_safety_improving_tasks"]
+fs_degrading_count_s = str(len(fs_degrading_keys))
+def _fs_desc(keys):
+    parts = []
+    for k in keys:
+        r = artifact_by_task[k]
+        thr = r["fs_threshold"].replace("soh_threshold_", "") if r.get("fs_threshold") else "?"
+        direction = r.get("fs_direction", "signed")
+        direction = {
+            "safer": "risk-decreasing",
+            "safety-degrading": "risk-increasing",
+        }.get(direction, direction)
+        parts.append(f"{task_label_map[k]} ({100*r['fs_delta']:+.0f} pp [{100*r['fs_ci_low']:+.0f}, {100*r['fs_ci_high']:+.0f}], n={r['fs_denominator_n']}, {direction} at the {thr} SOH threshold)")
+    return "; ".join(parts) if parts else "none"
+fs_degrading_desc_s = _fs_desc(fs_degrading_keys)
+fs_improving_desc_s = _fs_desc(fs_improving_keys)
+# Degenerate boundary flips (false acceptance deterministically 0<->1 under a schema)
+fs_flip_keys = []
+for r in artifact_rows:
+    for thr in r.get("fs_degenerate_thresholds", []):
+        cell = substance_tasks_raw[r["task"]]["schema_deltas"]["artifact_bookkeeping_as_used_minus_clean_original"]["false_safe_rate_delta_a_minus_b"][thr]
+        if abs(cell["delta"]) >= 0.5:
+            fs_flip_keys.append(r["task"])
+            break
+fs_flip_tasks_s = ", ".join(task_label_map[t] for t in fs_flip_keys) if fs_flip_keys else "none"
+
+# --- Absolute all-acceptable collapse: surface the deterministic false-acceptance=1.0 cells, not only the schema delta ---
+_lnas_node = substance_tasks_raw["leave_NASA_out"]
+_lnas_raw_du = _lnas_node["schemas"]["as_used_exp010_schema"]["metrics"]["decision_utility_ci"]
+_lnas_clean_du = _lnas_node["schemas"]["clean_original_no_recent_schema"]["metrics"]["decision_utility_ci"]
+_lnas_prev_du = _lnas_node["schemas"]["common_cycle_prev_soh_reference_schema"]["metrics"]["decision_utility_ci"]
+_lnas_fs_delta = _lnas_node["schema_deltas"]["artifact_bookkeeping_as_used_minus_clean_original"]["false_safe_rate_delta_a_minus_b"]
+
+def _thr_num(k):
+    return float(k.replace("soh_threshold_", ""))
+
+def _fmt_thr_range(keys):
+    if not keys:
+        return "none"
+    nums = sorted(_thr_num(k) for k in keys)
+    return f"{nums[0]:.2f}–{nums[-1]:.2f}" if len(nums) > 1 else f"{nums[0]:.2f}"
+
+def _fs_rate(du, k):
+    return du[k]["false_safe_per_actual_unsafe"]["rate"]
+
+_lnas_thr_keys = sorted(_lnas_raw_du.keys(), key=_thr_num)
+_lnas_raw_allsafe = [k for k in _lnas_thr_keys if _fs_rate(_lnas_raw_du, k) == 1.0]
+_lnas_clean_allsafe = [k for k in _lnas_thr_keys if _fs_rate(_lnas_clean_du, k) == 1.0]
+lnas_allsafe_raw_thresholds_s = _fmt_thr_range(_lnas_raw_allsafe)
+lnas_allsafe_clean_thresholds_s = _fmt_thr_range(_lnas_clean_allsafe)
+_lnas_allsafe_ns = [_lnas_raw_du[k]["false_safe_per_actual_unsafe"]["denominator_n"] for k in _lnas_raw_allsafe]
+lnas_allsafe_n_min = min(_lnas_allsafe_ns)
+lnas_allsafe_n_max = max(_lnas_allsafe_ns)
+lnas_restored_max_fs_s = pct(max(_fs_rate(_lnas_prev_du, k) for k in _lnas_thr_keys))
+lnas_fullfeat_cqr_080_s = pct(metrics["reliability_audit_decision_utility_ci"]["leave_NASA_out"]["cqr_gradient_boosting"]["soh_threshold_0.80"]["false_safe_per_actual_unsafe"]["rate"])
+lnas_fullfeat_ngboost_080_s = pct(metrics["reliability_audit_decision_utility_ci"]["leave_NASA_out"]["ngboost_normal_cqr"]["soh_threshold_0.80"]["false_safe_per_actual_unsafe"]["rate"])
+# Name the schema that collapses to all-acceptable at the excluded flip threshold (derived, not assumed)
+_lnas_flip_thrs = [k for k in _lnas_thr_keys if abs(_lnas_fs_delta[k]["delta"]) >= 0.5]
+fs_flip_threshold_s = _fmt_thr_range(_lnas_flip_thrs)
+if _lnas_flip_thrs and _fs_rate(_lnas_raw_du, _lnas_flip_thrs[0]) == 1.0:
+    fs_flip_schema_s = "the raw as-used bookkeeping schema"
+elif _lnas_flip_thrs:
+    fs_flip_schema_s = "the cleaned no-recent schema"
+else:
+    fs_flip_schema_s = "one schema"
+```
+
+{{< include 01-introduction.qmd >}}
+
+{{< include 02-related-work.qmd >}}
+
+{{< include 03-methodology.qmd >}}
+
+{{< include 04-results.qmd >}}
+
+{{< include 05-discussion.qmd >}}
+
+{{< include 06-conclusion.qmd >}}

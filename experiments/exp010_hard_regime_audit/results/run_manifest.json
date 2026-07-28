@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-07-18T05:04:35.951623",
+  "script": "scripts/run_hard_regime_audit_experiment.py",
+  "argv": [
+    "scripts/run_hard_regime_audit_experiment.py",
+    "--output-exp",
+    "exp010_hard_regime_audit",
+    "--seed",
+    "42",
+    "--bootstrap-reps",
+    "1000",
+    "--min-decision-denominator",
+    "5",
+    "--horizons",
+    "0,5,20"
+  ],
+  "experiment_id": "exp010_hard_regime_audit",
+  "seed": 42,
+  "bootstrap_reps": 1000,
+  "min_decision_denominator": 5,
+  "horizons": [
+    0,
+    5,
+    20
+  ],
+  "thresholds": [
+    0.9,
+    0.85,
+    0.8,
+    0.75,
+    0.7,
+    0.65
+  ],
+  "python": "3.11.15",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "runtime_packages": {
+    "python": "3.11.15",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.7.2"
+  },
+  "git_commit": "d9345592979d2c929e611b54056b4176e79dbe15",
+  "synthetic_data_used": false,
+  "target_journal": "Reliability Engineering & System Safety",
+  "deterministic_regeneration_command": "python scripts/run_hard_regime_audit_experiment.py --output-exp exp010_hard_regime_audit --seed 42 --bootstrap-reps 1000 --min-decision-denominator 5 --horizons 0,5,20",
+  "fpa_revision_plan": "docs/reports/20260530_215915_fpa_revision_20260530_215247_revision_plan.md"
+}

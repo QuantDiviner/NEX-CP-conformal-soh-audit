@@ -1,0 +1,15 @@
+{
+  "status": "closed",
+  "experiment_tier": "major",
+  "route": "E",
+  "result_type": "negative_diagnostic",
+  "synthetic_data_used": false,
+  "target_journal": "Reliability Engineering & System Safety",
+  "source_fpa_revision_plan": "docs/reports/20260530_161104_fpa_revision_20260530_160139_revision_plan.md",
+  "execution_log": "experiments/exp006_fpa_repair/execution-log.md",
+  "latest_metrics": "experiments/exp006_fpa_repair/results/metrics.json",
+  "run_manifest": "experiments/exp006_fpa_repair/results/run_manifest.json",
+  "split_manifest": "experiments/exp006_fpa_repair/results/split_manifest.json",
+  "latest_record": "experiments/exp006_fpa_repair/records/20260530_161826_record.md",
+  "latest_external_review": "docs/reports/20260530_161903_D-EXP-exp006_fpa_repair_codex.md"
+}

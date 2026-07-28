@@ -1,0 +1,15 @@
+# Feasibility Guard: exp001_main
+
+Time: 20260520_003258
+
+## Stage 1 Mechanical Checks
+- [x] results/metrics.json exists
+- [x] metrics JSON parseable
+- [x] synthetic data not declared
+- [x] target coverage present
+- [x] no NaN/Inf float values in metrics
+
+## Gate 3 Findings
+- P2: Main marginal coverage reaches target in the current split, but group/domain audit must remain visible.
+- P1: Current implementation is cycle-level SOH regression, not yet a Neural-ODE backbone.
+- P1: MIT/Stanford primary dataset is linked but not yet parsed into this batch.

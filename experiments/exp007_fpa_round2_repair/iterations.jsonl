@@ -1,0 +1,1 @@
+{"timestamp":"2026-05-30T16:46:37+0800","event":"round2_repair_run","command":"python scripts/run_fpa_repair_experiment.py --output-exp exp007_fpa_round2_repair --seed 42 --bootstrap-reps 1000 --include-ngboost","status":"completed","synthetic_data_used":false,"metrics":"experiments/exp007_fpa_round2_repair/results/metrics.json"}

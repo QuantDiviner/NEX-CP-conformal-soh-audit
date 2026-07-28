@@ -1,0 +1,1 @@
+{"timestamp":"2026-05-30T16:16:49+0800","event":"initial_repair_run","command":"python scripts/run_fpa_repair_experiment.py --seed 42 --bootstrap-reps 1000","status":"completed","synthetic_data_used":false,"metrics":"experiments/exp006_fpa_repair/results/metrics.json"}

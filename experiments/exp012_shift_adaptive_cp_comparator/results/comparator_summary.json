@@ -1,0 +1,107 @@
+{
+  "comparison_policy": "No method-superiority claim; report whether shift-adaptive CP recovers, partially recovers, or fails under protocol shift.",
+  "rows": [
+    {
+      "task": "main_heldout",
+      "standard_coverage": 0.9586741282823935,
+      "adaptive_coverage": 0.8936719758932415,
+      "coverage_delta_adaptive_minus_standard": -0.06500215238915197,
+      "standard_cell_ci_low": 0.9501198630136987,
+      "adaptive_cell_ci_low": 0.8370993861624356,
+      "standard_mean_width": 0.10211366617930907,
+      "adaptive_mean_width": 0.0961739617131001,
+      "width_ratio_adaptive_vs_standard": 0.9418324237249596,
+      "adaptive_meets_target": false,
+      "interpretation": "failure_boundary"
+    },
+    {
+      "task": "leave_CALCE_out",
+      "standard_coverage": 0.7552622498274673,
+      "adaptive_coverage": 0.6722739820565907,
+      "coverage_delta_adaptive_minus_standard": -0.08298826777087653,
+      "standard_cell_ci_low": 0.6912578623296419,
+      "adaptive_cell_ci_low": 0.6091803457239154,
+      "standard_mean_width": 0.15720647755351144,
+      "adaptive_mean_width": 0.08052709013680356,
+      "width_ratio_adaptive_vs_standard": 0.5122377359380308,
+      "adaptive_meets_target": false,
+      "interpretation": "failure_boundary"
+    },
+    {
+      "task": "target_recalibrated_CALCE",
+      "standard_coverage": 0.6555060963808786,
+      "adaptive_coverage": 0.679698083994581,
+      "coverage_delta_adaptive_minus_standard": 0.024191987613702337,
+      "standard_cell_ci_low": 0.5292712505013656,
+      "adaptive_cell_ci_low": 0.5654363079872148,
+      "standard_mean_width": 0.29031324164272704,
+      "adaptive_mean_width": 0.3020028001300045,
+      "width_ratio_adaptive_vs_standard": 1.0402653300315636,
+      "adaptive_meets_target": false,
+      "interpretation": "failure_boundary"
+    },
+    {
+      "task": "leave_NASA_out",
+      "standard_coverage": 0.9039351851851852,
+      "adaptive_coverage": 0.9120370370370371,
+      "coverage_delta_adaptive_minus_standard": 0.00810185185185186,
+      "standard_cell_ci_low": 0.8603570493148804,
+      "adaptive_cell_ci_low": 0.8704912925050723,
+      "standard_mean_width": 0.21565184397984238,
+      "adaptive_mean_width": 0.21666944995711154,
+      "width_ratio_adaptive_vs_standard": 1.004718744613954,
+      "adaptive_meets_target": true,
+      "interpretation": "recovery_candidate"
+    },
+    {
+      "task": "target_recalibrated_NASA",
+      "standard_coverage": 0.879948914431673,
+      "adaptive_coverage": 0.9374201787994891,
+      "coverage_delta_adaptive_minus_standard": 0.05747126436781613,
+      "standard_cell_ci_low": 0.836189298102428,
+      "adaptive_cell_ci_low": 0.8970180074802524,
+      "standard_mean_width": 0.24612341037223223,
+      "adaptive_mean_width": 0.25056258619283783,
+      "width_ratio_adaptive_vs_standard": 1.0180363818861924,
+      "adaptive_meets_target": true,
+      "interpretation": "recovery_candidate"
+    },
+    {
+      "task": "leave_Oxford_out",
+      "standard_coverage": 0.42857142857142855,
+      "adaptive_coverage": 0.42857142857142855,
+      "coverage_delta_adaptive_minus_standard": 0.0,
+      "standard_cell_ci_low": 0.34955582896875564,
+      "adaptive_cell_ci_low": 0.34955582896875564,
+      "standard_mean_width": 0.10498921251930758,
+      "adaptive_mean_width": 0.10366678107997311,
+      "width_ratio_adaptive_vs_standard": 0.9874041207891594,
+      "adaptive_meets_target": false,
+      "interpretation": "failure_boundary"
+    },
+    {
+      "task": "target_recalibrated_Oxford",
+      "standard_coverage": 0.9871244635193133,
+      "adaptive_coverage": 0.9871244635193133,
+      "coverage_delta_adaptive_minus_standard": 0.0,
+      "standard_cell_ci_low": 0.9694323144104804,
+      "adaptive_cell_ci_low": 0.9694323144104804,
+      "standard_mean_width": 0.042081611841029556,
+      "adaptive_mean_width": 0.042081611841029556,
+      "width_ratio_adaptive_vs_standard": 1.0,
+      "adaptive_meets_target": true,
+      "interpretation": "recovery_candidate"
+    }
+  ],
+  "tasks_recovered_by_adaptive": [
+    "leave_NASA_out",
+    "target_recalibrated_NASA",
+    "target_recalibrated_Oxford"
+  ],
+  "tasks_not_recovered_by_adaptive": [
+    "main_heldout",
+    "leave_CALCE_out",
+    "target_recalibrated_CALCE",
+    "leave_Oxford_out"
+  ]
+}

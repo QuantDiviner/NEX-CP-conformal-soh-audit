@@ -1,0 +1,210 @@
+{
+  "main_heldout": {
+    "task": "main_heldout",
+    "coverage_aligned_baseline_view": {
+      "qr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.06844597503228589,
+        "width_ratio_vs_persistence": 2.449044869850957,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "cqr_gradient_boosting": {
+        "coverage_gap_vs_persistence": 0.01076194575979339,
+        "width_ratio_vs_persistence": 2.7212565921310445,
+        "coverage_aligned": true,
+        "width_comparison_permitted": true,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "ngboost_normal_cqr": {
+        "coverage_gap_vs_persistence": -0.10632802410675857,
+        "width_ratio_vs_persistence": 2.0137539861291667,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      }
+    }
+  },
+  "leave_CALCE_out": {
+    "task": "leave_CALCE_out",
+    "coverage_aligned_baseline_view": {
+      "qr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.4438405797101449,
+        "width_ratio_vs_persistence": 0.5680307621396657,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "cqr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.19824016563146996,
+        "width_ratio_vs_persistence": 1.819189372472943,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "ngboost_normal_cqr": {
+        "coverage_gap_vs_persistence": -0.1663216011042098,
+        "width_ratio_vs_persistence": 2.1085691278674217,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      }
+    }
+  },
+  "target_recalibrated_CALCE": {
+    "task": "target_recalibrated_CALCE",
+    "coverage_aligned_baseline_view": {
+      "qr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.30868976195084186,
+        "width_ratio_vs_persistence": 13.850817455596104,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "cqr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.17185988000774144,
+        "width_ratio_vs_persistence": 15.300322057316507,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "ngboost_normal_cqr": {
+        "coverage_gap_vs_persistence": -0.2119218114960325,
+        "width_ratio_vs_persistence": 13.186101045268682,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      }
+    }
+  },
+  "leave_NASA_out": {
+    "task": "leave_NASA_out",
+    "coverage_aligned_baseline_view": {
+      "qr_gradient_boosting": {
+        "coverage_gap_vs_persistence": 0.06481481481481488,
+        "width_ratio_vs_persistence": 7.915342693051998,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "cqr_gradient_boosting": {
+        "coverage_gap_vs_persistence": 0.10069444444444453,
+        "width_ratio_vs_persistence": 8.071062575217939,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "ngboost_normal_cqr": {
+        "coverage_gap_vs_persistence": -0.515625,
+        "width_ratio_vs_persistence": 2.9435703026646776,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      }
+    }
+  },
+  "target_recalibrated_NASA": {
+    "task": "target_recalibrated_NASA",
+    "coverage_aligned_baseline_view": {
+      "qr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.17752234993614302,
+        "width_ratio_vs_persistence": 4.212113086180654,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "cqr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.0600255427841635,
+        "width_ratio_vs_persistence": 4.3896532840703255,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "ngboost_normal_cqr": {
+        "coverage_gap_vs_persistence": -0.2413793103448275,
+        "width_ratio_vs_persistence": 3.996789875231198,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      }
+    }
+  },
+  "leave_Oxford_out": {
+    "task": "leave_Oxford_out",
+    "coverage_aligned_baseline_view": {
+      "qr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.5851272015655578,
+        "width_ratio_vs_persistence": 2.326409808408524,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "cqr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.5616438356164384,
+        "width_ratio_vs_persistence": 2.5113623748266773,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "ngboost_normal_cqr": {
+        "coverage_gap_vs_persistence": -0.8434442270058709,
+        "width_ratio_vs_persistence": 1.3172514300225644,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      }
+    }
+  },
+  "target_recalibrated_Oxford": {
+    "task": "target_recalibrated_Oxford",
+    "coverage_aligned_baseline_view": {
+      "qr_gradient_boosting": {
+        "coverage_gap_vs_persistence": 0.0429184549356223,
+        "width_ratio_vs_persistence": 2.6296822598105085,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "cqr_gradient_boosting": {
+        "coverage_gap_vs_persistence": 0.0429184549356223,
+        "width_ratio_vs_persistence": 2.6296822598105085,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "ngboost_normal_cqr": {
+        "coverage_gap_vs_persistence": -0.48497854077253216,
+        "width_ratio_vs_persistence": 1.6867305116780587,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      }
+    }
+  },
+  "leave_NASA_out_common_feature_schema": {
+    "task": "leave_NASA_out_common_feature_schema",
+    "coverage_aligned_baseline_view": {
+      "qr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.2152777777777778,
+        "width_ratio_vs_persistence": 5.663441133316446,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "cqr_gradient_boosting": {
+        "coverage_gap_vs_persistence": -0.18981481481481477,
+        "width_ratio_vs_persistence": 5.762039377078165,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      },
+      "ngboost_normal_cqr": {
+        "coverage_gap_vs_persistence": -0.48148148148148145,
+        "width_ratio_vs_persistence": 3.7764220287959778,
+        "coverage_aligned": false,
+        "width_comparison_permitted": false,
+        "interpretation_rule": "Report width ratio only when coverage_aligned is true; otherwise report coverage recovery/collapse without superiority language."
+      }
+    }
+  }
+}

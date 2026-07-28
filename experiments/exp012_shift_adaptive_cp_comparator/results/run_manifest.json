@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-07-18T05:07:31.505456",
+  "script": "scripts/run_shift_adaptive_cp_comparator.py",
+  "argv": [
+    "scripts/run_shift_adaptive_cp_comparator.py",
+    "--output-exp",
+    "exp012_shift_adaptive_cp_comparator",
+    "--seed",
+    "42",
+    "--bootstrap-reps",
+    "1000",
+    "--min-decision-denominator",
+    "5"
+  ],
+  "experiment_id": "exp012_shift_adaptive_cp_comparator",
+  "seed": 42,
+  "bootstrap_reps": 1000,
+  "min_decision_denominator": 5,
+  "python": "3.11.15",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "runtime_packages": {
+    "python": "3.11.15",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.7.2"
+  },
+  "git_commit": "d9345592979d2c929e611b54056b4176e79dbe15",
+  "synthetic_data_used": false,
+  "target_journal": "Reliability Engineering & System Safety",
+  "article_type": "Short Communication / Case Study",
+  "deterministic_regeneration_command": "python scripts/run_shift_adaptive_cp_comparator.py --output-exp exp012_shift_adaptive_cp_comparator --seed 42 --bootstrap-reps 1000 --min-decision-denominator 5",
+  "fpa_source": "docs/reports/20260531_121759_20260531_121759_fpa_chain_summary.md"
+}

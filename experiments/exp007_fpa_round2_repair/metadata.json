@@ -1,0 +1,14 @@
+{
+  "status": "closed",
+  "experiment_tier": "major",
+  "route": "A",
+  "result_type": "scoped_positive_ress_method_claim",
+  "synthetic_data_used": false,
+  "target_journal": "Reliability Engineering & System Safety",
+  "source_fpa_revision_plan": "docs/reports/20260530_164103_fpa_revision_20260530_163246_revision_plan.md",
+  "execution_log": "experiments/exp007_fpa_round2_repair/execution-log.md",
+  "latest_metrics": "experiments/exp007_fpa_round2_repair/results/metrics.json",
+  "run_manifest": "experiments/exp007_fpa_round2_repair/results/run_manifest.json",
+  "split_manifest": "experiments/exp007_fpa_round2_repair/results/split_manifest.json",
+  "latest_external_review": "docs/reports/20260530_164727_D-EXP-exp007_fpa_round2_repair_codex.md"
+}

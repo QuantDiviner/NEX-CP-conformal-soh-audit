@@ -1,0 +1,405 @@
+## Results {#sec-results}
+
+
+The engineering object in this case study is not a new SOH estimator but the reliability evidence produced by a cross-dataset conformal SOH benchmark. The decision question is how interval coverage and SOH threshold decisions change across recent-label access, split construction, feature-schema sensitivity, residual protocol drift, and localized residual weighting diagnostics.
+
+
+The evidence base is a set of diagnostic contrasts over the same real-data benchmark splits. Task abbreviations use Main for the same-protocol held-out task, leave-CALCE (LCAL), target-CALCE (TCAL), leave-NASA (LNAS), target-NASA (TNAS), leave-Oxford (LOxf), and target-Oxford (TOxf). Table \ref{tbl-evidence-map} reports the argument-bearing contrasts needed to interpret reliability evidence; ancillary timing and residual-stress screens are treated as robustness checks rather than headline findings.
+
+```{python}
+#| echo: false
+#| output: asis
+
+import pandas as pd
+from IPython.display import Markdown
+
+scoped_tasks = metrics["scoped_method_repair_tasks"]
+main_persist = scoped_tasks["main_heldout"]["methods"]["persistence_anchor_protocol_mondrian_cp"]
+main_cqr = scoped_tasks["main_heldout"]["methods"]["cqr_gradient_boosting"]
+leave_nasa_persist = scoped_tasks["leave_NASA_out"]["methods"]["persistence_anchor_protocol_mondrian_cp"]
+leave_nasa_cqr = scoped_tasks["leave_NASA_out"]["methods"]["cqr_gradient_boosting"]
+bias_probe = metrics["stress_failure_probe_bias_probe"]["bias_grid"]
+lnas_ngboost_false_safe = (
+    metrics["reliability_audit_decision_utility_ci"]["leave_NASA_out"]
+    ["ngboost_normal_cqr"]["soh_threshold_0.80"]["false_safe_per_actual_unsafe"]
+)
+lnas_ngboost_false_safe_s = (
+    f"{100 * lnas_ngboost_false_safe['rate']:.1f} "
+    f"[{100 * lnas_ngboost_false_safe['ci_low']:.1f}, "
+    f"{100 * lnas_ngboost_false_safe['ci_high']:.1f}]; "
+    f"n={lnas_ngboost_false_safe['denominator_n']}"
+)
+
+evidence_rows = [
+    {
+        "Component": "Baseline",
+        "Evidence": f"Main held-out coverage {main_cov_s}, width {main_width_s}",
+        "Reading": "conditional reliability",
+    },
+    {
+        "Component": "Recent labels",
+        "Evidence": f"Pipeline-selection Main ablation {without_prev_delta_cov_s}; method-matched TCAL {largest_recent_label_delta_signed_s}",
+        "Reading": "load-bearing condition",
+    },
+    {
+        "Component": "Schema",
+        "Evidence": f"LNAS sensitivity {leave_nasa_artifact_delta_signed_s}; SMD {leave_nasa_raw_smd_s} to {leave_nasa_common_smd_s}",
+        "Reading": "sensitivity; control failed",
+    },
+    {
+        "Component": "No recent labels",
+        "Evidence": f"Main {no_recent_common_main_s}; LNAS {no_recent_common_leave_nasa_s}; LOxf {no_recent_common_leave_oxford_s}",
+        "Reading": "task dependent",
+    },
+    {
+        "Component": "Decision risk",
+        "Evidence": f"LNAS NGBoost false acceptance {pct(lnas_ngboost_false_safe['rate'])}, n={lnas_ngboost_false_safe['denominator_n']}",
+        "Reading": "finite-cell risk",
+    },
+    {
+        "Component": "Localized CQR",
+        "Evidence": f"{adaptive_recovered}/{adaptive_total} point envelopes met; {adaptive_point_failure_summary_s}; {adaptive_lower_bound_summary_s}",
+        "Reading": "heuristic diagnostic",
+    },
+]
+
+def _texesc(s):
+    return str(s).replace("%", r"\%")
+ev_latex_rows = "\n".join(
+    f"{_texesc(r['Component'])} & {_texesc(r['Evidence'])} & {_texesc(r['Reading'])} \\\\"
+    for r in evidence_rows
+)
+Markdown(rf"""
+\begin{{table}}[!htbp]
+\centering
+\scriptsize
+\caption{{Audit evidence map. Intervals are 95\% confidence intervals where shown; pp denotes percentage points and SMD denotes standardized mean difference.}}
+\label{{tbl-evidence-map}}
+\begin{{tabular}}{{p{{0.14\linewidth}}p{{0.57\linewidth}}p{{0.20\linewidth}}}}
+\toprule
+Component & Evidence & Reading \\
+\midrule
+{ev_latex_rows}
+\bottomrule
+\end{{tabular}}
+\end{{table}}
+""")
+```
+
+
+The main baseline selected method is the `{python} main_selected_method_s`. On the same-protocol held-out task it reaches coverage `{python} main_cov_s` with CI `{python} main_ci_low_s`-`{python} main_ci_high_s`, mean width `{python} main_width_s`, and sample size `{python} main_n`. Removing the recent-SOH feature from the ablation package changes the selected condition to the `{python} without_prev_method_s`, with coverage `{python} without_prev_cov_s` and mean width `{python} without_prev_width_s`; relative to the full feature condition, this is a coverage change of `{python} without_prev_delta_cov_s` and a width increase of `{python} without_prev_delta_width_s`. Figure \ref{fig-evidence-flow} summarizes the resulting audit logic: raw coverage is interpreted only after the measurement conditions are examined.
+
+```{python}
+#| echo: false
+#| output: asis
+
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+from pathlib import Path
+
+fig, ax = plt.subplots(figsize=(7.2, 2.4))
+ax.set_axis_off()
+
+nodes = [
+    (0.02, 0.55, 0.16, 0.24, "Real SOH\nrecords"),
+    (0.22, 0.55, 0.18, 0.24, "Benchmark\nschema"),
+    (0.46, 0.70, 0.20, 0.20, "Recent-label\ncheck"),
+    (0.46, 0.42, 0.20, 0.20, "Schema and\ndrift check"),
+    (0.72, 0.55, 0.22, 0.24, "Decision-risk\ninterpretation"),
+]
+
+for x, y, w, h, label in nodes:
+    box = FancyBboxPatch(
+        (x, y), w, h,
+        boxstyle="round,pad=0.02,rounding_size=0.015",
+        linewidth=1.0,
+        edgecolor="#2f4f4f",
+        facecolor="#edf4f2",
+    )
+    ax.add_patch(box)
+    ax.text(x + w / 2, y + h / 2, label, ha="center", va="center", fontsize=9)
+
+arrows = [
+    ((0.18, 0.67), (0.22, 0.67)),
+    ((0.40, 0.67), (0.46, 0.80)),
+    ((0.40, 0.67), (0.46, 0.52)),
+    ((0.66, 0.80), (0.72, 0.67)),
+    ((0.66, 0.52), (0.72, 0.67)),
+]
+for start, end in arrows:
+    ax.add_patch(FancyArrowPatch(start, end, arrowstyle="-|>", mutation_scale=12, linewidth=1.0, color="#2f4f4f"))
+
+Path("figures").mkdir(exist_ok=True)
+fig.savefig("figures/evidence-flow.pdf", bbox_inches="tight")
+plt.close(fig)
+Markdown(r"""
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/evidence-flow.pdf}
+\caption{Evidence-flow schematic for the benchmark-integrity audit. Each diagnostic examines a measurement-validity condition before conformal SOH intervals are interpreted as reliability evidence.}
+\label{fig-evidence-flow}
+\end{figure}
+""")
+```
+
+The cross-protocol diagnostics keep the result from becoming a simple method-success story. Same-split QR/CQR/NGBoost comparisons show that coverage can change only by changing the uncertainty family or accepting wider intervals; for example, in the main held-out task, CQR is coverage-aligned but has `{python} main_cqr_width_ratio_s` times the persistence-anchor width. In the common-cycle, no-recent-label audit, coverage is `{python} no_recent_common_main_s` on Main, `{python} no_recent_common_leave_nasa_s` on LNAS, and `{python} no_recent_common_leave_oxford_s` on LOxf. These values demonstrate heterogeneity, not a universal monotone benefit of recent labels. On Main, the clean-original no-recent schema attains a coverage of `{python} no_recent_clean_main_s`. Because the as-used no-recent schema is flagged as contaminated in two tasks, conclusions are based on the row-matched common-schema contrasts rather than the contaminated hard-regime rows. Ancillary host-timing and residual-bias screens are robustness checks only; they are not interpreted as hardware or physical-degradation evidence.
+
+The method-matched recent-label delta is gradient-boosting CQR coverage under the common no-recent-SOH schema minus coverage with the recent-SOH reference, evaluated on identical task rows. This comparison is heterogeneous across tasks, which is central to the measurement-validity interpretation. Table \ref{tbl-schema-deltas} reports it beside the as-used schema-bundle contrast and its independent permuted-feature control.
+
+```{python}
+#| echo: false
+#| output: asis
+
+import pandas as pd
+
+task_labels = {
+    "main_heldout": "Main",
+    "leave_CALCE_out": "LCAL",
+    "target_recalibrated_CALCE": "TCAL",
+    "leave_NASA_out": "LNAS",
+    "target_recalibrated_NASA": "TNAS",
+    "leave_Oxford_out": "LOxf",
+    "target_recalibrated_Oxford": "TOxf",
+}
+schema_rows = metrics["original_paper_substance_schema_delta_summary"]["rows"]
+by_task = {}
+for row in schema_rows:
+    by_task.setdefault(row["task"], {})[row["comparison"]] = row
+
+def interval_pp_compact(row, key="coverage_delta"):
+    low_key = key + "_ci_low"
+    high_key = key + "_ci_high"
+    if low_key not in row and key == "coverage_delta":
+        low_key = "coverage_ci_low"
+        high_key = "coverage_ci_high"
+    return f"{100 * row[key]:+.1f} [{100 * row[low_key]:+.1f}, {100 * row[high_key]:+.1f}]"
+
+decision_by_task = {r["task"]: r for r in metrics["original_paper_substance_decision_rules"]["rows"]}
+
+schema_table_rows = []
+for task, label in task_labels.items():
+    recent = by_task[task]["recent_label_reference_common_no_recent_minus_prev_soh_reference"]
+    artifact = by_task[task]["artifact_bookkeeping_as_used_minus_clean_original"]
+    negative = by_task[task]["negative_control_clean_original_minus_zero_control"]
+    schema_table_rows.append({
+        "Task": label,
+        "Recent": interval_pp_compact(recent),
+        "Bundle": interval_pp_compact(artifact),
+        "Control": interval_pp_compact(negative),
+        "Cov": "Yes" if decision_by_task[task]["coverage_artifact_positive"] else "No",
+        "NC": "Fail" if task in negative_control_failure_keys else "Pass",
+    })
+from IPython.display import Markdown
+schema_latex_rows = "\n".join(
+    f"{row['Task']} & {row['Recent']} & {row['Bundle']} & {row['Control']} & {row['Cov']} & {row['NC']} \\\\"
+    for row in schema_table_rows
+)
+Markdown(rf"""
+\begin{{table}}[!htbp]
+\centering
+\scriptsize
+\caption{{Method- and row-matched coverage deltas (pp; Bonferroni-adjusted cell-block normal intervals). Recent is common-schema no-recent minus recent-SOH reference; Bundle is as-used minus clean; Control is the negative-control coverage contrast. NC gate fails if that control is non-null for coverage or any false-acceptance endpoint.}}
+\label{{tbl-schema-deltas}}
+\begin{{tabular}}{{llllcc}}
+\toprule
+Task & No-recent $-$ recent & Bundle & Control & Flag & NC gate \\
+\midrule
+{schema_latex_rows}
+\bottomrule
+\end{{tabular}}
+\end{{table}}
+""")
+```
+
+
+The largest method-matched recent-label contrast occurs in TCAL, where removing the recent-SOH reference changes coverage by `{python} largest_recent_label_delta_s`; LNAS changes by `{python} lnas_recent_label_delta_s`, and TOxf reverses direction. Because these comparisons hold the conformal family and task rows fixed, they isolate information-set sensitivity more cleanly than the Main ablation in Table \ref{tbl-evidence-map}. The Main ablation changes `{python} without_prev_delta_cov_s`, but its selection rule switches conformal families and therefore measures the response of the complete selection pipeline, not a same-method feature effect.
+
+The as-used schema-bundle contrast passes the pre-specified coverage flag in `{python} coverage_artifact_count_s` tasks: `{python} coverage_artifact_tasks_s`. LNAS changes by `{python} leave_nasa_artifact_delta_signed_s`; its maximum SMD falls from `{python} leave_nasa_raw_smd_s` in the raw schema to `{python} leave_nasa_common_smd_s` in the common schema. However, the as-used bundle jointly changes `source_row_id`, `target_cycle_index`, and the permuted control column, while the independent permuted-feature control is also non-null in `{python} negative_control_failure_tasks_s`. The pre-specified claim gate therefore returns false. The contrast cannot isolate a bookkeeping-field effect. We interpret it only as a schema-bundle sensitivity warning that may combine schema identity, finite-cell structure, and residual shift. This negative-control failure blocks the stronger original artifact-mechanism story.
+
+LNAS shows a multiplicity-adjusted schema-bundle false-acceptance increase of `{python} lnas_bundle_fs_delta_s` at SOH threshold `{python} lnas_bundle_fs_threshold_s` (exact paired-cell p = `{python} lnas_bundle_fs_exact_p_s`, n = `{python} lnas_bundle_fs_n_s`); no other task passes the corrected criterion. Table \ref{tbl-false-acceptance-deltas} reports the largest observed eligible contrast for each task, and the complete `{python} artifact_family_n`-contrast ledger remains in the machine-readable SSOT. This is a bundle-level decision association, not an isolated bookkeeping effect or a deployment-safety rate. Absolute decision risk must therefore also be read directly from Table \ref{tbl-decision-tradeoff}. Figure \ref{fig-coverage-deltas} visualizes the task-dependent information-set and schema-bundle sensitivities.
+
+```{python}
+#| echo: false
+#| output: asis
+
+def fs_largest_cell(task):
+    cells = substance_tasks_raw[task]["schema_deltas"]["artifact_bookkeeping_as_used_minus_clean_original"]["false_safe_rate_delta_a_minus_b"]
+    eligible = [
+        (threshold, cell) for threshold, cell in cells.items()
+        if cell["denominator_n"] >= decision_min_denominator
+    ]
+    threshold, cell = max(eligible, key=lambda item: abs(item[1]["delta"]))
+    threshold = threshold.replace("soh_threshold_", "")
+    if cell["se"] == 0:
+        estimate = f"{100 * cell['delta']:+.1f}"
+        exact_p = f"{cell['paired_cell_sign_pvalue']:.3g}"
+    else:
+        estimate = (
+            f"{100 * cell['delta']:+.1f} "
+            f"[{100 * cell['ci_low']:+.1f}, {100 * cell['ci_high']:+.1f}]"
+        )
+        exact_p = "--"
+    if cell["se"] == 0:
+        corrected = "Yes" if cell.get("boundary_exact_significant", False) else "No"
+    else:
+        corrected = "Yes" if (cell["ci_low"] > 0 or cell["ci_high"] < 0) else "No"
+    return estimate, threshold, str(cell["denominator_n"]), exact_p, corrected
+
+fs_latex_rows = []
+for row in artifact_rows:
+    estimate, threshold, denominator, exact_p, corrected = fs_largest_cell(row["task"])
+    fs_latex_rows.append(
+        f"{task_labels[row['task']]} & {estimate} & {threshold} & {denominator} & {exact_p} & {corrected} \\\\"
+    )
+fs_latex_rows = "\n".join(fs_latex_rows)
+Markdown(rf"""
+\begin{{table}}[!htbp]
+\centering
+\scriptsize
+\caption{{Largest eligible schema-bundle false-acceptance contrast by task (pp). Intervals are Bonferroni-adjusted; zero-SE cells show exact paired-cell p-values. LNAS passes correction.}}
+\label{{tbl-false-acceptance-deltas}}
+\begin{{tabular}}{{llrrrc}}
+\toprule
+Task & Delta [CI] & SOH & n & Exact p & Corrected? \\
+\midrule
+{fs_latex_rows}
+\bottomrule
+\end{{tabular}}
+\end{{table}}
+""")
+```
+
+```{python}
+#| echo: false
+#| output: asis
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+order = ["main_heldout", "leave_CALCE_out", "target_recalibrated_CALCE", "leave_NASA_out", "target_recalibrated_NASA", "leave_Oxford_out", "target_recalibrated_Oxford"]
+rows_by = {}
+for row in metrics["original_paper_substance_schema_delta_summary"]["rows"]:
+    rows_by.setdefault(row["task"], {})[row["comparison"]] = row
+
+fig, ax = plt.subplots(figsize=(6.4, 3.2))
+y = np.arange(len(order))[::-1]
+for i, task in enumerate(order):
+    rec = rows_by[task]["recent_label_reference_common_no_recent_minus_prev_soh_reference"]
+    art = rows_by[task]["artifact_bookkeeping_as_used_minus_clean_original"]
+    yy = y[i]
+    ax.errorbar(100 * rec["coverage_delta"], yy + 0.16,
+                xerr=[[100 * (rec["coverage_delta"] - rec["coverage_ci_low"])], [100 * (rec["coverage_ci_high"] - rec["coverage_delta"])]],
+                fmt="o", color="#1f4e79", capsize=2, markersize=4, label="No-recent minus recent-SOH" if i == 0 else None)
+    ax.errorbar(100 * art["coverage_delta"], yy - 0.16,
+                xerr=[[100 * (art["coverage_delta"] - art["coverage_ci_low"])], [100 * (art["coverage_ci_high"] - art["coverage_delta"])]],
+                fmt="s", color="#b5651d", capsize=2, markersize=4, label="As-used schema bundle" if i == 0 else None)
+ax.axvline(0, ls="--", color="gray", lw=0.8)
+ax.set_yticks(y)
+ax.set_yticklabels([task_label_map[t] for t in order])
+ax.set_xlabel("Coverage delta (pp)")
+ax.legend(loc="lower left", fontsize=8, frameon=False)
+plt.tight_layout()
+Path("figures").mkdir(exist_ok=True)
+fig.savefig("figures/coverage-deltas.pdf", bbox_inches="tight")
+plt.close(fig)
+Markdown(r"""
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/coverage-deltas.pdf}
+\caption{Per-task recent-label and as-used schema-bundle coverage deltas (percentage points) with Bonferroni-corrected normal intervals. Recent-label deltas are large and negative in several tasks; bundle deltas are smaller, with LCAL and LNAS meeting the coverage flag. The endpoint-wide negative-control gate fails in LCAL and TCAL. The dashed line marks zero.}
+\label{fig-coverage-deltas}
+\end{figure}
+""")
+```
+
+
+Decision-utility rates are reported with denominators and cell-block intervals rather than as unqualified safety claims. Here, a false-acceptance event occurs when the actual SOH falls below the serviceability threshold but the predicted interval incorrectly implies threshold acceptability, while a false-rejection event occurs when an actually threshold-acceptable SOH is incorrectly flagged as threshold-unacceptable. Table \ref{tbl-decision-tradeoff} reports representative SOH threshold decision cells at threshold `{python} du_threshold_080_s`. The table illustrates why coverage alone is insufficient for a threshold-decision interpretation: the leave-NASA CQR cell has a lower false-acceptance point estimate but leaves a large uncertain region, whereas NGBoost has a high false-acceptance diagnostic. These thresholds and cells are illustrative boundary evidence, not deployment-safety rates; application use requires threshold-specific validation.
+
+```{python}
+#| echo: false
+#| output: asis
+
+method_labels = {
+    "persistence_anchor_protocol_mondrian_cp": "Persistence anchor",
+    "cqr_gradient_boosting": "CQR",
+    "ngboost_normal_cqr": "NGBoost",
+}
+safety_rows = []
+def rate_n_s(cell):
+    return (
+        f"{100 * cell['rate']:.1f} "
+        f"[{100 * cell['ci_low']:.1f}, {100 * cell['ci_high']:.1f}]; "
+        f"n={cell['denominator_n']}"
+    )
+
+for task in ["main_heldout", "leave_NASA_out"]:
+    for method in [
+        "persistence_anchor_protocol_mondrian_cp",
+        "cqr_gradient_boosting",
+        "ngboost_normal_cqr",
+    ]:
+        cell = metrics["reliability_audit_decision_utility_ci"][task][method]["soh_threshold_0.80"]
+        false_safe = cell["false_safe_per_actual_unsafe"]
+        uncertain = cell["uncertain_rate"]
+        safety_rows.append({
+            "Task": task_labels[task],
+            "Method": method_labels[method],
+            "False acceptance": rate_n_s(false_safe),
+            "Uncertain": rate_n_s(uncertain),
+        })
+
+safety_latex_rows = "\n".join(
+    f"{row['Task']} & {row['Method']} & {row['False acceptance']} & {row['Uncertain']} \\\\"
+    for row in safety_rows
+)
+Markdown(rf"""
+\begin{{table}}[!htbp]
+\centering
+\footnotesize
+\caption{{Illustrative threshold-0.80 decision-risk cells (percent; uncorrected 95\% cell-block CI; n = denominator).}}
+\label{{tbl-decision-tradeoff}}
+\begin{{tabular}}{{llll}}
+\toprule
+Task & Method & False acceptance & Uncertain \\
+\midrule
+{safety_latex_rows}
+\bottomrule
+\end{{tabular}}
+\end{{table}}
+""")
+```
+
+
+The localized-residual comparator reaches nominal point coverage on `{python} adaptive_recovered` of `{python} adaptive_total` tasks: `{python} adaptive_recovered_tasks_s`. It recovers `{python} adaptive_point_failure_summary_s`; `{python} adaptive_lower_bound_summary_s` crosses the nominal boundary. The remaining tasks are below the point target: `{python} adaptive_unrecovered_tasks_s`. Because the comparator uses distance-based residual localization rather than density-ratio weighting, these are empirical diagnostic outcomes without a covariate-shift coverage guarantee. Table \ref{tbl-adaptive-envelope} is therefore a sensitivity envelope, not evidence of conformal superiority.
+
+```{python}
+#| echo: false
+#| output: asis
+
+def _esc(s):
+    return str(s).replace("%", r"\%")
+adapt_latex_rows = "\n".join(
+    f"{task_labels[row['task']]} & "
+    f"{_esc(pct(row['standard_coverage']))} ({_esc(pct(row['standard_cell_ci_low']))}) & "
+    f"{_esc(pct(row['adaptive_coverage']))} ({_esc(pct(row['adaptive_cell_ci_low']))}) & "
+    f"{_esc(signed_pp(row['coverage_delta_adaptive_minus_standard']))} & "
+    f"{'Y' if row['adaptive_meets_target'] else 'N'} \\\\"
+    for row in adaptive_rows
+)
+from IPython.display import Markdown
+Markdown(rf"""
+\begin{{table}}[!htbp]
+\centering
+\footnotesize
+\caption{{Heuristic localized-residual CQR coverage by task. Std (low) and Local (low) give point coverage with the 95\% cell-block lower bound in parentheses; Delta is local minus standard coverage (pp). Pt $\geq$ nom marks nominal point coverage, not a formal coverage guarantee.}}
+\label{{tbl-adaptive-envelope}}
+\begin{{tabular}}{{lllcc}}
+\toprule
+Task & Std (low) & Local (low) & Delta & Pt $\geq$ nom \\
+\midrule
+{adapt_latex_rows}
+\bottomrule
+\end{{tabular}}
+\end{{table}}
+""")
+```

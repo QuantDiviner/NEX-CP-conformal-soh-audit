@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-07-18T05:06:56.398575",
+  "script": "scripts/run_original_paper_substance_experiment.py",
+  "argv": [
+    "scripts/run_original_paper_substance_experiment.py",
+    "--output-exp",
+    "exp011_original_paper_substance",
+    "--seed",
+    "42",
+    "--bootstrap-reps",
+    "1000",
+    "--min-decision-denominator",
+    "5"
+  ],
+  "experiment_id": "exp011_original_paper_substance",
+  "seed": 42,
+  "bootstrap_reps": 1000,
+  "min_decision_denominator": 5,
+  "python": "3.11.15",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "runtime_packages": {
+    "python": "3.11.15",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.7.2"
+  },
+  "git_commit": "d9345592979d2c929e611b54056b4176e79dbe15",
+  "synthetic_data_used": false,
+  "target_journal": "Reliability Engineering & System Safety",
+  "user_direction_gate": "Round 8 option 2: approve new substance for RESS Original Paper",
+  "deterministic_regeneration_command": "python scripts/run_original_paper_substance_experiment.py --output-exp exp011_original_paper_substance --seed 42 --bootstrap-reps 1000 --min-decision-denominator 5"
+}
