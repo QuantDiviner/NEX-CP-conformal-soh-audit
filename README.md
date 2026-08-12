@@ -1,4 +1,4 @@
-# A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation: Recent-Label Dependence, Schema-Bundle Sensitivity, and Threshold-Decision Risk
+# A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation
 
 Official replication repository and benchmark-integrity audit suite for conformal battery state-of-health (SOH) evaluation under distribution shift.
 
@@ -6,11 +6,8 @@ Official replication repository and benchmark-integrity audit suite for conforma
 
 ## 📌 Paper Overview
 
-- **Title**: A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation: Recent-Label Dependence, Schema-Bundle Sensitivity, and Threshold-Decision Risk
-- **Authors**: Qingsong Shan¹ and Qianning Liu¹*
-  - ¹ *School of Statistics and Data Science, Key Laboratory of Data Science in Finance and Economics, Jiangxi University of Finance and Economics, Nanchang, China*
-  - * Corresponding Author: Qianning Liu (email: `liuqianning@jxufe.edu.cn`)
-- **Target Journal**: *Reliability Engineering & System Safety* (RESS)
+- **Title**: A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation
+- **Authors**: Anonymous Authors
 
 ---
 
@@ -103,10 +100,9 @@ The source code and protocol implementation are released under the [MIT License]
 If you find this repository or protocol useful in your research, please cite our paper:
 
 ```bibtex
-@article{shan2026benchmarkintegrity,
-  title={A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation: Recent-Label Dependence, Schema-Bundle Sensitivity, and Threshold-Decision Risk},
-  author={Shan, Qingsong and Liu, Qianning},
-  journal={Reliability Engineering \& System Safety},
+@article{anonymous2026benchmarkintegrity,
+  title={A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation},
+  author={Anonymous},
   year={2026},
   note={Under review}
 }

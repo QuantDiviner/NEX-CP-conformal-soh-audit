@@ -4,11 +4,16 @@ Prepared: 2026-08-11
 
 ## Manuscript
 
-- `manuscript/index.pdf`: visually verified manuscript PDF after CRediT contribution adjustment and complete Quarto re-rendering.
+- `manuscript/index.pdf`: visually verified manuscript PDF after the title shortening, CRediT contribution adjustment, and complete Quarto re-rendering.
 - `manuscript/index.tex`: editable Elsevier `elsarticle` LaTeX source.
 - `manuscript/figures/evidence-flow.pdf`: vector Figure 1 artwork.
 - `manuscript/figures/coverage-deltas.pdf`: vector Figure 2 artwork.
 - `manuscript/references/main.bib`: active bibliography file.
+
+The title is `A Benchmark-Integrity Audit Protocol for Conformal Battery
+State-of-Health Evaluation`; the earlier three-clause subtitle was removed and
+the manuscript, attachments, and checksums below were regenerated from source
+so that every artifact in this package carries the same title.
 
 The LaTeX paths are self-contained relative to `manuscript/index.tex`. The
 rendered PDF contains no raster image objects and all fonts are embedded.

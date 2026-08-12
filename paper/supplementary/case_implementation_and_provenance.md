@@ -2,7 +2,7 @@
 
 ## Case implementation and provenance for the six-gate audit
 
-This supplement accompanies “A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation: Recent-Label Dependence, Schema-Bundle Sensitivity, and Threshold-Decision Risk.” It makes the retrospective case implementation auditable. The integrated G1–G6 synthesis was developed after the diagnostic program; it was not prospectively registered. The component plan files, scripts, and current paper data are preserved at immutable public replication commit `42f1120ed1f5cbc0282a706ebd4bec24a8d19d6e`.
+This supplement accompanies “A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation.” It makes the retrospective case implementation auditable. The integrated G1–G6 synthesis was developed after the diagnostic program; it was not prospectively registered. The component plan files, scripts, and current paper data are preserved at immutable public replication commit `42f1120ed1f5cbc0282a706ebd4bec24a8d19d6e`.
 
 ### Table S1. Analysis-to-gate implementation map
 
