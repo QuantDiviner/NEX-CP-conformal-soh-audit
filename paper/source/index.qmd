@@ -1,5 +1,5 @@
 ---
-title: "A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation: Recent-Label Dependence, Schema-Bundle Sensitivity, and Threshold-Decision Risk"
+title: "A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation"
 metadata-files:
   - _generated_metadata.yml
 author:
