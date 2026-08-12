@@ -1,197 +1,113 @@
-# Recent-Label Dependence in Cross-Dataset Conformal SOH Evaluation: A Benchmark-Integrity Case Study
+# A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation: Recent-Label Dependence, Schema-Bundle Sensitivity, and Threshold-Decision Risk
 
-Official replication package for the manuscript:
-
-**"Recent-Label Dependence in Cross-Dataset Conformal SOH Evaluation: A Benchmark-Integrity Case Study"**
-Qingsong Shan, Qianning Liu (Jiangxi University of Finance and Economics)
-Target journal: *Reliability Engineering & System Safety* (Short Communication / Case Study)
+Official replication repository and benchmark-integrity audit suite for conformal battery state-of-health (SOH) evaluation under distribution shift.
 
 ---
 
-## Overview
+## 📌 Paper Overview
 
-Conformal prediction (CP) provides distribution-free uncertainty guarantees for
-battery State of Health (SOH) estimation. This case study audits how benchmark
-design choices — specifically recent-label availability, cell-block separation,
-and time-forward calibration — affect reported coverage validity when
-conformal SOH algorithms are evaluated across real-world cycle trajectories.
-
-The repository contains the complete deterministic analysis pipeline, the
-dataset preprocessing and QA-gating code, all experiment metrics and run
-manifests, the numerical single source of truth (`paper/data/metrics.json`),
-and the Quarto manuscript sources. All results are derived exclusively from
-the public **CALCE**, **NASA**, and **Oxford** battery degradation corpora
-(45 QA-passing cells); no synthetic data are used anywhere.
+- **Title**: A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation: Recent-Label Dependence, Schema-Bundle Sensitivity, and Threshold-Decision Risk
+- **Authors**: Qingsong Shan¹ and Qianning Liu¹*
+  - ¹ *School of Statistics and Data Science, Key Laboratory of Data Science in Finance and Economics, Jiangxi University of Finance and Economics, Nanchang, China*
+  - * Corresponding Author: Qianning Liu (email: `liuqianning@jxufe.edu.cn`)
+- **Target Journal**: *Reliability Engineering & System Safety* (RESS)
 
 ---
 
-## Repository structure
+## 📝 Abstract
 
-```text
-NEX-CP-conformal-soh-audit/
-├── README.md                   # This file
-├── LICENSE                     # MIT License
-├── pyproject.toml              # Package metadata and locked dependency versions
-├── requirements.txt            # Pinned Python dependencies
-├── environment.yml             # Conda environment specification (equivalent)
-│
-├── scripts/                    # Self-contained analysis pipeline (run from repo root)
-│   ├── download_data.py        # Prints manual acquisition instructions for the 3 datasets
-│   ├── preprocess_real_battery.py            # Raw data -> QA-gated cycle-level SOH table + splits
-│   ├── run_real_experiments.py               # exp001-exp005: main coverage audit, ablation,
-│   │                                         #   cross-protocol transfer, stress probe, cost screen
-│   ├── run_fpa_repair_experiment.py          # exp006/exp007: baseline & dependence-aware repair analyses
-│   ├── run_reliability_audit_experiment.py   # exp008/exp009: reliability & safety-boundary audit
-│   ├── run_hard_regime_audit_experiment.py   # exp010: hard-regime audit (no recent labels)
-│   ├── run_original_paper_substance_experiment.py # exp011: feature-schema measurement-validity audit
-│   ├── run_shift_adaptive_cp_comparator.py   # exp012: shift-adaptive conformal comparator
-│   └── run_pcr_20260718_repair.py            # Batch driver that deterministically reruns the
-│                                             #   repair runners with their locked arguments
-│
-├── src/                        # Empty package skeletons only (no implementation).
-│                               # The analysis pipeline is entirely under scripts/.
-│
-├── data/
-│   ├── raw/                    # Raw datasets (NOT included; manual download, gitignored)
-│   ├── processed/              # Generated cycle-level tables (not tracked)
-│   └── splits/                 # Tracked preprocessing outputs: QA log (45 passing cells),
-│                               # split manifest, run manifest, skipped-cell ledger
-│
-├── experiments/                # One directory per experiment (see experiments/README.md)
-│   ├── exp001_main/ ... exp005_edge/
-│   │                           # exp001-exp005: results/metrics.json only
-│   ├── exp006_fpa_repair/ ... exp012_shift_adaptive_cp_comparator/
-│   │                           # exp006-exp012: results/metrics.json + results/run_manifest.json
-│   │                           # (plus split manifests and task-specific outputs)
-│   └── _template/              # Scaffold for new experiment directories
-│
-└── paper/
-    ├── data/                   # Numerical SSOT
-    │   ├── metrics.json        # Every number quoted in text, tables, and figures
-    │   ├── metrics_manifest.yaml
-    │   └── external_facts.yaml
-    ├── source/                 # Quarto manuscript (index.qmd + section files),
-    │   │                       # references/main.bib, Elsevier assets
-    │   └── figures/            # Vector figures (PDF) used by the manuscript
-    ├── scripts/                # SSOT maintenance & consistency-check utilities
-    └── templates/              # Reference copies of elsarticle / quarto-elsevier assets
+Conformal intervals for lithium-ion battery state-of-health (SOH) inform maintenance decisions, but cross-dataset validation can conceal measurement conditions. We develop a six-gate benchmark-integrity audit of prediction-time information, split integrity, cell-block uncertainty, schema controls, threshold decisions, and localization sensitivity. Twelve analyses use 13,831 eligible records from 13,876 CALCE, NASA, and Oxford observations. A pooled-domain, cell-held-out baseline reaches 94.8% coverage (cell-block lower bound 94.2%). Across six cross-dataset tasks, method-matched removal of the most recent measured SOH yields statistically supported coverage reductions in five tasks, by as much as 60.4 percentage points; the remaining task and pooled-domain baseline are compatible with no effect. The as-used schema bundle decreases leave-NASA coverage by 12.0 percentage points and increases false acceptance by 100.0 percentage points at the illustrative SOH cutoff 0.90 (exact paired-cell p = 9.54e-07); an independent control restricts interpretation to a bundle-level association. A localized-residual comparator recovers one point-coverage failure; its design carries no shift-robust guarantee. Each gate couples evidence requirements to claim bounds, yielding an executable pre-submission check demonstrated on three public battery benchmarks. Prospective applications are needed to establish detection performance.
+
+---
+
+## 🛡️ Six-Gate Benchmark-Integrity Audit Protocol
+
+The repository implements a governed benchmark-integrity audit protocol comprising six explicit gates:
+
+| Gate | Measurement Condition Examined | Evidence Required | Consequence of Failure |
+| :--- | :--- | :--- | :--- |
+| **G1** | Information set | State whether recent measured SOH or another oracle label is available at prediction time | No claim for settings without recent labels |
+| **G2** | Split integrity | Verify task-appropriate disjoint training, validation, calibration, and test indices; require cell-disjoint histories where the task claims cell-level holdout | Treat coverage as split-contingent |
+| **G3** | Uncertainty units | Report cell-block uncertainty rather than row-level i.i.d. intervals | Treat uncertainty as optimistic |
+| **G4** | Schema sensitivity | Compare schema contrasts with an independent permuted-feature control and multiplicity adjustment | Bundle-level warning; no mechanism claim |
+| **G5** | Decision consequences | Report threshold false acceptance and false rejection with record denominators, effective cell counts, and sparse-cell flags | Do not promote coverage to serviceability evidence |
+| **G6** | Localization sensitivity | Compare standard and localized calibration as a sensitivity envelope | Failure: no empirical recovery; apparent success: point-coverage sensitivity only. Neither outcome authorizes a shift-robust claim without a guarantee-bearing method and verified assumptions |
+
+---
+
+## 📂 Repository Structure
+
+```
+.
+├── paper/
+│   ├── source/               # Quarto manuscript source files (.qmd, .tex)
+│   ├── data/                 # Single Source of Truth (SSOT) metrics (metrics.json)
+│   ├── figures/              # Manuscript figures (PDF format)
+│   ├── submission/           # Submission packages (v1 archived, v2 ready)
+│   │   ├── ress/             # Latest v2 submission bundle directory
+│   │   ├── archive_v1_20260807/ # Archived v1 submission package
+│   │   ├── ress_v1_submission_ready.zip # v1 zip archive
+│   │   └── ress_v2_submission_ready.zip # v2 zip archive
+│   └── scripts/              # Data collection, figure generation & audit scripts
+├── experiments/              # 12 diagnostic analysis plans and results
+├── data/                     # Public battery dataset provenance and splits
+├── docs/                     # Governance, decision logs, and journal constraints
+└── README.md                 # Project documentation (this file)
 ```
 
 ---
 
-## Requirements
+## 📊 Datasets Evaluated
 
-- **Python 3.11** (results were produced with CPython 3.11.15; `pyproject.toml`
-  allows `>=3.11,<3.13`)
-- Python-side dependencies are pinned identically in `requirements.txt`,
-  `environment.yml`, and `pyproject.toml` (numpy 2.2.6, pandas 2.3.3,
-  scikit-learn 1.7.2, scipy 1.15.3, plus supporting packages)
+The empirical audit evaluates **13,831 eligible cycle-level records** from **45 real lithium-ion battery cells** across three public laboratory platforms:
+1. **CALCE** (Center for Advanced Life Cycle Engineering): 12 CS2/CX2 prismatic cells (11,592 eligible rows).
+2. **NASA Ames Prognostics Data Repository**: 25 multi-batch Li-ion cells (1,728 eligible rows).
+3. **Oxford Battery Degradation Dataset**: 8 Kokam pouch cells (511 eligible rows).
 
-Install with pip:
+---
+
+## ⚙️ Quick Start & Reproduction
+
+### 1. Environment Setup
 
 ```bash
-python3.11 -m venv .venv
-source .venv/bin/activate
+# Clone the repository
+git clone https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit.git
+cd NEX-CP-conformal-soh-audit
+
+# Create and activate Python environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-or with conda:
+### 2. Reproduce Manuscript & Render PDF
 
 ```bash
-conda env create -f environment.yml
-conda activate nex-cp-conformal-soh-audit
+# Verify metrics and data integrity
+python paper/scripts/validate_metrics_manifest.py
+
+# Render complete manuscript with Quarto
+cd paper/source
+quarto render index.qmd
 ```
 
-The `scripts/run_*.py` runners are self-contained and are executed directly
-from the repository root; no package installation (`pip install -e .`) is
-required.
+The compiled PDF will be generated in `paper/output/index.pdf`.
 
 ---
 
-## Data acquisition
+## 📜 License & Citation
 
-Raw battery data are **not redistributed** here and must be obtained manually
-from the three public sources:
+The source code and protocol implementation are released under the [MIT License](LICENSE).
 
-- **CALCE Battery Research Group**: <https://calce.umd.edu/battery-data> → place under `data/raw/calce/`
-- **NASA Ames PCoE Data Set Repository**: <https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/> → place under `data/raw/nasa/`
-- **Oxford Battery Degradation Dataset 1**: <https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac> → place under `data/raw/oxford/`
-
-`python scripts/download_data.py` prints the same instructions with
-per-dataset layout notes. See `data/README.md` for details.
-
----
-
-## Reproducing the analysis
-
-### Step 1 — Preprocessing and QA gating
-
-```bash
-python scripts/preprocess_real_battery.py
-```
-
-Builds `data/processed/real_battery_cycle_level_features.csv` from `data/raw/`,
-applies per-cell QA gating (55 candidate cells → 45 passing), and writes the
-time-forward, cell-separated splits to `data/splits/`. The tracked artifacts
-under `data/splits/` already contain these outputs, so this step is only
-needed to verify the pipeline end-to-end.
-
-### Step 2 — Experiment runners
-
-```bash
-python scripts/run_real_experiments.py                  # exp001-exp005
-python scripts/run_fpa_repair_experiment.py             # exp006/exp007 analyses
-python scripts/run_reliability_audit_experiment.py      # exp008/exp009 analyses
-python scripts/run_hard_regime_audit_experiment.py      # exp010
-python scripts/run_original_paper_substance_experiment.py # exp011
-python scripts/run_shift_adaptive_cp_comparator.py      # exp012
-```
-
-Each runner reads the processed table and split manifest, and rewrites the
-`results/` directory of its experiment(s). `scripts/run_pcr_20260718_repair.py`
-is a batch driver that reruns the three repair runners with the exact locked
-arguments used for the reported metrics. All reported metrics are already
-committed under `experiments/*/results/` and aggregated in
-`paper/data/metrics.json`.
-
-### Step 3 — Rendering the manuscript (optional)
-
-Requires Quarto and a TeX Live installation, plus the rendering-only Python
-packages listed in `requirements.txt`:
-
-```bash
-quarto render paper/source/index.qmd
-```
-
-The manuscript injects every quoted number from `paper/data/metrics.json` at
-render time; no numerical result is hard-coded in the text.
-
----
-
-## Citation
-
-If you use this code or data, please cite:
-
-> Qingsong Shan, Qianning Liu. "Recent-Label Dependence in Cross-Dataset
-> Conformal SOH Evaluation: A Benchmark-Integrity Case Study." Jiangxi
-> University of Finance and Economics. Replication package:
-> <https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit>
+If you find this repository or protocol useful in your research, please cite our paper:
 
 ```bibtex
-@misc{shan_liu_conformal_soh_audit,
-  author       = {Shan, Qingsong and Liu, Qianning},
-  title        = {Recent-Label Dependence in Cross-Dataset Conformal {SOH}
-                  Evaluation: A Benchmark-Integrity Case Study},
-  howpublished = {Replication package,
-                  \url{https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit}},
-  year         = {2026},
+@article{shan2026benchmarkintegrity,
+  title={A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation: Recent-Label Dependence, Schema-Bundle Sensitivity, and Threshold-Decision Risk},
+  author={Shan, Qingsong and Liu, Qianning},
+  journal={Reliability Engineering \& System Safety},
+  year={2026},
+  note={Under review}
 }
 ```
-
----
-
-## License
-
-This repository is licensed under the [MIT License](LICENSE). The underlying
-battery datasets remain the property of their respective providers (CALCE,
-NASA, Oxford) and are subject to their own terms of use.

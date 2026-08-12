@@ -1,5 +1,5 @@
 ---
-title: "Recent-Label Dependence in Cross-Dataset Conformal SOH Evaluation: A Benchmark-Integrity Case Study"
+title: "A Benchmark-Integrity Audit Protocol for Conformal Battery State-of-Health Evaluation: Recent-Label Dependence, Schema-Bundle Sensitivity, and Threshold-Decision Risk"
 metadata-files:
   - _generated_metadata.yml
 author:
@@ -55,6 +55,13 @@ def signed_pp(x, digits=1):
 def num(x, digits=3):
     return f"{x:.{digits}f}"
 
+def fmt_exact_p(p):
+    if p >= 1:
+        return "1.000"
+    if p < 0.001:
+        return f"{p:.2e}"
+    return f"{p:.3f}"
+
 def val(path, default="[metric pending]"):
     cur = metrics
     for part in path:
@@ -73,7 +80,7 @@ def interval_s(row, key="coverage_delta"):
     return f"{signed_pp(row[key])} [{signed_pp(row[low_key])}, {signed_pp(row[high_key])}]"
 
 def rate_ci_s(cell):
-    return f"{pct(cell['rate'])} [{pct(cell['ci_low'])}, {pct(cell['ci_high'])}], n={cell['denominator_n']}"
+    return f"{pct(cell['rate'])} [{pct(cell['ci_low'])}, {pct(cell['ci_high'])}], n={cell['denominator_n']:,}"
 
 leave_nasa_artifact_delta = next(
     r for r in metrics["original_paper_substance_schema_delta_summary"]["rows"]
@@ -83,6 +90,7 @@ leave_nasa_artifact_delta = next(
 largest_recent_label_delta = metrics["original_paper_substance_schema_delta_summary"]["largest_abs_coverage_delta"]["coverage_delta"]
 largest_recent_label_task = metrics["original_paper_substance_schema_delta_summary"]["largest_abs_coverage_delta"]["task"]
 adaptive_rows = metrics["shift_adaptive_comparator_comparator_summary"]["rows"]
+adaptive_by_task = {row["task"]: row for row in adaptive_rows}
 adaptive_recovered = sum(1 for r in adaptive_rows if r["adaptive_meets_target"])
 adaptive_total = len(adaptive_rows)
 task_label_map = {
@@ -99,7 +107,7 @@ main_cov_s = pct(main_cell_block["coverage"])
 main_ci_low_s = pct(main_cell_block["cell_block_ci_low"])
 main_ci_high_s = pct(main_cell_block["cell_block_ci_high"])
 main_width_s = num(main_cell_block["mean_width"])
-main_n = main_cell_block["n"]
+main_n = f"{main_cell_block['n']:,}"
 target_coverage_s = pct(metrics["main_baseline_target_coverage"], 0)
 main_q_level = main_cell_block["q_level"]
 source_experiment_count = len(metrics["_meta"]["source_experiments"])
@@ -111,6 +119,10 @@ source_cycle_rows_s = f"{main_split_design['source_cycle_rows']:,}"
 eligible_cycle_rows_s = f"{main_split_design['eligible_cycle_rows']:,}"
 excluded_first_rows_s = f"{main_split_design['excluded_first_rows']:,}"
 main_selected_method_s = "persistence-anchor Mondrian conformal diagnostic"
+full_features = metrics["ablation_study_conditions"]["full_features"]
+full_features_method_s = "persistence-anchor standard conformal diagnostic"
+full_features_cov_s = pct(full_features["selected"]["coverage"])
+full_features_width_s = num(full_features["selected"]["mean_width"])
 without_prev = metrics["ablation_study_conditions"]["without_prev_soh"]
 without_prev_method = without_prev["selected_method"]
 without_prev_method_s = "gradient-boosting domain-Mondrian conformal diagnostic"
@@ -121,13 +133,7 @@ without_prev_delta_width_s = num(without_prev["delta_vs_full"]["mean_width"])
 du_false_safe_s = rate_ci_s(metrics["reliability_audit_decision_utility_ci"]["leave_CALCE_out"]["cqr_gradient_boosting"]["soh_threshold_0.70"]["false_safe_per_actual_unsafe"])
 du_false_alarm_s = rate_ci_s(metrics["reliability_audit_decision_utility_ci"]["leave_CALCE_out"]["cqr_gradient_boosting"]["soh_threshold_0.70"]["false_alarm_per_actual_safe"])
 du_threshold_080_s = "0.80"
-serviceability_thresholds = sorted({
-    float(key.rsplit("_", 1)[1])
-    for task in metrics["reliability_audit_decision_utility_ci"].values()
-    for method in task.values()
-    for key in method
-    if key.startswith("soh_threshold_")
-})
+serviceability_thresholds = sorted(metrics["hard_regime_audit_thresholds"])
 serviceability_thresholds_s = ", ".join(f"{threshold:.2f}" for threshold in serviceability_thresholds)
 adaptive_recovered_tasks_s = ", ".join(
     task_label_map[t] for t in metrics["shift_adaptive_comparator_comparator_summary"]["tasks_recovered_by_adaptive"]
@@ -165,6 +171,14 @@ adaptive_lower_bound_recovered_tasks_s = ", ".join(
     task_label_map[r["task"]] for r in adaptive_lower_bound_recovered_rows
 )
 adaptive_leave_nasa_row = next(r for r in adaptive_rows if r["task"] == "leave_NASA_out")
+adaptive_main_row = adaptive_by_task["main_heldout"]
+adaptive_lcal_row = adaptive_by_task["leave_CALCE_out"]
+adaptive_main_standard_s = pct(adaptive_main_row["standard_coverage"])
+adaptive_lcal_standard_s = pct(adaptive_lcal_row["standard_coverage"])
+adaptive_main_delta_s = signed_pp(adaptive_main_row["coverage_delta_adaptive_minus_standard"])
+adaptive_lcal_delta_s = signed_pp(adaptive_lcal_row["coverage_delta_adaptive_minus_standard"])
+adaptive_main_standard_low_s = pct(adaptive_main_row["standard_cell_ci_low"])
+adaptive_main_adaptive_low_s = pct(adaptive_main_row["adaptive_cell_ci_low"])
 adaptive_leave_nasa_standard_low_s = pct(adaptive_leave_nasa_row["standard_cell_ci_low"])
 adaptive_leave_nasa_adaptive_low_s = pct(adaptive_leave_nasa_row["adaptive_cell_ci_low"])
 leave_nasa_raw_smd_s = num(metrics["round4_schema_repair_shift_diagnostics"]["leave_NASA_out"]["max_abs_standardized_mean_diff"], 2)
@@ -205,8 +219,8 @@ artifact_by_task = {r["task"]: r for r in artifact_rows}
 lnas_bundle_fs_rule = artifact_by_task["leave_NASA_out"]
 lnas_bundle_fs_delta_s = signed_pp(lnas_bundle_fs_rule["fs_delta"])
 lnas_bundle_fs_threshold_s = lnas_bundle_fs_rule["fs_threshold"].replace("soh_threshold_", "")
-lnas_bundle_fs_exact_p_s = f"{lnas_bundle_fs_rule['fs_exact_pvalue']:.3g}"
-lnas_bundle_fs_n_s = str(lnas_bundle_fs_rule["fs_denominator_n"])
+lnas_bundle_fs_exact_p_s = fmt_exact_p(lnas_bundle_fs_rule["fs_exact_pvalue"])
+lnas_bundle_fs_n_s = f"{lnas_bundle_fs_rule['fs_denominator_n']:,}"
 artifact_family_n = substance_multiplicity["family_n"]
 artifact_alpha_s = num(substance_multiplicity["alpha"], 2)
 import math as _math
@@ -224,6 +238,22 @@ coverage_artifact_tasks_s = ", ".join(task_label_map[t] for t in coverage_artifa
 coverage_artifact_count_s = str(len(coverage_artifact_keys))
 negative_control_failure_keys = substance_decision_rules["negative_control_failures"]
 negative_control_failure_tasks_s = ", ".join(task_label_map[t] for t in negative_control_failure_keys) if negative_control_failure_keys else "none"
+_tcal_control_cells = substance_tasks_raw["target_recalibrated_CALCE"]["schema_deltas"]["negative_control_clean_original_minus_zero_control"]["false_safe_rate_delta_a_minus_b"]
+_tcal_control_nonnull = [
+    (threshold, cell)
+    for threshold, cell in _tcal_control_cells.items()
+    if cell["ci_low"] > 0
+    or cell["ci_high"] < 0
+    or cell.get("boundary_exact_significant", False)
+]
+assert len(_tcal_control_nonnull) == 1
+_tcal_control_threshold, _tcal_control_cell = _tcal_control_nonnull[0]
+tcal_control_threshold_s = _tcal_control_threshold.replace("soh_threshold_", "")
+tcal_control_false_acceptance_s = (
+    f"{100 * _tcal_control_cell['delta']:+.1f} pp "
+    f"[{100 * _tcal_control_cell['ci_low']:+.1f}, "
+    f"{100 * _tcal_control_cell['ci_high']:+.1f}]"
+)
 schema_claim_allowed = bool(substance_decision_rules["claim_allowed"])
 # False acceptance reported as a SIGNED diagnostic (not a headline trigger)
 fs_degrading_keys = substance_decision_rules["fs_safety_degrading_tasks"]
@@ -239,7 +269,7 @@ def _fs_desc(keys):
             "safer": "risk-decreasing",
             "safety-degrading": "risk-increasing",
         }.get(direction, direction)
-        parts.append(f"{task_label_map[k]} ({100*r['fs_delta']:+.0f} pp [{100*r['fs_ci_low']:+.0f}, {100*r['fs_ci_high']:+.0f}], n={r['fs_denominator_n']}, {direction} at the {thr} SOH threshold)")
+        parts.append(f"{task_label_map[k]} ({100*r['fs_delta']:+.0f} pp [{100*r['fs_ci_low']:+.0f}, {100*r['fs_ci_high']:+.0f}], n={r['fs_denominator_n']:,}, {direction} at the {thr} SOH threshold)")
     return "; ".join(parts) if parts else "none"
 fs_degrading_desc_s = _fs_desc(fs_degrading_keys)
 fs_improving_desc_s = _fs_desc(fs_improving_keys)
@@ -259,6 +289,33 @@ _lnas_raw_du = _lnas_node["schemas"]["as_used_exp010_schema"]["metrics"]["decisi
 _lnas_clean_du = _lnas_node["schemas"]["clean_original_no_recent_schema"]["metrics"]["decision_utility_ci"]
 _lnas_prev_du = _lnas_node["schemas"]["common_cycle_prev_soh_reference_schema"]["metrics"]["decision_utility_ci"]
 _lnas_fs_delta = _lnas_node["schema_deltas"]["artifact_bookkeeping_as_used_minus_clean_original"]["false_safe_rate_delta_a_minus_b"]
+lnas_bundle_fs_cells_s = str(
+    _lnas_fs_delta[lnas_bundle_fs_rule["fs_threshold"]]["effective_cell_count"]
+)
+lnas_bundle_fs_raw_rate_s = pct(
+    _lnas_raw_du[lnas_bundle_fs_rule["fs_threshold"]]["false_safe_per_actual_unsafe"]["rate"]
+)
+lnas_bundle_fs_clean_rate_s = pct(
+    _lnas_clean_du[lnas_bundle_fs_rule["fs_threshold"]]["false_safe_per_actual_unsafe"]["rate"]
+)
+
+_lcal_node = substance_tasks_raw["leave_CALCE_out"]
+_lcal_raw_du = _lcal_node["schemas"]["as_used_exp010_schema"]["metrics"]["decision_utility_ci"]
+_lcal_clean_du = _lcal_node["schemas"]["clean_original_no_recent_schema"]["metrics"]["decision_utility_ci"]
+_lcal_fs_delta = _lcal_node["schema_deltas"]["artifact_bookkeeping_as_used_minus_clean_original"]["false_safe_rate_delta_a_minus_b"]
+_lcal_eligible = [
+    (key, cell) for key, cell in _lcal_fs_delta.items()
+    if cell["denominator_n"] >= decision_min_denominator
+]
+_lcal_fs_key, _lcal_fs_cell = max(_lcal_eligible, key=lambda item: abs(item[1]["delta"]))
+lcal_bundle_fs_delta_s = signed_pp(_lcal_fs_cell["delta"])
+lcal_bundle_fs_threshold_s = _lcal_fs_key.replace("soh_threshold_", "")
+lcal_bundle_fs_raw_rate_s = pct(_lcal_raw_du[_lcal_fs_key]["false_safe_per_actual_unsafe"]["rate"])
+lcal_bundle_fs_clean_rate_s = pct(_lcal_clean_du[_lcal_fs_key]["false_safe_per_actual_unsafe"]["rate"])
+lcal_bundle_fs_n_s = f"{_lcal_fs_cell['denominator_n']:,}"
+lcal_bundle_fs_cells_s = str(_lcal_fs_cell["effective_cell_count"])
+lcal_bundle_fs_discordant_s = str(_lcal_fs_cell["paired_cell_nonzero_count"])
+lcal_bundle_fs_exact_p_s = fmt_exact_p(_lcal_fs_cell["paired_cell_sign_pvalue"])
 
 def _thr_num(k):
     return float(k.replace("soh_threshold_", ""))

@@ -1,7 +1,7 @@
 # Highlights
 
-- Battery SOH conformal benchmarks can hide recent-label dependence.
-- Feature-schema artifacts can masquerade as protocol shift.
-- Residual drift remains after schema-artifact decoupling.
-- Shift-adaptive CQR separates point-coverage from lower-bound failures.
-- SOH serviceability claims need threshold-risk and small-denominator audits.
+- A six-gate benchmark-integrity audit for conformal SOH evidence.
+- Method-matched recent-label removal cuts coverage in five tasks.
+- Schema-bundle sensitivity changes false acceptance at an SOH threshold.
+- An independent control blocks unsupported mechanism attribution.
+- Decision audits report both error directions, cell counts, and denominators.

@@ -1,14 +1,16 @@
 ## Conclusion {#sec-conclusion}
 
-This case study shows why conformal battery SOH benchmark results should be audited before being treated as reliability evidence. In the corrected real-data analyses, recent-label access produces large but task-dependent method-matched coverage changes. The as-used schema bundle changes coverage in two tasks and increases LNAS false acceptance at one corrected threshold, but it jointly changes multiple columns and the endpoint-wide independent-control gate fails, blocking attribution to bookkeeping fields.
+This paper develops and demonstrates a governed benchmark-integrity audit protocol for conformal battery SOH evidence. In the corrected real-data analyses, method-matched recent-label removal produces statistically supported coverage reductions in five of six cross-dataset tasks, with task-dependent magnitudes, while the remaining task and the pooled-domain baseline remain compatible with no effect. The protocol also detects that the as-used schema bundle changes coverage in two tasks and increases LNAS false acceptance at one threshold after multiplicity correction. The LCAL decision contrast has the opposite sign and does not pass multiplicity correction. Because the bundle jointly changes multiple columns and the endpoint-wide independent control is non-null, the control confines interpretation to a bundle-level association rather than a field-specific mechanism.
 
-The contribution is therefore a bounded measurement-validity warning: conformal SOH intervals may be useful, but their serviceability interpretation depends on the benchmark-integrity discipline developed and discussed above. Future work should apply this audit to broader field data and prospective forecasting settings.
+The resulting contribution is fivefold. First, the paper defines an explicit six-gate benchmark-integrity protocol. Second, it quantifies task-dependent recent-label sensitivity with method-matched contrasts. Third, it combines multiplicity-adjusted schema contrasts with an independent negative control. Fourth, it reports a corrected LNAS link between schema-bundle sensitivity and threshold false acceptance. Fifth, it uses a localized-residual sensitivity envelope to distinguish empirical recovery from a covariate-shift guarantee.
 
-The implication for reliability engineering is simple: coverage must not be promoted to deployment reliability until the benchmark's information set, split integrity, controls, and decision consequences survive the same audit.
+Each gate ties a measurement condition to an evidentiary requirement and a bound on the resulting claim. The gates are formulated independently of the three datasets, but this case establishes executability and claim control rather than independent detection performance. The next validation step is prospective application to benchmarks we did not construct.
+
+Within the three public laboratory datasets studied here, the implication for reliability engineering is direct: coverage should support a serviceability interpretation only after the benchmark's information set, split integrity, uncertainty units, controls, decision consequences, and localization sensitivity have been audited. Broader field data, prospective forecasting splits, and repeated-control designs remain necessary before generalizing beyond this case.
 
 ## Data Availability {.unnumbered}
 
-This study uses real cycle-level SOH records from three public battery datasets: the CALCE Battery Research Group battery data repository [@calce_battery_data], the NASA Ames Prognostics Data Repository [@nasa_pcoe_battery_data], and the Oxford Battery Degradation Dataset [@howey2017oxford], all accessed 2026-06-02. The versioned derived-data package, source-data provenance, split manifests, and run manifests underlying every reported value are publicly available in the project replication repository at https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit.
+This study uses real cycle-level SOH records from three public battery datasets: the CALCE Battery Research Group data repository [@calce_battery_data], the NASA Ames Prognostics Data Repository [@nasa_pcoe_battery_data], and the Oxford Battery Degradation Dataset [@howey2017oxford], all accessed 2026-06-02. The versioned derived-data package, source-data provenance, split manifests, run manifests, archived analysis plans, and regeneration code underlying every reported value are publicly available at https://github.com/QuantDiviner/NEX-CP-conformal-soh-audit. Supplementary Tables S1--S2 provide the case-implementation and provenance matrix.
 
 ## Code Availability {.unnumbered}
 
@@ -22,13 +24,13 @@ The authors declare that they have no known competing financial interests or per
 
 This work was supported by the National Social Science Foundation of China (grant no. 25BTJ045) and the Natural Science Foundation of Jiangxi Province (grant no. 20232BAB201025), both awarded to Q.L. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
 
-## Declaration of Generative AI and AI-Assisted Technologies in the Manuscript Preparation Process {.unnumbered}
+## Declaration of generative AI and AI-assisted technologies in the writing process {.unnumbered}
 
-During the preparation of this work, the authors used OpenAI Codex and Anthropic Claude to support manuscript organization, language editing, and critical review. The authors subsequently reviewed and edited the content, verified the cited evidence and reported results, and take full responsibility for the content of the publication.
+During the preparation of this work, the authors used OpenAI Codex for code editing assistance, manuscript formatting, and language polishing. The authors subsequently reviewed and edited the content, verified all reported evidence and results, and take full responsibility for the content of the publication.
 
 ## CRediT Authorship Contribution Statement {.unnumbered}
 
-**Qianning Liu**: Conceptualization, Methodology, Investigation, Visualization, Writing - Original Draft, Writing - Review & Editing, Supervision, Funding acquisition. **Qingsong Shan**: Software, Data curation, Formal analysis, Validation, Writing - Review & Editing.
+**Qingsong Shan**: Software, Data curation, Formal analysis, Validation, Writing – review & editing. **Qianning Liu**: Conceptualization, Methodology, Investigation, Visualization, Writing – original draft, Writing – review & editing, Funding acquisition.
 
 ## Corresponding Author {.unnumbered}
 
